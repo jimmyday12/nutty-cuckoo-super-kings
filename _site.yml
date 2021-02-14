@@ -1,0 +1,12 @@
+name: "The Nutty Cuckoo Super Kings"
+title: "NCSK"
+description: |
+  The trials and tribulations of a social cricket team
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
