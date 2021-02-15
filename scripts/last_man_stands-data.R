@@ -5,6 +5,10 @@ library(rvest)
 library(xml2)
 library(lubridate)
 
+# Season IDS
+season_ids <- c(105, 110, 112, 114)
+
+# Functions --------------------------------------------------------------------
 get_innings <- function(fixture_id, innings = 1) {
   
   innings_q <- case_when(
@@ -179,20 +183,10 @@ list(batting = batting,
      bowling = bowling)
 }
 
-
-
-season_ids <- c(105, 110, 112, 114)
-season_id <- 114
-league_id <-  1398
-
-dat <- fetch_season_stats(season_id = season_id, 
-                          league_id = league_id)
-
-
+# Processing --------------------------------------------------------------------
+# Get data
 dat_all <- purrr::map(season_ids, ~fetch_season_stats(season_id = .x,
                                            league_id = league_id))
-
-
 
 batting_all <- dat_all %>%
   purrr::map_dfr(~purrr::pluck(.x, "batting"))
@@ -200,58 +194,64 @@ batting_all <- dat_all %>%
 bowling_all <- dat_all %>%
   purrr::map_dfr(~purrr::pluck(.x, "bowling"))
 
-bowling_all %>%
-  group_by(team, Bowlers) %>%
-  summarise(innings = n(),
-            Overs = sum(Overs),
-            Runs = sum(Runs),
-            SR = (Overs * 6)/sum(Wkts),
-            `3fa` = sum(Wkts >= 3),
-            `5fa` = sum(Wkts >= 5),
-            Wickets = sum(Wkts),
-            Maidens = sum(Maidens),
-            Econ = Runs/Overs,
-            Avg = Runs/Wickets) %>%
-  arrange(desc(Wickets), Econ, Avg) %>%
-  filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(innings > 3) %>%
-  print(n = 25)
-
-batting_all %>%
-  mutate(`50s` = ifelse(Runs >= 50, 1, 0),
-         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0)) %>%
-  group_by(team, Batsmen) %>%
-  summarise(innings = n(),
-          not_outs = sum(Dismissal == "Not Out"),
-          Runs = sum(Runs), 
-          Balls = sum(Balls),
-          SR = Runs/Balls*100,
-          Avg = Runs/(innings-not_outs),
-          `50s` = sum(`50s`),
-          `30s` = sum(`30s`),
-          fours = sum(`4s`),
-          sixes = sum(`6s`)) %>%
-  arrange(desc(Runs)) %>%
-  filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(innings > 3) %>%
-  filter(Runs > 99) %>%
-  print(n = 25)
+# Save Data
+write_csv(batting_all, here::here("data", "batting.csv"))
+write_csv(bowling_all, here::here("data", "bowling.csv"))
 
 
-
-url <- "https://www.lastmanstands.com/team-profile/past-leagues/t20?teamid=18132"
-
-resp <- httr::GET(url)
-xml <- xml2::read_html(resp)
-
-nodes <- xml %>%
-  rvest::html_nodes("#team-profile-pervious-seasons p") 
-
-text <- nodes %>%
-  rvest::html_text()
-
-hrefs <- nodes %>%
-  rvest::html_attr("href") %>%
-  purrr::map_chr(~str_split(.x, '=', simplify = TRUE)[,2])
-
-hrefs[!text %in% "The game was a tie"]
+# 
+# bowling_all %>%
+#   group_by(team, Bowlers) %>%
+#   summarise(innings = n(),
+#             Overs = sum(Overs),
+#             Runs = sum(Runs),
+#             SR = (Overs * 6)/sum(Wkts),
+#             `3fa` = sum(Wkts >= 3),
+#             `5fa` = sum(Wkts >= 5),
+#             Wickets = sum(Wkts),
+#             Maidens = sum(Maidens),
+#             Econ = Runs/Overs,
+#             Avg = Runs/Wickets) %>%
+#   arrange(desc(Wickets), Econ, Avg) %>%
+#   filter(team == "The Nutty Cuckoo Super Kings") %>%
+#   filter(innings > 3) %>%
+#   print(n = 25)
+# 
+# batting_all %>%
+#   mutate(`50s` = ifelse(Runs >= 50, 1, 0),
+#          `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0)) %>%
+#   group_by(team, Batsmen) %>%
+#   summarise(innings = n(),
+#           not_outs = sum(Dismissal == "Not Out"),
+#           Runs = sum(Runs), 
+#           Balls = sum(Balls),
+#           SR = Runs/Balls*100,
+#           Avg = Runs/(innings-not_outs),
+#           `50s` = sum(`50s`),
+#           `30s` = sum(`30s`),
+#           fours = sum(`4s`),
+#           sixes = sum(`6s`)) %>%
+#   arrange(desc(Runs)) %>%
+#   filter(team == "The Nutty Cuckoo Super Kings") %>%
+#   filter(innings > 3) %>%
+#   filter(Runs > 99) %>%
+#   print(n = 25)
+# 
+# 
+# 
+# url <- "https://www.lastmanstands.com/team-profile/past-leagues/t20?teamid=18132"
+# 
+# resp <- httr::GET(url)
+# xml <- xml2::read_html(resp)
+# 
+# nodes <- xml %>%
+#   rvest::html_nodes("#team-profile-pervious-seasons p") 
+# 
+# text <- nodes %>%
+#   rvest::html_text()
+# 
+# hrefs <- nodes %>%
+#   rvest::html_attr("href") %>%
+#   purrr::map_chr(~str_split(.x, '=', simplify = TRUE)[,2])
+# 
+# hrefs[!text %in% "The game was a tie"]
