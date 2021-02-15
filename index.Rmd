@@ -1,5 +1,6 @@
 ---
-title: "NCSK"
+title: "Nutty Cuckoo Super Kings"
+description: |
+  A hub for stats, figures and the history of the NSCK! 
 site: distill::distill_website
-listing: posts
 ---
