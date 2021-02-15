@@ -14,8 +14,16 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Honour Board"
+      href: honour-board.html
     - text: "Records"
-      href: records.html
+      menu:
+        - text: "Batting"
+        - text: "Bolwing"
     - text: "Stats"
-      href: stats.html
+      menu:
+        - text: "Batting"
+          href: all-time-batting.html
+        - text: "Bowling"
+          href: all-time-bowling.html
 output: distill::distill_article

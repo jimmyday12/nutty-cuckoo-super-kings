@@ -1,0 +1,236 @@
+---
+title: "All time bowling stats"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(here)
+library(reactable)
+library(htmltools)
+```
+
+```{r load data, include=FALSE, echo = FALSE}
+
+bowling <- read_csv(here::here("data", "bowling.csv"))
+batting <- read_csv(here::here("data", "batting.csv"))
+```
+
+```{r batting, echo=FALSE, message=FALSE, warning=FALSE}
+batting_df <- batting %>%
+  mutate(`50s` = ifelse(Runs >= 50, 1, 0),
+         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0),
+         `0s` = ifelse(Runs == 0 & Dismissal != "Not Out", 1, 0),
+         runs_made = Runs) %>%
+  group_by(team, User.Id, Batsmen) %>%
+  summarise(Inns = n(),
+          NO = sum(Dismissal == "Not Out"),
+          Runs = sum(runs_made),
+          HS = max(runs_made),
+          Avg = Runs/(Inns-NO),
+          Balls = sum(Balls),
+          SR = Runs/Balls*100,
+          `50` = sum(`50s`),
+          `30` = sum(`30s`),
+          `0` = sum(`0s`),
+          fours = sum(`4s`),
+          sixes = sum(`6s`)) %>%
+  arrange(desc(Runs)) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  ungroup() %>%
+  rename(Name = Batsmen) %>%
+  select(-team)
+batting_df[batting_df == "Inf" ] <- NA
+```
+
+```{r}
+bowling_df <- bowling %>%
+   mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
+         `5s` = ifelse(Wkts >= 5 , 1, 0)) %>%
+  group_by(team, User.Id, Bowlers) %>%
+  summarise(innings = n(),
+            Balls = ceiling(sum(Overs)*6),
+            Runs = sum(Runs),
+            Wkts = sum(Wkts),
+            SR = Balls/sum(Wkts),
+            Avg = Runs/Wkts,
+            Econ = Runs/sum(Overs),
+            `3` = sum(`3s`),
+            `5` = sum(`5s`)) %>%
+  arrange(desc(Wkts), Econ, Avg) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  ungroup() %>%
+  rename(Name = Bowlers) %>%
+  select(-team)
+
+best_bowling <- bowling %>% 
+  rename(Name = Bowlers) %>%
+  group_by(Name) %>% 
+  filter(Wkts == max(Wkts)) %>% 
+  filter(Runs == min(Runs)) %>% 
+  filter(row_number(Runs) == 1) %>%
+  mutate(BB = paste0(Wkts, "/", Runs)) %>%
+  select(Name, BB)
+
+bowling_df <- bowling_df %>%
+  left_join(best_bowling, by = "Name")
+bowling_df[bowling_df == "Inf" ] <- NA
+```
+
+```{r}
+reactable_function <- function(df, type = "batting"){
+  reactable(df, 
+          pagination = FALSE,
+          defaultSortOrder = "desc",
+          defaultSorted = ifelse(type == "batting", "Runs", "Wkts"),
+          defaultColDef = colDef(
+            sortNALast = TRUE,
+            minWidth = 45,
+            class = JS("function(rowInfo, colInfo, state) {
+        // Highlight sorted columns
+        for (var i = 0; i < state.sorted.length; i++) {
+          if (state.sorted[i].id === colInfo.id) {
+            return 'sorted'
+          }
+        }
+      }"),
+      headerClass = "box-score-header"),
+      columns = list(      
+        User.Id = colDef(show = FALSE),
+        Name = colDef(
+          name = "Name",
+          defaultSortOrder = "asc",
+          width = 130,
+          cell = function(value, index) {
+            player_id <- df[index, "User.Id"]
+            player_url <- sprintf(
+              "https://www.lastmanstands.com/cricket-player/t20?playerid=%s", 
+              player_id)
+            tags$a(href = player_url, target = "_blank", value)
+          }
+        ),
+        SR = colDef(format = colFormat(digits = 1)),
+        Avg = colDef(format = colFormat(digits = 1)),
+        Econ = colDef(format = colFormat(digits = 1))
+      ),
+      showSortIcon = FALSE,
+      highlight = TRUE,
+      striped = TRUE,
+      class = "box-score-tbl")
+}
+```
+```{r}
+
+div(class = "box-score",
+
+  div(class = "box-score-title", "Bowling"),
+  reactable_function(bowling_df, "bowling"),
+
+)
+
+
+```
+
+
+```{r ref.label="box_score", eval=FALSE}
+```
+
+```{r}
+tags$link(href = "https://fonts.googleapis.com/css?family=Roboto:400,500&display=fallback", rel = "stylesheet")
+```
+
+```{css}
+.box-score {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.box-score a:hover {
+  text-decoration: none;
+}
+.header {
+  text-align: center;
+  font-size: 20px;
+}
+.game-date {
+  font-size: 16px;
+}
+.line-score {
+  margin-top: 24px;
+  text-align: center;
+}
+.line-score-tbl {
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 15px;
+}
+.line-score-header {
+  font-size: 13px;
+  font-weight: 400;
+}
+.line-score-final {
+  font-weight: 500;
+}
+.team-name {
+  font-weight: 500;
+}
+.team-record {
+  margin-left: 6px;
+  color: hsl(0, 0%, 45%);
+  font-size: 12px;
+}
+.box-score-title {
+  margin-top: 24px;
+  padding: 8px;
+  background-color: hsl(205, 100%, 36%);
+  color: hsl(0, 0%, 98%);
+  font-size: 15px;
+  font-weight: 400;
+}
+.box-score-tbl {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+.box-score-header {
+  padding: 8px !important;
+  border-bottom-width: 1px;
+  background-color: hsl(205, 93%, 16%);
+  color: hsl(0, 0%, 98%);
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.box-score-header:hover,
+.box-score-header[aria-sort="ascending"],
+.box-score-header[aria-sort="descending"] {
+  background-color: hsl(205, 100%, 36%);
+}
+.box-score-header[aria-sort="ascending"] {
+  box-shadow: inset 0 10px 0 -6px #efaa10 !important;
+}
+.box-score-header[aria-sort="descending"] {
+  box-shadow: inset 0 -10px 0 -6px #efaa10 !important;
+}
+.sorted {
+  background-color: hsla(0, 0%, 60%, 0.1);
+}
+.box-score-total {
+  font-size: 13px;
+  font-weight: 500;
+}
+```
+
+```{css echo=FALSE}
+/* rmarkdown html documents */
+.main-container {
+  max-width: 1024px !important;
+}
+h1.title {
+  display: none;
+}
+/* pkgdown articles */
+.contents {
+  width: inherit;
+}
+```
