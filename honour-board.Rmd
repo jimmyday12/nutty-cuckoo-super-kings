@@ -28,7 +28,7 @@ leading_runs <- batting %>%
   summarise(runs = sum(Runs)) %>%
   group_by(season_id) %>%
   filter(runs == max(runs)) %>%
-  mutate(top_runscorer = paste0(Batsmen, " - ", runs)) %>%
+  mutate(top_runscorer = paste0(Batsmen, " (", runs, ")")) %>%
   select(season, season_id, top_runscorer)
 
 leading_wickets <- bowling %>% 
@@ -37,7 +37,7 @@ leading_wickets <- bowling %>%
   summarise(wkts = sum(Wkts)) %>%
   group_by(season_id) %>%
   filter(wkts == max(wkts)) %>%
-  mutate(most_wickets = paste0(Bowlers, " - ", wkts)) %>%
+  mutate(most_wickets = paste0(Bowlers, " (", wkts, ")")) %>%
   select(season, season_id, most_wickets)
 
 
@@ -72,11 +72,10 @@ reactable_function <- function(df, type = "batting"){
       headerClass = "box-score-header"),
       columns = list(      
         season_id = colDef(show = FALSE),
-        Season.Number = colDef(name = "Number"),
+        Season.Number = colDef(name = "#", width = 30),
         season = colDef(
           name = "Season",
           defaultSortOrder = "asc",
-          width = 70,
           cell = function(value, index) {
             season_id <- df[index, "season_id"]
             season_url <- sprintf(
@@ -85,6 +84,7 @@ reactable_function <- function(df, type = "batting"){
             tags$a(href = season_url, target = "_blank", value)
           }
         ),
+        Position = colDef(width = 70),
         Golden.Furphy = colDef(name = "Golden Furphy"),
         Golden.Bunny = colDef(name = "Bunnoz Award"),
         top_runscorer = colDef(name = "Most Runs"),
@@ -101,7 +101,8 @@ reactable_function <- function(df, type = "batting"){
 ```{r}
 
 div(class = "box-score",
-  reactable_function(df)
+    div(class = "box-score-title", "Honour Board"),
+    reactable_function(df)
 )
 
 
