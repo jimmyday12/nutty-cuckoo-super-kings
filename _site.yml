@@ -3,10 +3,19 @@ title: "NCSK"
 description: |
   The trials and tribulations of a social cricket team
 output_dir: "docs"
+collections:
+  posts: 
+    categories: true
+  records:
+    categories: true
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Records"
+      href: records.html
+    - text: "Stats"
+      href: stats.html
 output: distill::distill_article
