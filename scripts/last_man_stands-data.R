@@ -5,8 +5,6 @@ library(rvest)
 library(xml2)
 library(lubridate)
 
-# Season IDS
-season_ids <- c(105, 110, 112, 114)
 
 # Functions --------------------------------------------------------------------
 get_innings <- function(fixture_id, innings = 1) {
@@ -174,10 +172,14 @@ dat <- ids %>%
   purrr::map(fetch_match_results) 
 
 batting <- dat %>%
-  purrr::map_dfr(~purrr::pluck(.x, "batting"))
+  purrr::map_dfr(~purrr::pluck(.x, "batting")) %>%
+  mutate(season_id = season_id,
+         league_id = league_id)
 
 bowling <- dat %>%
-  purrr::map_dfr(~purrr::pluck(.x, "bowling"))
+  purrr::map_dfr(~purrr::pluck(.x, "bowling")) %>%
+  mutate(season_id = season_id,
+         league_id = league_id)
 
 list(batting = batting,
      bowling = bowling)
@@ -185,6 +187,10 @@ list(batting = batting,
 
 # Processing --------------------------------------------------------------------
 # Get data
+# Season IDS
+season_ids <- c(105, 110, 112, 114)
+league_id <- c(1398)
+
 dat_all <- purrr::map(season_ids, ~fetch_season_stats(season_id = .x,
                                            league_id = league_id))
 
