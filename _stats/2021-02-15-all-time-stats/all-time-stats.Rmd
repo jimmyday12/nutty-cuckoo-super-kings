@@ -1,0 +1,75 @@
+---
+title: "All time stats"
+description: |
+  A short description of the post.
+author:
+  - name: James Day
+date: 02-15-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(here)
+library(reactable)
+```
+
+```{r load data, include=FALSE, echo = FALSE}
+
+bowling <- read_csv(here::here("data", "bowling.csv"))
+batting <- read_csv(here::here("data", "batting.csv"))
+```
+
+```{r batting, echo=FALSE, message=FALSE, warning=FALSE}
+batting_df <- batting %>%
+  mutate(`50s` = ifelse(Runs >= 50, 1, 0),
+         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0)) %>%
+  group_by(team, Batsmen) %>%
+  summarise(innings = n(),
+          not_outs = sum(Dismissal == "Not Out"),
+          Runs = sum(Runs),
+          Balls = sum(Balls),
+          SR = Runs/Balls*100,
+          Avg = Runs/(innings-not_outs),
+          `50s` = sum(`50s`),
+          `30s` = sum(`30s`),
+          fours = sum(`4s`),
+          sixes = sum(`6s`)) %>%
+  arrange(desc(Runs)) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  ungroup() %>%
+  select(-team)
+
+
+reactable(batting_df, 
+          pagination = FALSE,
+          defaultSortOrder = "desc",
+          defaultSorted = "Runs",
+          columns = list(
+          SR = colDef(format = colFormat(digits = 1)),
+          Avg = colDef(format = colFormat(digits = 1))
+          )
+)
+```
+
+
+```{r bowling, echo=FALSE, message=FALSE, warning=FALSE}
+bowling_df <- bowling %>%
+  group_by(team, Bowlers) %>%
+  summarise(innings = n(),
+            Overs = sum(Overs),
+            Runs = sum(Runs),
+            SR = (Overs * 6)/sum(Wkts),
+            `3fa` = sum(Wkts >= 3),
+            `5fa` = sum(Wkts >= 5),
+            Wickets = sum(Wkts),
+            Maidens = sum(Maidens),
+            Econ = Runs/Overs,
+            Avg = Runs/Wickets) %>%
+  arrange(desc(Wickets), Econ, Avg) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") 
+
+```
