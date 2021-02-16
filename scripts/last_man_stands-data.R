@@ -4,6 +4,7 @@ library(httr)
 library(rvest)
 library(xml2)
 library(lubridate)
+library(cli)
 
 
 # Functions --------------------------------------------------------------------
@@ -116,7 +117,6 @@ fetch_players <- function(id) {
 
 
 fetch_match_results <- function(id){
-  print(id)
   match_details <- fetch_match_details(id)
   innings_1 <- fetch_innings_data(id, 1)
   innings_2 <- fetch_innings_data(id, 2)
@@ -163,9 +163,23 @@ fetch_ids <- function(league_id, season_id){
 }
 
 
-fetch_season_stats <- function(league_id, season_id) {
-print(season_id)
-ids <- fetch_ids(season_id = season_id, league_id = league_id)
+fetch_season_stats <- function(league_id, season_id, existing_ids = "") {
+
+  cli_id <- cli::cli_process_start("Finding data from season {.val {season_id}}") 
+  
+  # check for existing data
+  ids <- fetch_ids(season_id = season_id, league_id = league_id)
+  
+  ids <- ids[!ids %in% existing_ids]
+  
+  if (length(ids) == 0) {
+    cli::cli_process_done(cli_id, "No new matches found for {.val {season_id}}")
+    
+    return(list(batting = data.frame(),
+                                    bowling = data.frame()))
+    }
+  cli::cli_process_done(cli_id, "Found {.val {length(ids)}} new matches for season {.val {season_id}}") 
+  cli_id2 <- cli::cli_process_start("Getting data for {.val {length(ids)}} matches")
 
 dat <- ids %>%
   as.numeric() %>%
@@ -181,6 +195,8 @@ bowling <- dat %>%
   mutate(season_id = season_id,
          league_id = league_id)
 
+cli::cli_process_done(cli_id2)
+
 list(batting = batting,
      bowling = bowling)
 }
@@ -189,75 +205,29 @@ list(batting = batting,
 # Get data
 # Season IDS
 season_ids <- c(105, 110, 112, 114)
-league_id <- c(1398)
+league_ids <- c(1398, 1398, 1398, 1398)
 
-dat_all <- purrr::map(season_ids, ~fetch_season_stats(season_id = .x,
-                                           league_id = league_id))
+batting <- read_csv(here::here("data", "batting.csv"))
+bowling <- read_csv(here::here("data", "bowling.csv"))
+
+existing_ids <- unique(c(unique(batting$id),unique(bowling$id)))
+
+dat_all <- purrr::map2(season_ids, league_ids,
+                      ~fetch_season_stats(season_id = .x,
+                                          league_id = .y,
+                                          existing_ids = existing_ids))
 
 batting_all <- dat_all %>%
   purrr::map_dfr(~purrr::pluck(.x, "batting"))
 
+batting <- bind_rows(batting, batting_all)
+
 bowling_all <- dat_all %>%
   purrr::map_dfr(~purrr::pluck(.x, "bowling"))
 
+bowling <- bind_rows(bowling, bowling_all)
+
 # Save Data
-write_csv(batting_all, here::here("data", "batting.csv"))
-write_csv(bowling_all, here::here("data", "bowling.csv"))
+write_csv(batting, here::here("data", "batting.csv"))
+write_csv(bowling, here::here("data", "bowling.csv"))
 
-
-# 
-# bowling_all %>%
-#   group_by(team, Bowlers) %>%
-#   summarise(innings = n(),
-#             Overs = sum(Overs),
-#             Runs = sum(Runs),
-#             SR = (Overs * 6)/sum(Wkts),
-#             `3fa` = sum(Wkts >= 3),
-#             `5fa` = sum(Wkts >= 5),
-#             Wickets = sum(Wkts),
-#             Maidens = sum(Maidens),
-#             Econ = Runs/Overs,
-#             Avg = Runs/Wickets) %>%
-#   arrange(desc(Wickets), Econ, Avg) %>%
-#   filter(team == "The Nutty Cuckoo Super Kings") %>%
-#   filter(innings > 3) %>%
-#   print(n = 25)
-# 
-# batting_all %>%
-#   mutate(`50s` = ifelse(Runs >= 50, 1, 0),
-#          `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0)) %>%
-#   group_by(team, Batsmen) %>%
-#   summarise(innings = n(),
-#           not_outs = sum(Dismissal == "Not Out"),
-#           Runs = sum(Runs), 
-#           Balls = sum(Balls),
-#           SR = Runs/Balls*100,
-#           Avg = Runs/(innings-not_outs),
-#           `50s` = sum(`50s`),
-#           `30s` = sum(`30s`),
-#           fours = sum(`4s`),
-#           sixes = sum(`6s`)) %>%
-#   arrange(desc(Runs)) %>%
-#   filter(team == "The Nutty Cuckoo Super Kings") %>%
-#   filter(innings > 3) %>%
-#   filter(Runs > 99) %>%
-#   print(n = 25)
-# 
-# 
-# 
-# url <- "https://www.lastmanstands.com/team-profile/past-leagues/t20?teamid=18132"
-# 
-# resp <- httr::GET(url)
-# xml <- xml2::read_html(resp)
-# 
-# nodes <- xml %>%
-#   rvest::html_nodes("#team-profile-pervious-seasons p") 
-# 
-# text <- nodes %>%
-#   rvest::html_text()
-# 
-# hrefs <- nodes %>%
-#   rvest::html_attr("href") %>%
-#   purrr::map_chr(~str_split(.x, '=', simplify = TRUE)[,2])
-# 
-# hrefs[!text %in% "The game was a tie"]
