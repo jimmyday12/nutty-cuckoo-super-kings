@@ -1,25 +1,205 @@
 ---
-title: "Untitled"
+title: "Bowling Records"
 description: |
-  A new article created using the Distill format.
+  A collection of various records throughout our history! 
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: James Day
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+library(here)
+library(reactable)
+library(htmltools)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
+```{r load data, include=FALSE, echo = FALSE}
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+bowling <- read_csv(here::here("data", "bowling.csv"))
+```
 
 
+```{r summarise-data-all}
+bowling <- bowling %>%
+  mutate(Opposition = ifelse(home_team == "The Nutty Cuckoo Super Kings", away_team, home_team),
+         `3s` = ifelse(Wkts >= 3, 1, 0),
+         `5s` = ifelse(Wkts >= 5 , 1, 0),
+         date = format(date, "%d/%m/%Y")) %>%
+  filter(team == "The Nutty Cuckoo Super Kings")
+
+df_all <- bowling %>%
+  group_by(Bowlers) %>%
+  summarise(innings = n(),
+            Overs = sum(Overs),
+            Balls = ceiling(sum(Overs)*6),
+            Runs = sum(Runs),
+            Wkts = sum(Wkts),
+            SR = Balls/sum(Wkts),
+            Avg = Runs/Wkts,
+            Econ = Runs/sum(Overs),
+            `3` = sum(`3s`),
+            `5` = sum(`5s`)) %>%
+  rename(Name = Bowlers) 
+
+best_bowling <- bowling %>% 
+  rename(Name = Bowlers) %>%
+  group_by(Name) %>% 
+  filter(Wkts == max(Wkts)) %>% 
+  filter(Runs == min(Runs)) %>% 
+  filter(row_number(Runs) == 1) %>%
+  mutate(BB = paste0(Wkts, "/", Runs)) 
+
+best_bowling_df <- best_bowling %>%
+  select(Name, BB)
+
+df_all <- df_all %>%
+  left_join(best_bowling_df, by = "Name")
+df_all[df_all == "Inf" ] <- NA
+```
+
+```{r summarise-data-seas}
+df_seas <- bowling %>%
+  group_by(season, Bowlers) %>%
+  summarise(innings = n(),
+            Overs = sum(Overs),
+            Balls = ceiling(sum(Overs)*6),
+            Runs = sum(Runs),
+            Wkts = sum(Wkts),
+            SR = Balls/sum(Wkts),
+            Avg = Runs/Wkts,
+            Econ = Runs/sum(Overs),
+            `3` = sum(`3s`),
+            `5` = sum(`5s`)) %>%
+  rename(Name = Bowlers) 
+
+df_seas[df_seas == "Inf" ] <- NA
+```
+
+# Best Bowling (innings)
+```{r}
+bowling %>%
+  arrange(desc(Wkts), Runs) %>%
+  mutate(BB = paste0(Wkts, "/", Runs)) %>%
+  ungroup() %>%
+  filter(row_number(desc(Wkts)) < 6) %>%
+  select(date, Bowlers, Overs, BB, Opposition)
+  
+  
+```
+
+# Wickets
+
+### Most Wickets (all time)
+
+```{r}
+df_all %>%
+  arrange(desc(Wkts), Balls) %>%
+  select(Name, innings, Overs, Wkts, Runs, Avg, SR) %>%
+  filter(row_number(desc(Wkts)) < 6)
+
+```
+
+
+### Most Wickets (season)
+
+```{r}
+df_seas %>%
+  arrange(desc(Wkts), Balls) %>%
+  select(Name, innings, Overs, Wkts, Runs, Avg, SR) %>%
+  ungroup() %>%
+  filter(row_number(desc(Wkts)) < 6)
+
+```
+
+
+# Economy
+### Best Economy Rate (all time, min 10 overs)
+
+```{r}
+df_all %>%
+  filter(Overs >= 10) %>%
+  arrange(Econ, Balls) %>%
+  select(Name, innings, Overs, Runs, Econ) %>%
+  filter(row_number(Econ) < 6)
+
+```
+
+### Best Economy Rate (season, min 5 overs)
+
+```{r}
+df_seas %>%
+  filter(Overs >= 5) %>%
+  arrange(Econ, Overs) %>%
+  select(Name, innings, Overs, Runs, Econ) %>%
+  ungroup() %>%
+  filter(row_number(Econ) < 6)
+```
+
+### Best Economy Rate (innings, min 2 overs)
+
+```{r}
+bowling %>%
+  filter(Overs >= 2) %>%
+  arrange(Econ, Overs, desc(Wkts)) %>%
+  select(date, Bowlers, Overs, Wkts, Runs, Econ, Opposition) %>%
+  ungroup() %>%
+  filter(row_number(Econ) < 6)
+
+```
+
+# SR
+### Best Strike Rate (all time, min 10 overs)
+
+```{r}
+df_all %>%
+  filter(Overs >= 10) %>%
+  arrange(SR, Balls) %>%
+  select(Name, innings, Overs, Wkts, SR) %>%
+  filter(row_number(SR) < 6)
+
+```
+
+### Best Strike Rate (season, min 5 overs)
+
+```{r}
+df_seas %>%
+  filter(Overs >= 5) %>%
+  arrange(SR, Overs) %>%
+  select(Name, innings, Overs, Wkts, SR) %>%
+  ungroup() %>%
+  filter(row_number(SR) < 6)
+```
+
+# Avg
+
+### Best Average (all time, min 10 overs)
+
+```{r}
+df_all %>%
+  filter(Overs >= 10) %>%
+  arrange(Avg, Balls) %>%
+  select(Name, innings, Overs, Wkts, Runs, Avg) %>%
+  filter(row_number(Avg) < 6)
+
+```
+
+### Best Average (season, min 5 overs)
+
+```{r}
+df_seas %>%
+  filter(Overs >= 5) %>%
+  arrange(Avg, Overs) %>%
+  select(Name, innings, Overs, Wkts, Runs, Avg) %>%
+  ungroup() %>%
+  filter(row_number(Avg) < 6)
+```
 
 
 

@@ -17,10 +17,12 @@ navbar:
           href: records-batting.html
         - text: "Bolwing"
           href: records-bowling.html
+        - text: "Team"
     - text: "Stats"
       menu:
         - text: "Batting"
           href: stats-all-batting.html
         - text: "Bowling"
           href: stats-all-bowling.html
+        - text: "Team"
 output: distill::distill_article

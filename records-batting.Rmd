@@ -1,25 +1,302 @@
 ---
-title: "Untitled"
+title: "Batting Records"
 description: |
-  A new article created using the Distill format.
+  A collection of various records throughout our history! 
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: James Day
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+library(here)
+library(reactable)
+library(htmltools)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web. 
+```{r load data, include=FALSE, echo = FALSE}
+batting <- read_csv(here::here("data", "batting.csv"))
+```
+```{r}
+df <- batting %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  mutate(not_out = Dismissal == "Not Out",
+         Score = ifelse(not_out, paste0(Runs, "*"), Runs),
+         Opposition = ifelse(home_team == "The Nutty Cuckoo Super Kings", away_team, home_team),
+         Fifty = Runs >= 50,
+         `50s` = ifelse(Runs >= 50, 1, 0),
+         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0),
+         `0s` = ifelse(Runs == 0 & Dismissal != "Not Out", 1, 0),
+         runs_made = Runs,
+         date = format(date, "%d/%m/%Y"))
 
-Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+```
+# Best Batting
+
+```{r}
+df %>%
+  arrange(desc(Runs + (not_out/2))) %>%
+  filter(row_number(desc(Runs)) < 6) %>%
+  select(date, season, Batsmen, Score, Balls, SR, Opposition) 
+  
+
+```
+# Runs
+### Most Runs (all time)
+
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(Runs = sum(runs_made),
+            not_outs = sum(Dismissal == "Not Out"),
+            Innings = n(),
+            Avg = Runs/(Innings-not_outs)) %>%
+  arrange(desc(Runs), Innings) %>%
+  select(Batsmen, Innings, Runs, Avg) %>%
+  filter(row_number(desc(Runs)) < 6)
 
 
 
+```
 
+### Most Runs (season)
+
+```{r}
+df %>%
+  group_by(Batsmen, season) %>%
+  summarise(Runs = sum(runs_made),
+            not_outs = sum(Dismissal == "Not Out"),
+            Innings = n(),
+            Avg = Runs/(Innings-not_outs)) %>%
+  arrange(desc(Runs), Innings) %>%
+  select(season, Batsmen, Innings, Runs, Avg) %>%
+  ungroup() %>%
+  filter(row_number(desc(Runs)) < 6)
+
+```
+
+
+### Highest Average (all time, min 5 innings)
+
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(Runs = sum(runs_made),
+            not_outs = sum(Dismissal == "Not Out"),
+            Innings = n(),
+            Avg = Runs/(Innings-not_outs)) %>%
+  arrange(desc(Avg), Innings) %>%
+  select(Batsmen, Innings, Runs, Avg) %>%
+  ungroup() %>%
+  filter(Innings > 5) %>%
+  filter(row_number(desc(Avg)) < 6)
+
+```
+
+
+### Highest Average (season, min 3 innings)
+```{r}
+df %>%
+  group_by(Batsmen, season) %>%
+  summarise(Runs = sum(runs_made),
+            not_outs = sum(Dismissal == "Not Out"),
+            Innings = n(),
+            Avg = Runs/(Innings-not_outs)) %>%
+  arrange(desc(Avg), Innings) %>%
+  select(season, Batsmen, Innings, Runs, Avg) %>%
+  ungroup() %>%
+  filter(Innings >= 3) %>%
+  filter(Avg != "Inf") %>%
+  filter(row_number(desc(Avg)) < 6)
+
+```
+
+
+# Strike Rate
+### Highest SR (all time, min 10 innings)
+
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(SR = sum(Runs)/sum(Balls) * 100,
+            Runs = sum(Runs),
+            Innings = n()) %>%
+  filter(Innings > 9) %>%
+  arrange(desc(SR), desc(Runs)) %>%
+  select(Batsmen, Innings, Runs, SR) %>%
+  filter(row_number(desc(SR)) < 6)
+
+```
+
+### Highest SR (season, min 3 innings)
+```{r}
+df %>%
+  group_by(season, Batsmen) %>%
+  summarise(SR = sum(Runs)/sum(Balls) * 100,
+            Runs = sum(Runs),
+            Innings = n()) %>%
+  filter(Innings > 2) %>%
+  arrange(desc(SR), desc(Runs)) %>%
+  select(season, Batsmen, Innings, Runs, SR) %>%
+  ungroup() %>%
+  filter(row_number(desc(SR)) < 6)
+
+```
+
+
+### Highest SR (innings, min 10 balls)
+```{r}
+df %>%
+  filter(Balls > 9) %>%
+  arrange(desc(SR), desc(Runs)) %>%
+  select(date, season, Batsmen, Runs, Balls, SR, Opposition) %>%
+  filter(row_number(desc(SR)) < 6)
+
+```
+
+
+### Fastest Fifty
+
+```{r}
+df %>%
+  filter(Runs > 49) %>%
+  arrange(Balls, desc(SR)) %>%
+  select(date, season, Batsmen, Runs, Balls, SR, Opposition) %>%
+  filter(row_number(desc(SR)) < 6)
+
+```
+
+# Boundaries
+### Most Sixes (career)
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(Sixes = sum(`6s`),
+            Innings = n()) %>%
+  arrange(desc(Sixes), Innings) %>%
+  select(Batsmen, Innings, Sixes) %>%
+  filter(row_number(desc(Sixes)) < 6)
+
+```
+
+
+
+### Most Sixes (season)
+
+```{r}
+df %>%
+  group_by(season, Batsmen) %>%
+  summarise(Sixes = sum(`6s`),
+            Innings = n()) %>%
+  arrange(desc(Sixes), Innings) %>%
+  select(season, Batsmen, Innings, Sixes) %>%
+  ungroup() %>%
+  filter(row_number(desc(Sixes)) < 6)
+
+```
+
+### Most Sixes (innings)
+```{r}
+df %>%
+  mutate(Sixes = `6s`) %>%
+  arrange(desc(Sixes), Balls) %>%
+  select(date, season, Batsmen, Runs, Balls, Sixes, Opposition) %>%
+  filter(row_number(desc(Sixes)) < 6)
+
+```
+
+### Most Fours (career)
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(Fours = sum(`4s`),
+            Innings = n()) %>%
+  arrange(desc(Fours), Innings) %>%
+  select(Batsmen, Innings, Fours) %>%
+  filter(row_number(desc(Fours)) < 6)
+
+```
+
+
+
+### Most Fours (season)
+
+```{r}
+df %>%
+  group_by(season, Batsmen) %>%
+  summarise(Fours = sum(`4s`),
+            Innings = n()) %>%
+  arrange(desc(Fours), Innings) %>%
+  select(season, Batsmen, Innings, Fours) %>%
+  ungroup() %>%
+  filter(row_number(desc(Fours)) < 6)
+
+```
+
+
+### Most Fours (innings)
+```{r}
+df %>%
+  mutate(Fours = `4s`) %>%
+  arrange(desc(Fours), Balls) %>%
+  select(date, season, Batsmen, Runs, Balls, Fours, Opposition) %>%
+  filter(row_number(desc(Fours)) < 6)
+
+```
+
+# Milestones
+### Most Fifties (career)
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(Fifties = sum(Fifty),
+            Innings = n()) %>%
+  arrange(desc(Fifties), Innings) %>%
+  select(Batsmen, Innings, Fifties) %>%
+  filter(row_number(desc(Fifties)) < 6)
+
+```
+
+
+### Most Fifties (season)
+```{r}
+df %>%
+  group_by(season, Batsmen) %>%
+  summarise(Fifties = sum(Fifty),
+            Innings = n()) %>%
+  arrange(desc(Fifties), Innings) %>%
+  select(season, Batsmen, Innings, Fifties) %>%
+  ungroup %>%
+  filter(row_number(desc(Fifties)) < 6)
+```
+### Most Not Outs (career)
+```{r}
+df %>%
+  group_by(Batsmen) %>%
+  summarise(NO = sum(not_out),
+            Innings = n()) %>%
+  arrange(desc(NO), Innings) %>%
+  select(Batsmen, Innings, NO) %>%
+  filter(row_number(desc(NO)) < 6)
+
+```
+
+
+### Most Not Outs (season)
+```{r}
+df %>%
+  group_by(season, Batsmen) %>%
+  summarise(NO = sum(not_out),
+            Innings = n()) %>%
+  arrange(desc(NO), Innings) %>%
+  select(season, Batsmen, Innings, NO) %>%
+  ungroup %>%
+  filter(row_number(desc(NO)) < 6)
+```
 
