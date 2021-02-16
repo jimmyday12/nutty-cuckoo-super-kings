@@ -4,6 +4,7 @@ description: |
   The trials and tribulations of a social cricket team
 output_dir: "docs"
 navbar:
+  source_url: https://github.com/jimmyday12/nutty-cuckoo-super-kings
   right:
     - text: "Home"
       href: index.html
