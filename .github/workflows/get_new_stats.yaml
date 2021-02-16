@@ -1,0 +1,28 @@
+name: Fetch new stats
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: "0 13 * * *"
+
+jobs:
+  scrape-and-commit:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: r-lib/actions/setup-r@master
+      - name: Install dependencies
+        run: |
+          Rscript -e 'install.packages(c("devtools", "tidyverse", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
+      - name: Get data
+        run: Rscript -e 'source(here::here("scripts", "lms_fetch_stats.R"), echo = TRUE)'
+      - name: Commit
+        run: |
+          git config --global user.name 'James Day'
+          git config --global user.email '17557361+jimmyday12@users.noreply.github.com'
+          git add .
+          git commit -m 'adding new stats' || echo "No changes to commit"
+          git push || echo "No changes to commit"
