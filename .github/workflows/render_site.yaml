@@ -1,4 +1,4 @@
-name: Fetch new stats
+name: Re-render Site
 
 on:
   push:
@@ -6,19 +6,19 @@ on:
       - main
       - master
   schedule:
-    - cron: "30 9 * * *"
+    - cron: "0 10 * * *"
 
 jobs:
-  scrape-and-commit:
+  render-and-commit:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("devtools", "tidyverse", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
-      - name: Get data
-        run: Rscript -e 'source(here::here("scripts", "lms_fetch_stats.R"), echo = TRUE)'
+          Rscript -e 'install.packages(c("devtools", "rmarkdown", "tidyverse", "here", "reactable", "htmltools"))'
+      - name: Render site
+        run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
       - name: Commit
         run: |
           git config --global user.name 'James Day'
