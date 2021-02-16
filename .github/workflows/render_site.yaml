@@ -1,4 +1,4 @@
-name: Re-render Site
+name: render-site
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("devtools", "rmarkdown", "tidyverse", "here", "reactable", "htmltools"))'
+          Rscript -e 'install.packages(c("devtools", "distill", "rmarkdown", "tidyverse", "here", "reactable", "htmltools"))'
       - name: Render site
         run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
       - name: Commit

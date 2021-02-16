@@ -1,4 +1,4 @@
-name: Fetch new stats
+name: fetch-new-stats
 
 on:
   push:
