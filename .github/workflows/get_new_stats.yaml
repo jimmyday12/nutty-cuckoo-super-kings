@@ -18,7 +18,7 @@ jobs:
         run: |
           Rscript -e 'install.packages(c("devtools", "tidyverse", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
       - name: Get data
-        run: Rscript -e 'source(here::here("scripts", "lms_fetch_stats.R"), echo = TRUE)'
+        run: Rscript -e 'source(here::here("scripts", "fetch_stats_script.R"), echo = TRUE)'
       - name: Commit
         run: |
           git config --global user.name 'James Day'
