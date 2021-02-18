@@ -2091,6 +2091,7 @@ Stats
 <div class="nav-dropdown-content">
 <a href="stats-all-batting.html">Batting</a>
 <a href="stats-all-bowling.html">Bowling</a>
+<a href="latest_game.html">Latest Game</a>
 <span class="nav-dropdown-header">Team</span>
 </div>
 </div>
@@ -2139,11 +2140,11 @@ Stats
 <pre><code># A tibble: 5 x 4
   Batsmen       Innings  Runs   Avg
   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Jimmy Day          21   724  55.7
+1 Jimmy Day          22   759  54.2
 2 Michael Drew       16   590  73.8
-3 Ben Cull           19   410  34.2
-4 Adam Peel          21   351  19.5
-5 Daniel Dymond       7   257  85.7</code></pre>
+3 Ben Cull           20   426  32.8
+4 Adam Peel          22   405  21.3
+5 Daniel Dymond       8   268  67  </code></pre>
 </div>
 <h3 id="most-runs-season">Most Runs (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2161,11 +2162,11 @@ Stats
 <pre><code># A tibble: 5 x 4
   Batsmen       Innings  Runs   Avg
   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Daniel Dymond       7   257  85.7
-2 Michael Drew       16   590  73.8
-3 Jimmy Day          21   724  55.7
-4 Ben Cull           19   410  34.2
-5 Pat Danaher         7   106  26.5</code></pre>
+1 Michael Drew       16   590  73.8
+2 Daniel Dymond       8   268  67  
+3 Jimmy Day          22   759  54.2
+4 Ben Cull           20   426  32.8
+5 Matt Bunney        12   198  24.8</code></pre>
 </div>
 <h3 id="highest-average-season-min-3-innings">Highest Average (season, min 3 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2176,7 +2177,7 @@ Stats
 2 2021 Summer Joseph Kornwasser       3    81  81  
 3 2020 Spring Jimmy Day               5   161  80.5
 4 2020        Daniel Dymond           4   144  72  
-5 2021 Summer Jimmy Day               3   126  63  </code></pre>
+5 2020 Spring Michael Drew            6   188  62.7</code></pre>
 </div>
 <h1 id="strike-rate">Strike Rate</h1>
 <h3 id="highest-sr-all-time-min-10-innings">Highest SR (all time, min 10 innings)</h3>
@@ -2184,10 +2185,10 @@ Stats
 <pre><code># A tibble: 5 x 4
   Batsmen      Innings  Runs    SR
   &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Ben Cull          19   410 219. 
-2 Jimmy Day         21   724 163. 
+1 Ben Cull          20   426 220. 
+2 Jimmy Day         22   759 161. 
 3 Michael Drew      16   590 156. 
-4 Adam Peel         21   351 118. 
+4 Adam Peel         22   405 123. 
 5 Matt Bunney       12   198  97.5</code></pre>
 </div>
 <h3 id="highest-sr-season-min-3-innings">Highest SR (season, min 3 innings)</h3>
@@ -2195,7 +2196,7 @@ Stats
 <pre><code># A tibble: 5 x 5
   season      Batsmen           Innings  Runs    SR
   &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2021 Summer Ben Cull                4    75  250 
+1 2021 Summer Ben Cull                5    91  246.
 2 2020        Ben Cull                6   218  242.
 3 2021 Summer Joseph Kornwasser       3    81  231.
 4 2020 Spring Michael Drew            6   188  183.
@@ -2229,11 +2230,11 @@ Stats
 <pre><code># A tibble: 5 x 3
   Batsmen       Innings Sixes
   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Ben Cull           19    37
-2 Jimmy Day          21    25
+1 Ben Cull           20    38
+2 Jimmy Day          22    26
 3 Michael Drew       16    15
-4 Daniel Dymond       7    10
-5 Adam Peel          21     8</code></pre>
+4 Daniel Dymond       8    10
+5 Adam Peel          22     9</code></pre>
 </div>
 <h3 id="most-sixes-season">Most Sixes (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2242,7 +2243,7 @@ Stats
   &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt;
 1 2020        Ben Cull                6    20
 2 2020        Jimmy Day               6    12
-3 2021 Summer Ben Cull                4     7
+3 2021 Summer Ben Cull                5     8
 4 2019 Spring Michael Drew            6     7
 5 2021 Summer Joseph Kornwasser       3     6</code></pre>
 </div>
@@ -2262,11 +2263,11 @@ Stats
 <pre><code># A tibble: 5 x 3
   Batsmen       Innings Fours
   &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Jimmy Day          21    61
+1 Jimmy Day          22    63
 2 Michael Drew       16    50
-3 Daniel Dymond       7    24
-4 Adam Peel          21    24
-5 Ben Cull           19    23</code></pre>
+3 Adam Peel          22    30
+4 Ben Cull           20    25
+5 Daniel Dymond       8    24</code></pre>
 </div>
 <h3 id="most-fours-season">Most Fours (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2296,11 +2297,11 @@ Stats
 <pre><code># A tibble: 5 x 3
   Batsmen       Innings Fifties
   &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
-1 Jimmy Day          21       8
+1 Jimmy Day          22       8
 2 Michael Drew       16       7
-3 Daniel Dymond       7       4
-4 Ben Cull           19       4
-5 Adam Peel          21       2</code></pre>
+3 Daniel Dymond       8       4
+4 Ben Cull           20       4
+5 Adam Peel          22       3</code></pre>
 </div>
 <h3 id="most-fifties-season">Most Fifties (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
@@ -2308,8 +2309,8 @@ Stats
   season      Batsmen       Innings Fifties
   &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
 1 2020        Michael Drew        3       3
-2 2021 Summer Jimmy Day           3       2
-3 2020        Daniel Dymond       4       2
+2 2020        Daniel Dymond       4       2
+3 2021 Summer Jimmy Day           4       2
 4 2020 Spring Jimmy Day           5       2
 5 2020        Ben Cull            6       2</code></pre>
 </div>
@@ -2319,10 +2320,10 @@ Stats
   Batsmen               Innings    NO
   &lt;chr&gt;                   &lt;int&gt; &lt;int&gt;
 1 Michael Drew               16     8
-2 Morgan Tear                17     8
-3 Rohan Bythell-Douglas      18     8
-4 Jimmy Day                  21     8
-5 Ben Cull                   19     7</code></pre>
+2 Morgan Tear                18     8
+3 Rohan Bythell-Douglas      19     8
+4 Jimmy Day                  22     8
+5 Ben Cull                   20     7</code></pre>
 </div>
 <h3 id="most-not-outs-season">Most Not Outs (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
