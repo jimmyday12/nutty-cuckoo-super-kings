@@ -1,0 +1,77 @@
+---
+title: "Latest Game"
+description: |
+  Stats from our most recent game
+author:
+  - name: James Day
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(tidyverse)
+library(here)
+library(reactable)
+library(htmltools)
+library(knitr)
+library(rmarkdown)
+```
+
+```{r load data, include=FALSE, echo = FALSE}
+bowling <- read_csv(here::here("data", "bowling_detailed.csv"))
+batting <- read_csv(here::here("data", "batting_detailed.csv"))
+fielding <- read_csv(here::here("data", "fielding_detailed.csv"))
+keeping <- read_csv(here::here("data", "keeping_detailed.csv"))
+```
+
+### Bowling
+
+```{r, layout="l-body-outset"}
+
+bowling %>% 
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(StartDateTime == max(StartDateTime)) %>%
+  select(FirstName, LastName, Over, Ball, RunsConceded, Wickets, BowlingDotBalls, NoBall, Wide) %>%
+  mutate(Econ = RunsConceded/Over,
+         DotBallPerc = BowlingDotBalls/(Over*5 + Ball)*100) %>%
+  kable()
+
+```
+
+### Batting
+```{r, layout="l-body-outset"}
+
+batting %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(StartDateTime == max(StartDateTime)) %>%
+  select(FirstName, LastName, Order, RunsScored, BallsFaced, Fours, Sixes, BattingDotBalls) %>%
+  mutate(SR = RunsScored/BallsFaced*100,
+         DotBallPerc = BattingDotBalls/BallsFaced*100) %>%
+  arrange(Order) %>%
+  kable()
+
+```
+
+### Fielding
+```{r}
+fielding  %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(StartDateTime == max(StartDateTime)) %>%
+  select(FirstName, LastName, Catches, RunOuts) %>%
+  kable()
+
+```
+
+```{r}
+keeping  %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(StartDateTime == max(StartDateTime)) %>%
+  select(FirstName, LastName, Catches, Stumpings, RunOuts, Byes) %>%
+  kable()
+
+```

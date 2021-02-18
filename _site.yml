@@ -25,5 +25,7 @@ navbar:
           href: stats-all-batting.html
         - text: "Bowling"
           href: stats-all-bowling.html
+        - text: "Latest Game"
+          href: latest_game.html
         - text: "Team"
 output: distill::distill_article
