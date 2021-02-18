@@ -5,9 +5,7 @@ library(rvest)
 library(xml2)
 library(lubridate)
 library(cli)
-#devtools::install_github("ropenscilabs/roomba")
-#devtools::install_github("wcsherb/roomba")
-library(roomba)
+
 
 fetch_detailed_stats <- function(id){
   print(id)
