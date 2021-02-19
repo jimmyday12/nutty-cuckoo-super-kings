@@ -25,6 +25,8 @@ navbar:
           href: stats-all-batting.html
         - text: "Bowling"
           href: stats-all-bowling.html
+        - text: "Fielding"
+          href: stats-all-fielding.html
         - text: "Latest Game"
           href: latest_game.html
         - text: "Team"
