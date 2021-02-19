@@ -120,7 +120,7 @@ batting_detailed <- batting_detailed %>%
 batting_comb <- left_join(batting, batting_detailed, 
                           by = c("User.Id" = "Id", "id" = "MatchId"))
 
-batting_summary <- batting_comb %>%
+batting_df <- batting_comb %>%
   mutate(`50s` = ifelse(Runs >= 50, 1, 0),
          `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0),
          ducks = ifelse(Runs == 0 & Dismissal != "Not Out", 1, 0),
@@ -147,7 +147,7 @@ batting_summary <- batting_comb %>%
   rename(Name = Batsmen)
 batting_df[batting_df == "Inf" ] <- NA
 
-write_csv(batting_summary, here::here("data", "batting_summary.csv"))
+write_csv(batting_df, here::here("data", "batting_summary.csv"))
 
 # Combine Bowling --------------------------------------------------------------
 bowling <- read_csv(here::here("data", "bowling.csv"))
