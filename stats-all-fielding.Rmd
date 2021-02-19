@@ -6,6 +6,7 @@ date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
@@ -17,19 +18,38 @@ source(here::here("scripts", "reactable_function.R"))
 
 ```{r load data, include=FALSE, echo = FALSE}
 
-bowling_df <- read_csv(here::here("data", "bowling_summary.csv")) %>%
-  filter(team == "The Nutty Cuckoo Super Kings") %>%
-  select(-team)
+fielding <- read_csv(here::here("data", "fielding_detailed.csv"))
+keeping <- read_csv(here::here("data", "keeping_detailed.csv"))
 ```
 
-```{r, layout="l-body-outset"}
+```{r process}
+fielding_summary <- fielding %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  group_by(Id, FirstName, LastName, Team) %>%
+  select(Id:RunOuts, Team) %>%
+  summarise(across(where(is.double), sum)) %>%
+  arrange(desc(Catches)) %>%
+  select(-Team)
+
+keeping_summary <- keeping %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  mutate(Innings = 1) %>%
+  group_by(Id, FirstName, LastName, Team) %>%
+  select(Id:Byes, Team, Innings) %>%
+  summarise(across(where(is.double), sum)) %>%
+  mutate(Dismissals = Catches + Stumpings) %>%
+  arrange(desc(Dismissals)) %>%
+  select(-Team)
+
+```
+```{r}
 div(class = "box-score",
-  div(class = "box-score-title", "Bowling"),
-  reactable_function(bowling_df, "bowling"),
+  div(class = "box-score-title", "Fielding"),
+  reactable_function(fielding_summary, "fielding"),
+  div(class = "box-score-title", "Keeping"),
+  reactable_function(keeping_summary, "keeping"),
 )
 ```
-
-
 ```{r ref.label="box_score", eval=FALSE}
 ```
 
@@ -130,3 +150,4 @@ h1.title {
   width: inherit;
 }
 ```
+

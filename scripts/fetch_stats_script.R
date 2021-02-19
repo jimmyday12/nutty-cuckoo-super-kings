@@ -109,38 +109,89 @@ if(!is.null(dat_detailed[[1]])) {
   write_csv(batting_detailed, here::here("data", "batting_detailed.csv"))
 }
 
-# 
-# keeping_detailed %>% 
-#   group_by(Id, FirstName, LastName) %>% 
-#   #mutate(matches = 1L) %>%
-#   summarise(across(where(is.integer), sum)) %>%
-#   arrange(desc(Stumpings)) %>%
-#   select(-MatchId, -battingFirstId, -bowlingFirstId)
-# 
-# fielding_detailed %>% 
-#   group_by(Id, FirstName, LastName) %>% 
-#   #mutate(matches = 1L) %>%
-#   summarise(across(where(is.integer), sum)) %>%
-#   arrange(desc(Catches)) %>%
-#   select(-MatchId, -battingFirstId, -bowlingFirstId)
-# 
-# bowling_detailed %>% 
-#   group_by(Id, FirstName, LastName, Team) %>% 
-#   mutate(BallsBowled = as.integer(Overs$Over * 5 + Overs$Ball)) %>%
-#   #mutate(matches = 1L) %>%
-#   summarise(across(where(is.integer), sum)) %>%
-#   mutate(DotBallPerc = BowlingDotBalls/BallsBowled*100) %>%
-#   arrange(desc(DotBallPerc)) %>%
-#   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-#   select(Id:Team, BallsBowled, RunsConceded:Wide, DotBallPerc)
-# 
-# batting_detailed %>% 
-#   group_by(Id, FirstName, LastName, Team) %>% 
-#   #mutate(matches = 1L) %>%
-#   summarise(across(where(is.integer), sum)) %>%
-#   arrange(desc(RunsScored)) %>%
-#   mutate(DotBallPerc = BattingDotBalls/BallsFaced*100) %>%
-#   arrange(DotBallPerc) %>%
-#   filter(BallsFaced > 100) %>%
-#   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-#   select(Id:BattingDotBalls, DotBallPerc)
+
+# Combine Stats --------------------------------------------------------------
+# Combine Batting --------------------------------------------------------------
+batting_detailed <- read_csv(here::here("data", "batting_detailed.csv"))
+batting <- read_csv(here::here("data", "batting.csv"))
+
+batting_detailed <- batting_detailed %>% 
+  select(Id, MatchId, FirstName, LastName, BattingDotBalls)
+batting_comb <- left_join(batting, batting_detailed, 
+                          by = c("User.Id" = "Id", "id" = "MatchId"))
+
+batting_summary <- batting_comb %>%
+  mutate(`50s` = ifelse(Runs >= 50, 1, 0),
+         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0),
+         ducks = ifelse(Runs == 0 & Dismissal != "Not Out", 1, 0),
+         runs_made = Runs) %>%
+  group_by(team, User.Id, Batsmen) %>%
+  summarise(Inns = n(),
+            NO = sum(Dismissal == "Not Out", na.rm = TRUE),
+            Runs = sum(runs_made, na.rm = TRUE),
+            HS = max(runs_made, na.rm = TRUE),
+            Avg = Runs/(Inns-NO),
+            Balls = sum(Balls),
+            SR = Runs/Balls*100,
+            `50` = sum(`50s`, na.rm = TRUE),
+            `30` = sum(`30s`, na.rm = TRUE),
+            ducks = sum(ducks, na.rm = TRUE),
+            Dots = sum(BattingDotBalls, na.rm = TRUE),
+            fours = sum(`4s`, na.rm = TRUE),
+            sixes = sum(`6s`, na.rm = TRUE)) %>%
+  arrange(desc(Runs)) %>%
+  mutate(dot.perc = Dots/Balls,
+         boundary.perc = (fours+sixes)/Balls) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  ungroup() %>%
+  rename(Name = Batsmen)
+batting_df[batting_df == "Inf" ] <- NA
+
+write_csv(batting_summary, here::here("data", "batting_summary.csv"))
+
+# Combine Bowling --------------------------------------------------------------
+bowling <- read_csv(here::here("data", "bowling.csv"))
+bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"))
+
+bowling_detailed <- bowling_detailed %>% 
+  select(Id, MatchId, FirstName, LastName, BowlingDotBalls, Wide, NoBall, Over, Ball)
+
+bowling_comb <- left_join(bowling, bowling_detailed, by = c("User.Id" = "Id", "id" = "MatchId"))
+
+bowling_df <- bowling_comb %>%
+  mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
+         `5s` = ifelse(Wkts >= 5 , 1, 0)) %>%
+  group_by(team, User.Id, Bowlers) %>%
+  summarise(innings = n(),
+            Overs = sum(Over, na.rm = TRUE),
+            Balls = ceiling(Overs*5),
+            Runs = sum(Runs, na.rm = TRUE),
+            Wkts = sum(Wkts, na.rm = TRUE),
+            SR = Balls/sum(Wkts, na.rm = TRUE),
+            Avg = Runs/Wkts,
+            Econ = Runs/Overs,
+            Maidens = sum(Maidens, na.rm = TRUE),
+            wide.perc = sum(Wide, na.rm = TRUE)/Balls,
+            nb.perc = sum(NoBall, na.rm = TRUE)/Balls,
+            dot.perc = sum(BowlingDotBalls, na.rm = TRUE)/Balls,
+            `3fa` = sum(`3s`, na.rm = TRUE),
+            `5fa` = sum(`5s`, na.rm = TRUE),
+  ) %>%
+  arrange(desc(Wkts), Econ, Avg) %>%
+  ungroup() %>%
+  rename(Name = Bowlers)
+
+best_bowling <- bowling %>% 
+  rename(Name = Bowlers) %>%
+  group_by(Name) %>% 
+  filter(Wkts == max(Wkts)) %>% 
+  filter(Runs == min(Runs)) %>% 
+  filter(row_number(Runs) == 1) %>%
+  mutate(BB = paste0(Wkts, "/", Runs)) %>%
+  select(Name, BB)
+
+bowling_df <- bowling_df %>%
+  left_join(best_bowling, by = "Name")
+bowling_df[bowling_df == "Inf" ] <- NA
+
+write_csv(bowling_df, here::here("data", "bowling_summary.csv"))

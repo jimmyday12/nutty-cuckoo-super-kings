@@ -86,9 +86,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>NCSK: Batting Records</title>
+  <title>NCSK: All time bowling stats</title>
   
-  <meta property="description" itemprop="description" content="A collection of various records throughout our history!"/>
   
   
   <!--  https://schema.org/Article -->
@@ -97,22 +96,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="article:author" content="James Day"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="NCSK: Batting Records"/>
+  <meta property="og:title" content="NCSK: All time bowling stats"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A collection of various records throughout our history!"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="NCSK"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="NCSK: Batting Records"/>
-  <meta property="twitter:description" content="A collection of various records throughout our history!"/>
+  <meta property="twitter:title" content="NCSK: All time bowling stats"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Batting Records"]},{"type":"character","attributes":{},"value":["A collection of various records throughout our history! \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["James Day"]}]}]},{"type":"character","attributes":{},"value":["2021-02-19"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["All time bowling stats"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["James Day"]}]}]},{"type":"character","attributes":{},"value":["2021-02-19"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2037,6 +2034,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
   
   <!--/radix_placeholder_distill-->
+  <script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+  <script src="site_libs/react-16.12.0/react.min.js"></script>
+  <script src="site_libs/react-16.12.0/react-dom.min.js"></script>
+  <script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+  <script src="site_libs/reactable-binding-0.2.3/reactable.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2056,7 +2059,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Batting Records","description":"A collection of various records throughout our history!","authors":[{"author":"James Day","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-19T00:00:00.000+00:00","citationText":"Day, 2021"}
+{"title":"All time bowling stats","authors":[{"author":"James Day","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-19T00:00:00.000+00:00","citationText":"Day, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2107,10 +2110,10 @@ Stats
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Batting Records</h1>
+<h1>All time bowling stats</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A collection of various records throughout our history!</p></p>
+
 </div>
 
 <div class="d-byline">
@@ -2123,220 +2126,119 @@ Stats
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h1 id="best-batting">Best Batting</h1>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen      Score Balls    SR Opposition      
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           
-1 09/12/20… 2019 Spri… Michael Drew 60*      38  158. Workers Club Li…
-2 11/11/20… 2019 Spri… Jimmy Day    56       30  187. The Hunts       
-3 14/01/20… 2021 Summ… Michael Drew 56       40  140  The Hunts       
-4 21/01/20… 2021 Summ… Kaushik Gay… 55*      31  177. Major Paine     
-5 04/02/20… 2021 Summ… Jimmy Day    55       33  167. The Hunts       </code></pre>
+<div class="box-score">
+<div class="box-score-title">Fielding</div>
+<div id="htmlwidget-5122871f1514dbd31b8f" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5122871f1514dbd31b8f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Id":[125735,239859,242570,239863,239860,198555,215594,238150,239861,243716,243722,122966,239867,244708,260574],"FirstName":["Jimmy","Michael","Ben","Adam","Rohan","Morgan","Syed mahmood","Kaushik","Daniel","Devin","Rob","Surya","Matt","Charlie","Harrison"],"LastName":["Day","Drew","Cull","Peel","Bythell-Douglas","Tear","Ali","Gayal","Dymond","Goheen","Evans","Yarlagadda","Bunney","Kenihan","Payne"],"Catches":[11,10,8,4,3,2,2,2,2,2,2,1,1,1,1],"RunOuts":[4,3,1,2,1,0,0,0,0,0,0,0,2,0,0]},"columns":[{"accessor":"Id","name":"Id","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"FirstName","name":"FirstName","type":"character","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"LastName","name":"LastName","type":"character","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Catches","name":"Catches","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"RunOuts","name":"RunOuts","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"}],"defaultSortDesc":true,"defaultSorted":[{"id":"Catches","desc":true}],"defaultPageSize":15,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"striped":true,"showSortIcon":false,"className":"box-score-tbl","dataKey":"52c86accadda69e75df27109a7ec764e","key":"52c86accadda69e75df27109a7ec764e"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.className","tag.attribs.columns.1.className","tag.attribs.columns.2.className","tag.attribs.columns.3.className","tag.attribs.columns.4.className"],"jsHooks":[]}</script>
+<div class="box-score-title">Keeping</div>
+<div id="htmlwidget-e8d55019e363f5543965" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e8d55019e363f5543965">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Id":[125735,239859,239860,242570,45501],"FirstName":["Jimmy","Michael","Rohan","Ben","Luke"],"LastName":["Day","Drew","Bythell-Douglas","Cull","Farrell"],"Catches":[9,1,0,0,0],"Stumpings":[7,1,1,1,0],"Byes":[20,0,0,2,8],"Innings":[18,1,1,2,1],"Dismissals":[16,2,1,1,0]},"columns":[{"accessor":"Id","name":"Id","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"FirstName","name":"FirstName","type":"character","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"LastName","name":"LastName","type":"character","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Catches","name":"Catches","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Stumpings","name":"Stumpings","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Byes","name":"Byes","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Innings","name":"Innings","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"},{"accessor":"Dismissals","name":"Dismissals","type":"numeric","sortNALast":true,"minWidth":45,"className":"function(rowInfo, colInfo, state) {\n        // Highlight sorted columns\n        for (var i = 0; i < state.sorted.length; i++) {\n          if (state.sorted[i].id === colInfo.id) {\n            return 'sorted'\n          }\n        }\n      }","headerClassName":"box-score-header"}],"defaultSortDesc":true,"defaultSorted":[{"id":"Dismissals","desc":true}],"defaultPageSize":5,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"striped":true,"showSortIcon":false,"className":"box-score-tbl","dataKey":"90e9b6931e5edcec5460b10d1869f0e6","key":"90e9b6931e5edcec5460b10d1869f0e6"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.className","tag.attribs.columns.1.className","tag.attribs.columns.2.className","tag.attribs.columns.3.className","tag.attribs.columns.4.className","tag.attribs.columns.5.className","tag.attribs.columns.6.className","tag.attribs.columns.7.className"],"jsHooks":[]}</script>
 </div>
-<h1 id="runs">Runs</h1>
-<h3 id="most-runs-all-time">Most Runs (all time)</h3>
+</div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen       Innings  Runs   Avg
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Jimmy Day          22   759  54.2
-2 Michael Drew       16   590  73.8
-3 Ben Cull           20   426  32.8
-4 Adam Peel          22   405  21.3
-5 Daniel Dymond       8   268  67  </code></pre>
+
 </div>
-<h3 id="most-runs-season">Most Runs (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen      Innings  Runs   Avg
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2019 Spring Jimmy Day          7   232  46.4
-2 2020        Ben Cull           6   218 109  
-3 2020        Jimmy Day          6   205  51.2
-4 2019 Spring Michael Drew       6   194  48.5
-5 2020 Spring Michael Drew       6   188  62.7</code></pre>
+<p><link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;display=fallback" rel="stylesheet"/></p>
 </div>
-<h3 id="highest-average-all-time-min-5-innings">Highest Average (all time, min 5 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen       Innings  Runs   Avg
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Michael Drew       16   590  73.8
-2 Daniel Dymond       8   268  67  
-3 Jimmy Day          22   759  54.2
-4 Ben Cull           20   426  32.8
-5 Matt Bunney        12   198  24.8</code></pre>
+<style type="text/css">
+.box-score {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.box-score a:hover {
+  text-decoration: none;
+}
+.header {
+  text-align: center;
+  font-size: 20px;
+}
+.game-date {
+  font-size: 16px;
+}
+.line-score {
+  margin-top: 24px;
+  text-align: center;
+}
+.line-score-tbl {
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 15px;
+}
+.line-score-header {
+  font-size: 13px;
+  font-weight: 400;
+}
+.line-score-final {
+  font-weight: 500;
+}
+.team-name {
+  font-weight: 500;
+}
+.team-record {
+  margin-left: 6px;
+  color: hsl(0, 0%, 45%);
+  font-size: 12px;
+}
+.box-score-title {
+  margin-top: 24px;
+  padding: 8px;
+  background-color: hsl(205, 100%, 36%);
+  color: hsl(0, 0%, 98%);
+  font-size: 15px;
+  font-weight: 400;
+}
+.box-score-tbl {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+.box-score-header {
+  padding: 8px !important;
+  border-bottom-width: 1px;
+  background-color: hsl(205, 93%, 16%);
+  color: hsl(0, 0%, 98%);
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.box-score-header:hover,
+.box-score-header[aria-sort="ascending"],
+.box-score-header[aria-sort="descending"] {
+  background-color: hsl(205, 100%, 36%);
+}
+.box-score-header[aria-sort="ascending"] {
+  box-shadow: inset 0 10px 0 -6px #efaa10 !important;
+}
+.box-score-header[aria-sort="descending"] {
+  box-shadow: inset 0 -10px 0 -6px #efaa10 !important;
+}
+.sorted {
+  background-color: hsla(0, 0%, 60%, 0.1);
+}
+.box-score-total {
+  font-size: 13px;
+  font-weight: 500;
+}
+</style>
 </div>
-<h3 id="highest-average-season-min-3-innings">Highest Average (season, min 3 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen           Innings  Runs   Avg
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2020        Ben Cull                6   218 109  
-2 2021 Summer Joseph Kornwasser       3    81  81  
-3 2020 Spring Jimmy Day               5   161  80.5
-4 2020        Daniel Dymond           4   144  72  
-5 2020 Spring Michael Drew            6   188  62.7</code></pre>
+<style type="text/css">
+/* rmarkdown html documents */
+.main-container {
+  max-width: 1024px !important;
+}
+h1.title {
+  display: none;
+}
+/* pkgdown articles */
+.contents {
+  width: inherit;
+}
+</style>
 </div>
-<h1 id="strike-rate">Strike Rate</h1>
-<h3 id="highest-sr-all-time-min-10-innings">Highest SR (all time, min 10 innings)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen      Innings  Runs    SR
-  &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Ben Cull          20   426 220. 
-2 Jimmy Day         22   759 161. 
-3 Michael Drew      16   590 156. 
-4 Adam Peel         22   405 123. 
-5 Matt Bunney       12   198  97.5</code></pre>
-</div>
-<h3 id="highest-sr-season-min-3-innings">Highest SR (season, min 3 innings)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen           Innings  Runs    SR
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2021 Summer Ben Cull                5    91  246.
-2 2020        Ben Cull                6   218  242.
-3 2021 Summer Joseph Kornwasser       3    81  231.
-4 2020 Spring Michael Drew            6   188  183.
-5 2020        Jimmy Day               6   205  180.</code></pre>
-</div>
-<h3 id="highest-sr-innings-min-10-balls">Highest SR (innings, min 10 balls)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date       season      Batsmen    Runs Balls    SR Opposition       
-  &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            
-1 03/12/2020 2020        Ben Cull     36    11  327. The Michael Beva…
-2 21/01/2021 2021 Summer Ben Cull     50    16  312. Major Paine      
-3 20/02/2020 2020 Spring Ben Cull     51    19  268. Batty Boys       
-4 09/11/2020 2020        Ben Cull     53    20  265  Major Paine      
-5 21/10/2019 2019 Spring Jimmy Day    51    20  255  Poms &amp; Convicts  </code></pre>
-</div>
-<h3 id="fastest-fifty">Fastest Fifty</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen          Runs Balls    SR Opposition   
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        
-1 21/01/20… 2021 Summ… Ben Cull           50    16  312. Major Paine  
-2 20/02/20… 2020 Spri… Ben Cull           51    19  268. Batty Boys   
-3 09/11/20… 2020       Ben Cull           53    20  265  Major Paine  
-4 21/10/20… 2019 Spri… Jimmy Day          51    20  255  Poms &amp; Convi…
-5 21/01/20… 2021 Summ… Joseph Kornwas…    53    23  230. Major Paine  </code></pre>
-</div>
-<h1 id="boundaries">Boundaries</h1>
-<h3 id="most-sixes-career">Most Sixes (career)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Sixes
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Ben Cull           20    38
-2 Jimmy Day          22    26
-3 Michael Drew       16    15
-4 Daniel Dymond       8    10
-5 Adam Peel          22     9</code></pre>
-</div>
-<h3 id="most-sixes-season">Most Sixes (season)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen           Innings Sixes
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt;
-1 2020        Ben Cull                6    20
-2 2020        Jimmy Day               6    12
-3 2021 Summer Ben Cull                5     8
-4 2019 Spring Michael Drew            6     7
-5 2021 Summer Joseph Kornwasser       3     6</code></pre>
-</div>
-<h3 id="most-sixes-innings">Most Sixes (innings)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date       season      Batsmen   Runs Balls Sixes Opposition        
-  &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             
-1 21/01/2021 2021 Summer Ben Cull    50    16     5 Major Paine       
-2 20/02/2020 2020 Spring Ben Cull    51    19     5 Batty Boys        
-3 09/11/2020 2020        Ben Cull    53    20     5 Major Paine       
-4 03/12/2020 2020        Ben Cull    36    11     4 The Michael Bevans
-5 02/11/2020 2020        Ben Cull    47    20     4 The Hunts         </code></pre>
-</div>
-<h3 id="most-fours-career">Most Fours (career)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Fours
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Jimmy Day          22    63
-2 Michael Drew       16    50
-3 Adam Peel          22    30
-4 Ben Cull           20    25
-5 Daniel Dymond       8    24</code></pre>
-</div>
-<h3 id="most-fours-season">Most Fours (season)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen      Innings Fours
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt;
-1 2019 Spring Jimmy Day          7    26
-2 2020 Spring Michael Drew       6    22
-3 2019 Spring Michael Drew       6    14
-4 2020 Spring Jimmy Day          5    13
-5 2020        Jimmy Day          6    13</code></pre>
-</div>
-<h3 id="most-fours-innings">Most Fours (innings)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen       Runs Balls Fours Opposition      
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           
-1 21/10/20… 2019 Spri… Jimmy Day       51    20     8 Poms &amp; Convicts 
-2 17/02/20… 2020 Spri… Michael Drew    52    24     8 Batty Boys      
-3 11/11/20… 2019 Spri… Jimmy Day       56    30     8 The Hunts       
-4 28/01/20… 2021 Summ… Daniel Dymo…    52    27     7 Workers Club Li…
-5 03/12/20… 2020       Jimmy Day       51    27     6 The Michael Bev…</code></pre>
-</div>
-<h1 id="milestones">Milestones</h1>
-<h3 id="most-fifties-career">Most Fifties (career)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Fifties
-  &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
-1 Jimmy Day          22       8
-2 Michael Drew       16       7
-3 Daniel Dymond       8       4
-4 Ben Cull           20       4
-5 Adam Peel          22       3</code></pre>
-</div>
-<h3 id="most-fifties-season">Most Fifties (season)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen       Innings Fifties
-  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
-1 2020        Michael Drew        3       3
-2 2020        Daniel Dymond       4       2
-3 2021 Summer Jimmy Day           4       2
-4 2020 Spring Jimmy Day           5       2
-5 2020        Ben Cull            6       2</code></pre>
-</div>
-<h3 id="most-not-outs-career">Most Not Outs (career)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen               Innings    NO
-  &lt;chr&gt;                   &lt;int&gt; &lt;int&gt;
-1 Michael Drew               16     8
-2 Morgan Tear                18     8
-3 Rohan Bythell-Douglas      19     8
-4 Jimmy Day                  22     8
-5 Ben Cull                   20     7</code></pre>
-</div>
-<h3 id="most-not-outs-season">Most Not Outs (season)</h3>
-<div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen      Innings    NO
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;int&gt;
-1 2020 Spring Morgan Tear        5     4
-2 2020        Ben Cull           6     4
-3 2020        Morgan Tear        6     4
-4 2020        Michael Drew       3     3
-5 2020 Spring Jimmy Day          5     3</code></pre>
-</div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
