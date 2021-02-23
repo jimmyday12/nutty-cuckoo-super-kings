@@ -1,11 +1,3 @@
-# LMS Script 
-library(tidyverse)
-library(httr)
-library(rvest)
-library(xml2)
-library(lubridate)
-library(cli)
-
 
 # Functions --------------------------------------------------------------------
 get_innings <- function(fixture_id, innings = 1) {

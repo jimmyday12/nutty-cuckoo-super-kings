@@ -8,10 +8,15 @@ output: distill::distill_article
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(purrr)
+library(stringr)
 library(here)
 library(reactable)
 library(htmltools)
+library(knitr)
+library(rmarkdown)
 source(here::here("scripts", "reactable_function.R"))
 ```
 

@@ -1,11 +1,3 @@
-# LMS Script 
-library(tidyverse)
-library(httr)
-library(rvest)
-library(xml2)
-library(lubridate)
-library(cli)
-
 
 fetch_detailed_stats <- function(id){
   print(id)

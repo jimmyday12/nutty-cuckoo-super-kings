@@ -1,5 +1,8 @@
 # LMS Script 
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(purrr)
+library(stringr)
 library(httr)
 library(rvest)
 library(xml2)
@@ -16,8 +19,8 @@ source(here::here("scripts", "lms_fetch_detailed_stats.R"))
 season_ids <- c(105, 110, 112, 114)
 league_ids <- c(1398, 1398, 1398, 1398)
 
-batting <- read_csv(here::here("data", "batting.csv"))
-bowling <- read_csv(here::here("data", "bowling.csv"))
+batting <- readr::read_csv(here::here("data", "batting.csv"))
+bowling <- readr::read_csv(here::here("data", "bowling.csv"))
 
 existing_ids <- unique(c(unique(batting$id),unique(bowling$id)))
 
@@ -50,18 +53,18 @@ if(nrow(bowling_all) > 0) {
 bowling <- bind_rows(bowling, bowling_all)
 
 # Save Data
-write_csv(batting, here::here("data", "batting.csv"))
-write_csv(bowling, here::here("data", "bowling.csv"))
+readr::write_csv(batting, here::here("data", "batting.csv"))
+readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
 # Detailed Data ----------------------------------------------------------------
 season_ids <- c(105, 110, 112, 114)
 league_ids <- c(1398, 1398, 1398, 1398)
 
 # Get existing IDS
-bowling_detailed_existing <- read_csv(here::here("data", "bowling_detailed.csv"))
-batting_detailed_existing <- read_csv(here::here("data", "batting_detailed.csv"))
-fielding_detailed_existing <- read_csv(here::here("data", "fielding_detailed.csv"))
-keeping_detailed_existing <- read_csv(here::here("data", "keeping_detailed.csv"))
+bowling_detailed_existing <- readr::read_csv(here::here("data", "bowling_detailed.csv"))
+batting_detailed_existing <- readr::read_csv(here::here("data", "batting_detailed.csv"))
+fielding_detailed_existing <- readr::read_csv(here::here("data", "fielding_detailed.csv"))
+keeping_detailed_existing <- readr::read_csv(here::here("data", "keeping_detailed.csv"))
 
 all_ids <- season_ids %>%
   purrr::map2(league_ids, ~fetch_ids(season_id = .x, league_id = .y)) %>%
@@ -103,17 +106,17 @@ if(!is.null(dat_detailed[[1]])) {
   keeping_detailed <- bind_rows(keeping_detailed_existing, keeping_detailed)
   
   # Save Data
-  write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
-  write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
-  write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
-  write_csv(batting_detailed, here::here("data", "batting_detailed.csv"))
+  readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
+  readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
+  readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
+  readr::write_csv(batting_detailed, here::here("data", "batting_detailed.csv"))
 }
 
 
 # Combine Stats --------------------------------------------------------------
 # Combine Batting --------------------------------------------------------------
-batting_detailed <- read_csv(here::here("data", "batting_detailed.csv"))
-batting <- read_csv(here::here("data", "batting.csv"))
+batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"))
+batting <- readr::read_csv(here::here("data", "batting.csv"))
 
 batting_detailed <- batting_detailed %>% 
   select(Id, MatchId, FirstName, LastName, BattingDotBalls)

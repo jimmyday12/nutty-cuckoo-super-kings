@@ -16,7 +16,7 @@ jobs:
       - uses: r-lib/actions/setup-r@master
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages(c("devtools", "tidyverse", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
+          Rscript -e 'install.packages(c("devtools", "dplyr", "readr", "purrr", "stringr", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
       - name: Get data
         run: Rscript -e 'source(here::here("scripts", "fetch_stats_script.R"), echo = TRUE)'
       - name: Commit
