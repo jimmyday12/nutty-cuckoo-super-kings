@@ -17,7 +17,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@master
       - name: Install dependencies
         run: |
-              Rscript -e 'install.packages(c("devtools", "dplyr", "rmarkdown", "readr", "purrr", "stringr", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
+              Rscript -e 'install.packages(c("devtools", "dplyr", "distill", "rmarkdown", "readr", "purrr", "stringr", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
       - name: Render site
         run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
       - name: Commit
