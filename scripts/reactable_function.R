@@ -1,10 +1,15 @@
-reactable_function <- function(df, type = "batting"){
+reactable_function <- function(df, type = NULL){
   
-  sort_col <- case_when(type == "batting" ~ "Runs", 
-                        type == "bowling" ~ "Wkts", 
-                        type == "fielding" ~ "Catches",
-                        type == "keeping" ~ "Dismissals",
-                        TRUE ~ "Runs")
+  if (is.null(type)) {
+    sort_col <- NULL
+  } else {
+    sort_col <- case_when(type == "batting" ~ "Runs", 
+                          type == "bowling" ~ "Wkts", 
+                          type == "fielding" ~ "Catches",
+                          type == "keeping" ~ "Dismissals",
+                          TRUE ~ "NULL")
+  }
+
   reactable(df, 
             pagination = FALSE,
             #filterable = TRUE,
