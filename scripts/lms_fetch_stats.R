@@ -109,6 +109,7 @@ fetch_players <- function(id) {
 
 
 fetch_match_results <- function(id){
+  print(id)
   match_details <- fetch_match_details(id)
   innings_1 <- fetch_innings_data(id, 1)
   innings_2 <- fetch_innings_data(id, 2)

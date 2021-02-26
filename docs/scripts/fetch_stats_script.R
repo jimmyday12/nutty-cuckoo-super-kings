@@ -19,10 +19,15 @@ source(here::here("scripts", "lms_fetch_detailed_stats.R"))
 season_ids <- c(105, 110, 112, 114)
 league_ids <- c(1398, 1398, 1398, 1398)
 
-batting <- readr::read_csv(here::here("data", "batting.csv"))
-bowling <- readr::read_csv(here::here("data", "bowling.csv"))
+batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
+bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols())
 
-existing_ids <- unique(c(unique(batting$id),unique(bowling$id)))
+existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
+
+# Add random matches
+empty_matches <- c(277707)
+existing_ids <- c(existing_ids, empty_matches)
+
 
 dat_all <- purrr::map2(season_ids, league_ids,
                        ~fetch_season_stats(season_id = .x,
@@ -61,16 +66,17 @@ season_ids <- c(105, 110, 112, 114)
 league_ids <- c(1398, 1398, 1398, 1398)
 
 # Get existing IDS
-bowling_detailed_existing <- readr::read_csv(here::here("data", "bowling_detailed.csv"))
-batting_detailed_existing <- readr::read_csv(here::here("data", "batting_detailed.csv"))
-fielding_detailed_existing <- readr::read_csv(here::here("data", "fielding_detailed.csv"))
-keeping_detailed_existing <- readr::read_csv(here::here("data", "keeping_detailed.csv"))
+bowling_detailed_existing <- readr::read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
+batting_detailed_existing <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
+fielding_detailed_existing <- readr::read_csv(here::here("data", "fielding_detailed.csv"), col_types = cols())
+keeping_detailed_existing <- readr::read_csv(here::here("data", "keeping_detailed.csv"), col_types = cols())
 
 all_ids <- season_ids %>%
   purrr::map2(league_ids, ~fetch_ids(season_id = .x, league_id = .y)) %>%
   reduce(c)
 
 existing_ids <- unique(bowling_detailed_existing$MatchId)
+existing_ids <- c(existing_ids, empty_matches)
 # Check against existing ids
 ids <- all_ids[!all_ids %in% existing_ids]
 
@@ -79,7 +85,7 @@ dat_detailed <- ids %>%
 
 
 
-if(!is.null(dat_detailed[[1]])) {
+if(!all(map_lgl(dat_detailed, is.null))) {
   
   batting_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "batters"))
@@ -91,7 +97,8 @@ if(!is.null(dat_detailed[[1]])) {
   
   bowling_detailed <- bowling_detailed %>%
     bind_cols(bowling_detailed$Overs) %>% 
-    select(-Overs)
+    select(-Overs) %>%
+    mutate(`$id` = as.numeric(`$id`))
   
   bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed)
   
@@ -115,8 +122,8 @@ if(!is.null(dat_detailed[[1]])) {
 
 # Combine Stats --------------------------------------------------------------
 # Combine Batting --------------------------------------------------------------
-batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"))
-batting <- readr::read_csv(here::here("data", "batting.csv"))
+batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
+batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 
 batting_detailed <- batting_detailed %>% 
   select(Id, MatchId, FirstName, LastName, BattingDotBalls)
@@ -153,8 +160,8 @@ batting_df[batting_df == "Inf" ] <- NA
 write_csv(batting_df, here::here("data", "batting_summary.csv"))
 
 # Combine Bowling --------------------------------------------------------------
-bowling <- read_csv(here::here("data", "bowling.csv"))
-bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"))
+bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
+bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
 bowling_detailed <- bowling_detailed %>% 
   select(Id, MatchId, FirstName, LastName, BowlingDotBalls, Wide, NoBall, Over, Ball)

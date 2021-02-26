@@ -106,7 +106,7 @@ fetch_detailed_stats <- function(id){
     MatchName = dat_state$Name,
     LeagueName = dat_state$LeagueName,
     SeasonName = dat_state$SeasonName,
-    StartDateTime = dat_state[["Events"]][["TimeStamp"]][1],
+    StartDateTime = ymd_hms(dat_state[["Events"]][["TimeStamp"]][1]),
     battingFirstName = dat_state$BattingFirst$Name,
     battingFirstId = dat_state$BattingFirst$Id,
     bowlingFirstName = dat_state$BowlingFirst$Name,

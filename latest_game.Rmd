@@ -24,6 +24,7 @@ library(htmltools)
 library(knitr)
 library(rmarkdown)
 source(here::here("scripts", "reactable_function.R"))
+
 ```
 
 ```{r load data, include=FALSE, echo = FALSE}

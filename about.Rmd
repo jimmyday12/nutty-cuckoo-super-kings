@@ -6,4 +6,5 @@ description: |
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+source(here::here("scripts", "fetch_stats_script.R"))
 ```

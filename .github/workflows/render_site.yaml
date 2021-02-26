@@ -6,7 +6,7 @@ on:
       - main
       - master
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "*/30 * * * *"
 
 jobs:
   render-and-commit:
