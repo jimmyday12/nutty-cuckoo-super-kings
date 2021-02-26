@@ -16,8 +16,8 @@ source(here::here("scripts", "lms_fetch_detailed_stats.R"))
 # Simple data --------------------------------------------------------------------
 # Get data
 # Season IDS
-season_ids <- c(105, 110, 112, 114)
-league_ids <- c(1398, 1398, 1398, 1398)
+season_ids <- c(105, 110, 112, 114, 114)
+league_ids <- c(1398, 1398, 1398, 1398, 3072)
 
 batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols())
@@ -62,8 +62,6 @@ readr::write_csv(batting, here::here("data", "batting.csv"))
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
 # Detailed Data ----------------------------------------------------------------
-season_ids <- c(105, 110, 112, 114)
-league_ids <- c(1398, 1398, 1398, 1398)
 
 # Get existing IDS
 bowling_detailed_existing <- readr::read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
@@ -97,8 +95,8 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   
   bowling_detailed <- bowling_detailed %>%
     bind_cols(bowling_detailed$Overs) %>% 
-    select(-Overs) %>%
-    mutate(`$id` = as.numeric(`$id`))
+    select(-contains("Overs")) #%>%
+    #mutate(`$id` = as.numeric(`$id`))
   
   bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed)
   

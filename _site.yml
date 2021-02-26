@@ -27,9 +27,11 @@ navbar:
           href: stats-all-bowling.html
         - text: "Fielding"
           href: stats-all-fielding.html
-        - text: "Latest Game"
-          href: latest_game.html
+        - text: "Current Season"
+          href: current_season.html
         - text: "Team"
+    - text: "Latest Game"
+      href: lastest_game.html
     # - text: "Seasons"
     #   menu: 
     #     - text: "2019 Spring"

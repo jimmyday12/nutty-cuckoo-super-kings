@@ -112,6 +112,12 @@ fetch_detailed_stats <- function(id){
     bowlingFirstName = dat_state$BowlingFirst$Name,
     bowlingFirstId = dat_state$BowlingFirst$Id
   )
+  
+  league_ids <- get_seas_league_ids(id)
+  
+  match_details <- match_details %>%
+    bind_cols(league_ids)
+  
     
   batters <- batters %>% 
       join_and_select(players, match_details) %>%
@@ -135,5 +141,21 @@ fetch_detailed_stats <- function(id){
   )
   
   return(match_data)
+}
+
+get_seas_league_ids <- function(id){
+  url <- paste0("https://admin.lastmanstands.com/odata/Fixtures(", id ,")?$expand=Resource,Umpires,UserFixtures($expand=Team),TeamFixtures($expand=Team($expand=TeamUsers($expand=User))),LeagueAssociations($expand=League($expand=ScoreService,Sport($expand=Scoresheet),StatisticsSet),Season,Division),Venue($expand=Region($expand=Country))")
+  
+  resp <- httr::GET(url)
+  
+  cont <- resp %>% httr::content(as = "text")
+  
+  dat <- cont %>% jsonlite::fromJSON()
+  
+  league_id <- dat$LeagueAssociations$League$Id
+  season_id <- dat$LeagueAssociations$Season$Id
+  
+  data.frame(league_id = league_id,
+             season_id = season_id)
 }
 
