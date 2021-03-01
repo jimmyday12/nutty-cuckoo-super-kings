@@ -95,8 +95,8 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   
   bowling_detailed <- bowling_detailed %>%
     bind_cols(bowling_detailed$Overs) %>% 
-    select(-contains("Overs")) #%>%
-    #mutate(`$id` = as.numeric(`$id`))
+    select(-contains("Overs")) %>%
+    mutate(`$id` = as.numeric(`$id`))
   
   bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed)
   
