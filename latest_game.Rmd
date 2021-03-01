@@ -49,7 +49,7 @@ bowling_df <- bowling %>%
          Runs = RunsConceded,
          Dots = BowlingDotBalls,
          NB = NoBall) %>%
-  select(User.Id, Name, Over, Ball, Runs, Wkts, Dots, NB, Wide, Econ, dot.perc) 
+  select(User.Id, Name, Over, Ball, Runs, Wkts, Dots, NB, Wide, Econ, Dots, dot.perc) 
 
 
 
@@ -105,6 +105,12 @@ div(class = "box-score",
   reactable_function(batting_df, NULL),
   div(class = "box-score-title", "Bowling"),
   reactable_function(bowling_df, NULL),
+  )
+
+```
+
+```{r}
+div(class = "box-score",
   div(class = "box-score-title", "Fielding"),
   reactable_function(fielding_df, NULL),
   div(class = "box-score-title", "Keeping"),

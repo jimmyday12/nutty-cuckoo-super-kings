@@ -44,7 +44,7 @@ reactable_function <- function(df, type = NULL){
               SR = colDef(format = colFormat(digits = 1)),
               Avg = colDef(format = colFormat(digits = 1)),
               Econ = colDef(format = colFormat(digits = 1)),
-              Dots = colDef(show = FALSE),
+              #Dots = colDef(show = FALSE),
               Fours = colDef(name = "4s"),
               Sixes = colDef(name = "6s"),
               dot.perc = colDef(name = "Dot%", format = colFormat(percent = TRUE, digits = 1)),
