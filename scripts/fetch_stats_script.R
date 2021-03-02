@@ -57,7 +57,11 @@ if(nrow(bowling_all) > 0) {
 
 bowling <- bind_rows(bowling, bowling_all)
 
+
 # Save Data
+batting$league_id[batting$league_id == 3072] <- 1398
+bowling$league_id[bowling$league_id == 3072] <- 1398
+
 readr::write_csv(batting, here::here("data", "batting.csv"))
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
@@ -111,6 +115,11 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   keeping_detailed <- bind_rows(keeping_detailed_existing, keeping_detailed)
   
   # Save Data
+  batting_detailed$league_id[batting_detailed$league_id == 3072] <- 1398
+  bowling_detailed$league_id[bowling_detailed$league_id == 3072] <- 1398
+  keeping_detailed$league_id[keeping_detailed$league_id == 3072] <- 1398
+  fielding_detailed$league_id[fielding_detailed$league_id == 3072] <- 1398
+  
   readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
   readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
   readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
