@@ -2127,218 +2127,948 @@ Stats
 </div>
 <h1 id="best-batting">Best Batting</h1>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen      Score Balls    SR Opposition      
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           
-1 09/12/20… 2019 Spri… Michael Drew 60*      38  158. Workers Club Li…
-2 11/11/20… 2019 Spri… Jimmy Day    56       30  187. The Hunts       
-3 14/01/20… 2021 Summ… Michael Drew 56       40  140  The Hunts       
-4 21/01/20… 2021 Summ… Kaushik Gay… 55*      31  177. Major Paine     
-5 25/02/20… 2021 Summ… Michael Drew 55*      27  204. The Hunts       </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: left;">Score</th>
+<th style="text-align: right;">Balls</th>
+<th style="text-align: right;">SR</th>
+<th style="text-align: left;">Opposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">09/12/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: left;">60*</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">157.9</td>
+<td style="text-align: left;">Workers Club Lions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">11/11/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">186.7</td>
+<td style="text-align: left;">The Hunts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">14/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">140.0</td>
+<td style="text-align: left;">The Hunts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Kaushik Gayal</td>
+<td style="text-align: left;">55*</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">177.4</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25/02/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: left;">55*</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">203.7</td>
+<td style="text-align: left;">The Hunts</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="runs">Runs</h1>
 <h3 id="most-runs-all-time">Most Runs (all time)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen       Innings  Runs   Avg
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Jimmy Day          23   804  53.6
-2 Michael Drew       17   645  80.6
-3 Ben Cull           21   445  31.8
-4 Adam Peel          23   441  22.0
-5 Daniel Dymond       8   268  67  </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">804</td>
+<td style="text-align: right;">50.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">645</td>
+<td style="text-align: right;">80.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">445</td>
+<td style="text-align: right;">29.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">441</td>
+<td style="text-align: right;">21.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">268</td>
+<td style="text-align: right;">53.6</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-runs-season">Most Runs (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen      Innings  Runs   Avg
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2019 Spring Jimmy Day          7   232  46.4
-2 2020        Ben Cull           6   218 109  
-3 2021 Summer Jimmy Day          5   206  51.5
-4 2020        Jimmy Day          6   205  51.2
-5 2019 Spring Michael Drew       6   194  48.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">232</td>
+<td style="text-align: right;">46.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">109.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">206</td>
+<td style="text-align: right;">51.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">51.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">48.5</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="highest-average-all-time-min-5-innings">Highest Average (all time, min 5 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen       Innings  Runs   Avg
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Michael Drew       17   645  80.6
-2 Daniel Dymond       8   268  67  
-3 Jimmy Day          23   804  53.6
-4 Ben Cull           21   445  31.8
-5 Matt Bunney        12   198  24.8</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">645</td>
+<td style="text-align: right;">80.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">268</td>
+<td style="text-align: right;">53.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">804</td>
+<td style="text-align: right;">50.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">445</td>
+<td style="text-align: right;">29.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Matt Bunney</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">24.8</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="highest-average-season-min-3-innings">Highest Average (season, min 3 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen           Innings  Runs   Avg
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2020        Ben Cull                6   218 109  
-2 2021 Summer Joseph Kornwasser       3    81  81  
-3 2020 Spring Jimmy Day               5   161  80.5
-4 2020        Daniel Dymond           4   144  72  
-5 2020 Spring Michael Drew            6   188  62.7</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">109.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Joseph Kornwasser</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">81.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">161</td>
+<td style="text-align: right;">80.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">72.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">62.7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="strike-rate">Strike Rate</h1>
 <h3 id="highest-sr-all-time-min-10-innings">Highest SR (all time, min 10 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  Batsmen      Innings  Runs    SR
-  &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 Ben Cull          21   445 219. 
-2 Jimmy Day         23   804 162. 
-3 Michael Drew      17   645 159. 
-4 Adam Peel         23   441 123. 
-5 Matt Bunney       12   198  97.5</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">SR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">445</td>
+<td style="text-align: right;">208.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">804</td>
+<td style="text-align: right;">159.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">645</td>
+<td style="text-align: right;">159.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">441</td>
+<td style="text-align: right;">110.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Matt Bunney</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">97.5</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="highest-sr-season-min-3-innings">Highest SR (season, min 3 innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 5
-  season      Batsmen           Innings  Runs    SR
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 2020        Ben Cull                6   218  242.
-2 2021 Summer Ben Cull                6   110  239.
-3 2021 Summer Joseph Kornwasser       3    81  231.
-4 2020 Spring Michael Drew            6   188  183.
-5 2020        Jimmy Day               6   205  180.</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">SR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">218</td>
+<td style="text-align: right;">242.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">239.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Joseph Kornwasser</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">231.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">182.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">205</td>
+<td style="text-align: right;">179.8</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="highest-sr-innings-min-10-balls">Highest SR (innings, min 10 balls)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date       season      Batsmen    Runs Balls    SR Opposition       
-  &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            
-1 03/12/2020 2020        Ben Cull     36    11  327. The Michael Beva…
-2 21/01/2021 2021 Summer Ben Cull     50    16  312. Major Paine      
-3 20/02/2020 2020 Spring Ben Cull     51    19  268. Batty Boys       
-4 09/11/2020 2020        Ben Cull     53    20  265  Major Paine      
-5 21/10/2019 2019 Spring Jimmy Day    51    20  255  Poms &amp; Convicts  </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Balls</th>
+<th style="text-align: right;">SR</th>
+<th style="text-align: left;">Opposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">03/12/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">327.3</td>
+<td style="text-align: left;">The Michael Bevans</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">312.5</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20/02/2020</td>
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">268.4</td>
+<td style="text-align: left;">Batty Boys</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">09/11/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">265.0</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">21/10/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">255.0</td>
+<td style="text-align: left;">Poms &amp; Convicts</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="fastest-fifty">Fastest Fifty</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen          Runs Balls    SR Opposition   
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        
-1 21/01/20… 2021 Summ… Ben Cull           50    16  312. Major Paine  
-2 20/02/20… 2020 Spri… Ben Cull           51    19  268. Batty Boys   
-3 09/11/20… 2020       Ben Cull           53    20  265  Major Paine  
-4 21/10/20… 2019 Spri… Jimmy Day          51    20  255  Poms &amp; Convi…
-5 21/01/20… 2021 Summ… Joseph Kornwas…    53    23  230. Major Paine  </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Balls</th>
+<th style="text-align: right;">SR</th>
+<th style="text-align: left;">Opposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">21/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">312.5</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20/02/2020</td>
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">268.4</td>
+<td style="text-align: left;">Batty Boys</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">09/11/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">265.0</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">21/10/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">255.0</td>
+<td style="text-align: left;">Poms &amp; Convicts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">21/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Joseph Kornwasser</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">230.4</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="boundaries">Boundaries</h1>
 <h3 id="most-sixes-career">Most Sixes (career)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Sixes
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Ben Cull           21    40
-2 Jimmy Day          23    27
-3 Michael Drew       17    18
-4 Daniel Dymond       8    10
-5 Adam Peel          23    10</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Sixes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-sixes-season">Most Sixes (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen           Innings Sixes
-  &lt;chr&gt;       &lt;chr&gt;               &lt;int&gt; &lt;dbl&gt;
-1 2020        Ben Cull                6    20
-2 2020        Jimmy Day               6    12
-3 2021 Summer Ben Cull                6    10
-4 2019 Spring Michael Drew            6     7
-5 2021 Summer Joseph Kornwasser       3     6</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Sixes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Joseph Kornwasser</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-sixes-innings">Most Sixes (innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date       season      Batsmen   Runs Balls Sixes Opposition        
-  &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             
-1 21/01/2021 2021 Summer Ben Cull    50    16     5 Major Paine       
-2 20/02/2020 2020 Spring Ben Cull    51    19     5 Batty Boys        
-3 09/11/2020 2020        Ben Cull    53    20     5 Major Paine       
-4 03/12/2020 2020        Ben Cull    36    11     4 The Michael Bevans
-5 02/11/2020 2020        Ben Cull    47    20     4 The Hunts         </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Balls</th>
+<th style="text-align: right;">Sixes</th>
+<th style="text-align: left;">Opposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">21/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">20/02/2020</td>
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Batty Boys</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">09/11/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Major Paine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">03/12/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">The Michael Bevans</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">02/11/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">The Hunts</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-fours-career">Most Fours (career)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Fours
-  &lt;chr&gt;           &lt;int&gt; &lt;dbl&gt;
-1 Jimmy Day          23    67
-2 Michael Drew       17    55
-3 Adam Peel          23    34
-4 Ben Cull           21    26
-5 Daniel Dymond       8    24</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Fours</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">68</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">24</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-fours-season">Most Fours (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen      Innings Fours
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;dbl&gt;
-1 2019 Spring Jimmy Day          7    26
-2 2020 Spring Michael Drew       6    22
-3 2021 Summer Jimmy Day          5    15
-4 2019 Spring Michael Drew       6    14
-5 2021 Summer Adam Peel          7    14</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Fours</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">14</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-fours-innings">Most Fours (innings)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 7
-  date      season     Batsmen       Runs Balls Fours Opposition      
-  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           
-1 21/10/20… 2019 Spri… Jimmy Day       51    20     8 Poms &amp; Convicts 
-2 17/02/20… 2020 Spri… Michael Drew    52    24     8 Batty Boys      
-3 11/11/20… 2019 Spri… Jimmy Day       56    30     8 The Hunts       
-4 28/01/20… 2021 Summ… Daniel Dymo…    52    27     7 Workers Club Li…
-5 03/12/20… 2020       Jimmy Day       51    27     6 The Michael Bev…</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Balls</th>
+<th style="text-align: right;">Fours</th>
+<th style="text-align: left;">Opposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">21/10/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Poms &amp; Convicts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">17/02/2020</td>
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Batty Boys</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11/11/2019</td>
+<td style="text-align: left;">2019 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">The Hunts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">28/01/2021</td>
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Workers Club Lions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">03/12/2020</td>
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">The Michael Bevans</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h1 id="milestones">Milestones</h1>
 <h3 id="most-fifties-career">Most Fifties (career)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen       Innings Fifties
-  &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
-1 Michael Drew       17       8
-2 Jimmy Day          23       8
-3 Daniel Dymond       8       4
-4 Ben Cull           21       4
-5 Adam Peel          23       3</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Fifties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adam Peel</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-fifties-season">Most Fifties (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen       Innings Fifties
-  &lt;chr&gt;       &lt;chr&gt;           &lt;int&gt;   &lt;int&gt;
-1 2020        Michael Drew        3       3
-2 2021 Summer Michael Drew        2       2
-3 2020        Daniel Dymond       4       2
-4 2020 Spring Jimmy Day           5       2
-5 2021 Summer Jimmy Day           5       2</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">Fifties</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2021 Summer</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-not-outs-career">Most Not Outs (career)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 3
-  Batsmen               Innings    NO
-  &lt;chr&gt;                   &lt;int&gt; &lt;int&gt;
-1 Michael Drew               17     9
-2 Morgan Tear                19     8
-3 Rohan Bythell-Douglas      20     8
-4 Jimmy Day                  23     8
-5 Ben Cull                   21     7</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">NO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Morgan Tear</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rohan Bythell-Douglas</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">7</td>
+</tr>
+</tbody>
+</table>
 </div>
 <h3 id="most-not-outs-season">Most Not Outs (season)</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 5 x 4
-  season      Batsmen      Innings    NO
-  &lt;chr&gt;       &lt;chr&gt;          &lt;int&gt; &lt;int&gt;
-1 2020 Spring Morgan Tear        5     4
-2 2020        Ben Cull           6     4
-3 2020        Morgan Tear        6     4
-4 2020        Michael Drew       3     3
-5 2020 Spring Jimmy Day          5     3</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">Batsmen</th>
+<th style="text-align: right;">Innings</th>
+<th style="text-align: right;">NO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Morgan Tear</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Morgan Tear</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2020</td>
+<td style="text-align: left;">Michael Drew</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2020 Spring</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

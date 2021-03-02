@@ -42,18 +42,26 @@ Stats for `r first(bowling$league[bowling$season_id == current_season])` - `r fi
 
 ```{r batting, layout="l-body-outset"}
 
-batting_detailed <- batting_detailed %>% 
-  select(Id, MatchId, FirstName, LastName, BattingDotBalls)
-batting_comb <- left_join(batting, batting_detailed, 
-                          by = c("User.Id" = "Id", "id" = "MatchId"))
+batting_comb <- full_join(batting, batting_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
 
 batting_df <- batting_comb %>%
   filter(team == "The Nutty Cuckoo Super Kings") %>%
   filter(season_id == current_season) %>%
-  mutate(`50s` = ifelse(Runs >= 50, 1, 0),
-         `30s` = ifelse(Runs >= 30 & Runs < 50, 1, 0),
-         ducks = ifelse(Runs == 0 & Dismissal != "Not Out", 1, 0),
-         runs_made = Runs) %>%
+  mutate(Batsmen = ifelse(is.na(Batsmen),
+                          paste0(FirstName, " ", LastName), Batsmen),
+         runs_made = ifelse(is.na(Runs), RunsScored, Runs),
+         Balls = ifelse(is.na(Balls), BallsFaced, Balls),
+         `4s` = ifelse(is.na(`4s`), Fours, `4s`),
+         `6s` = ifelse(is.na(`6s`), Sixes, `6s`)) %>%
+  mutate(`50s` = ifelse(runs_made >= 50, 1, 0),
+         `30s` = ifelse(runs_made >= 30 & Runs < 50, 1, 0),
+         ducks = ifelse(runs_made == 0 & Dismissal != "Not Out", 1, 0),
+         ) %>%
   group_by(team, User.Id, Batsmen) %>%
   summarise(Inns = n(),
             NO = sum(Dismissal == "Not Out", na.rm = TRUE),
@@ -82,19 +90,27 @@ batting_df[batting_df == "Inf" ] <- NA
 
 
 ```{r bowling, layout="l-body-outset"}
-bowling_detailed <- bowling_detailed %>% 
-  select(Id, MatchId, FirstName, LastName, BowlingDotBalls, Wide, NoBall, Over, Ball)
+bowling <- bowling %>% select(-Maidens)
 
-bowling_comb <- left_join(bowling, bowling_detailed, by = c("User.Id" = "Id", "id" = "MatchId"))
+bowling_comb <- full_join(bowling, bowling_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
 
 bowling_df <- bowling_comb %>%
   filter(team == "The Nutty Cuckoo Super Kings") %>%
   filter(season_id == current_season) %>%
+  mutate(Bowlers = ifelse(is.na(Bowlers), paste0(FirstName, " ", LastName), Bowlers),
+        Overs = ifelse(is.na(Overs), Over, Overs),
+        Runs = ifelse(is.na(Runs), RunsConceded, Runs),
+        Wkts = ifelse(is.na(Wkts), Wickets, Wkts)) %>%
   mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
          `5s` = ifelse(Wkts >= 5 , 1, 0)) %>%
   group_by(team, User.Id, Bowlers) %>%
   summarise(innings = n(),
-            Overs = sum(Over, na.rm = TRUE),
+            Overs = sum(Overs, na.rm = TRUE),
             Balls = ceiling(Overs*5),
             Runs = sum(Runs, na.rm = TRUE),
             Wkts = sum(Wkts, na.rm = TRUE),

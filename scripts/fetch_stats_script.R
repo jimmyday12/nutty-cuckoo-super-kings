@@ -132,10 +132,21 @@ if(!all(map_lgl(dat_detailed, is.null))) {
 batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
 batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 
-batting_detailed <- batting_detailed %>% 
-  select(Id, MatchId, FirstName, LastName, BattingDotBalls)
-batting_comb <- left_join(batting, batting_detailed, 
-                          by = c("User.Id" = "Id", "id" = "MatchId"))
+
+batting_comb <- full_join(batting, batting_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
+
+batting_comb <- batting_comb %>%
+  mutate(Batsmen = ifelse(is.na(Batsmen),
+                          paste0(FirstName, " ", LastName), Batsmen),
+         runs_made = ifelse(is.na(Runs), RunsScored, Runs),
+         Balls = ifelse(is.na(Balls), BallsFaced, Balls),
+         `4s` = ifelse(is.na(`4s`), Fours, `4s`),
+         `6s` = ifelse(is.na(`6s`), Sixes, `6s`)) 
 
 batting_df <- batting_comb %>%
   mutate(`50s` = ifelse(Runs >= 50, 1, 0),
@@ -165,15 +176,27 @@ batting_df <- batting_comb %>%
 batting_df[batting_df == "Inf" ] <- NA
 
 write_csv(batting_df, here::here("data", "batting_summary.csv"))
+write_csv(batting_comb, here::here("data", "batting_combined.csv"))
 
 # Combine Bowling --------------------------------------------------------------
 bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
 bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
-bowling_detailed <- bowling_detailed %>% 
-  select(Id, MatchId, FirstName, LastName, BowlingDotBalls, Wide, NoBall, Over, Ball)
+bowling <- bowling %>% select(-Maidens)
 
-bowling_comb <- left_join(bowling, bowling_detailed, by = c("User.Id" = "Id", "id" = "MatchId"))
+bowling_comb <- full_join(bowling, bowling_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
+
+bowling_comb <- bowling_comb %>%
+  mutate(Bowlers = ifelse(is.na(Bowlers), 
+                          paste0(FirstName, " ", LastName), Bowlers),
+         Overs = ifelse(is.na(Overs), Over, Overs),
+         Runs = ifelse(is.na(Runs), RunsConceded, Runs),
+         Wkts = ifelse(is.na(Wkts), Wickets, Wkts)) 
 
 bowling_df <- bowling_comb %>%
   mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
@@ -212,3 +235,4 @@ bowling_df <- bowling_df %>%
 bowling_df[bowling_df == "Inf" ] <- NA
 
 write_csv(bowling_df, here::here("data", "bowling_summary.csv"))
+write_csv(bowling_comb, here::here("data", "bowling_combined.csv"))

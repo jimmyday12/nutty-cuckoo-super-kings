@@ -26,7 +26,7 @@ library(rmarkdown)
 ```
 
 ```{r load data, include=FALSE, echo = FALSE}
-batting <- read_csv(here::here("data", "batting.csv"))
+batting <- read_csv(here::here("data", "batting_combined.csv"))
 ```
 ```{r}
 df <- batting %>%
@@ -48,7 +48,8 @@ df <- batting %>%
 df %>%
   arrange(desc(Runs + (not_out/2))) %>%
   filter(row_number(desc(Runs)) < 6) %>%
-  select(date, season, Batsmen, Score, Balls, SR, Opposition) 
+  select(date, season, Batsmen, Score, Balls, SR, Opposition)  %>%
+  kable(digits = 1)
   
 
 ```
@@ -58,13 +59,14 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(Runs = sum(runs_made),
-            not_outs = sum(Dismissal == "Not Out"),
+  summarise(Runs = sum(runs_made, na.rm = TRUE),
+            not_outs = sum(Dismissal == "Not Out", na.rm = TRUE),
             Innings = n(),
             Avg = Runs/(Innings-not_outs)) %>%
   arrange(desc(Runs), Innings) %>%
   select(Batsmen, Innings, Runs, Avg) %>%
-  filter(row_number(desc(Runs)) < 6)
+  filter(row_number(desc(Runs)) < 6) %>%
+  kable(digits = 1)
 
 
 
@@ -74,14 +76,15 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen, season) %>%
-  summarise(Runs = sum(runs_made),
-            not_outs = sum(Dismissal == "Not Out"),
+  summarise(Runs = sum(runs_made, na.rm = TRUE),
+            not_outs = sum(Dismissal == "Not Out", na.rm = TRUE),
             Innings = n(),
             Avg = Runs/(Innings-not_outs)) %>%
   arrange(desc(Runs), Innings) %>%
   select(season, Batsmen, Innings, Runs, Avg) %>%
   ungroup() %>%
-  filter(row_number(desc(Runs)) < 6)
+  filter(row_number(desc(Runs)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -91,15 +94,16 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(Runs = sum(runs_made),
-            not_outs = sum(Dismissal == "Not Out"),
+  summarise(Runs = sum(runs_made, na.rm = TRUE),
+            not_outs = sum(Dismissal == "Not Out", na.rm = TRUE),
             Innings = n(),
             Avg = Runs/(Innings-not_outs)) %>%
   arrange(desc(Avg), Innings) %>%
   select(Batsmen, Innings, Runs, Avg) %>%
   ungroup() %>%
   filter(Innings > 5) %>%
-  filter(row_number(desc(Avg)) < 6)
+  filter(row_number(desc(Avg)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -108,8 +112,8 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen, season) %>%
-  summarise(Runs = sum(runs_made),
-            not_outs = sum(Dismissal == "Not Out"),
+  summarise(Runs = sum(runs_made, na.rm = TRUE),
+            not_outs = sum(Dismissal == "Not Out", na.rm = TRUE),
             Innings = n(),
             Avg = Runs/(Innings-not_outs)) %>%
   arrange(desc(Avg), Innings) %>%
@@ -117,7 +121,8 @@ df %>%
   ungroup() %>%
   filter(Innings >= 3) %>%
   filter(Avg != "Inf") %>%
-  filter(row_number(desc(Avg)) < 6)
+  filter(row_number(desc(Avg)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -128,13 +133,14 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(SR = sum(Runs)/sum(Balls) * 100,
-            Runs = sum(Runs),
+  summarise(SR = sum(Runs, na.rm = TRUE)/sum(Balls, na.rm = TRUE) * 100,
+            Runs = sum(Runs, na.rm = TRUE),
             Innings = n()) %>%
   filter(Innings > 9) %>%
   arrange(desc(SR), desc(Runs)) %>%
   select(Batsmen, Innings, Runs, SR) %>%
-  filter(row_number(desc(SR)) < 6)
+  filter(row_number(desc(SR)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -142,14 +148,15 @@ df %>%
 ```{r}
 df %>%
   group_by(season, Batsmen) %>%
-  summarise(SR = sum(Runs)/sum(Balls) * 100,
-            Runs = sum(Runs),
+  summarise(SR = sum(Runs, na.rm = TRUE)/sum(Balls, na.rm = TRUE) * 100,
+            Runs = sum(Runs, na.rm = TRUE),
             Innings = n()) %>%
   filter(Innings > 2) %>%
   arrange(desc(SR), desc(Runs)) %>%
   select(season, Batsmen, Innings, Runs, SR) %>%
   ungroup() %>%
-  filter(row_number(desc(SR)) < 6)
+  filter(row_number(desc(SR)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -160,7 +167,8 @@ df %>%
   filter(Balls > 9) %>%
   arrange(desc(SR), desc(Runs)) %>%
   select(date, season, Batsmen, Runs, Balls, SR, Opposition) %>%
-  filter(row_number(desc(SR)) < 6)
+  filter(row_number(desc(SR)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -172,7 +180,8 @@ df %>%
   filter(Runs > 49) %>%
   arrange(Balls, desc(SR)) %>%
   select(date, season, Batsmen, Runs, Balls, SR, Opposition) %>%
-  filter(row_number(desc(SR)) < 6)
+  filter(row_number(desc(SR)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -181,11 +190,12 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(Sixes = sum(`6s`),
+  summarise(Sixes = sum(`6s`, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Sixes), Innings) %>%
   select(Batsmen, Innings, Sixes) %>%
-  filter(row_number(desc(Sixes)) < 6)
+  filter(row_number(desc(Sixes)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -196,12 +206,13 @@ df %>%
 ```{r}
 df %>%
   group_by(season, Batsmen) %>%
-  summarise(Sixes = sum(`6s`),
+  summarise(Sixes = sum(`6s`, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Sixes), Innings) %>%
   select(season, Batsmen, Innings, Sixes) %>%
   ungroup() %>%
-  filter(row_number(desc(Sixes)) < 6)
+  filter(row_number(desc(Sixes)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -211,7 +222,8 @@ df %>%
   mutate(Sixes = `6s`) %>%
   arrange(desc(Sixes), Balls) %>%
   select(date, season, Batsmen, Runs, Balls, Sixes, Opposition) %>%
-  filter(row_number(desc(Sixes)) < 6)
+  filter(row_number(desc(Sixes)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -219,11 +231,12 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(Fours = sum(`4s`),
+  summarise(Fours = sum(`4s`, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Fours), Innings) %>%
   select(Batsmen, Innings, Fours) %>%
-  filter(row_number(desc(Fours)) < 6)
+  filter(row_number(desc(Fours)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -234,12 +247,13 @@ df %>%
 ```{r}
 df %>%
   group_by(season, Batsmen) %>%
-  summarise(Fours = sum(`4s`),
+  summarise(Fours = sum(`4s`, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Fours), Innings) %>%
   select(season, Batsmen, Innings, Fours) %>%
   ungroup() %>%
-  filter(row_number(desc(Fours)) < 6)
+  filter(row_number(desc(Fours)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -250,7 +264,8 @@ df %>%
   mutate(Fours = `4s`) %>%
   arrange(desc(Fours), Balls) %>%
   select(date, season, Batsmen, Runs, Balls, Fours, Opposition) %>%
-  filter(row_number(desc(Fours)) < 6)
+  filter(row_number(desc(Fours)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -259,11 +274,12 @@ df %>%
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(Fifties = sum(Fifty),
+  summarise(Fifties = sum(Fifty, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Fifties), Innings) %>%
   select(Batsmen, Innings, Fifties) %>%
-  filter(row_number(desc(Fifties)) < 6)
+  filter(row_number(desc(Fifties)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -272,22 +288,24 @@ df %>%
 ```{r}
 df %>%
   group_by(season, Batsmen) %>%
-  summarise(Fifties = sum(Fifty),
+  summarise(Fifties = sum(Fifty, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(Fifties), Innings) %>%
   select(season, Batsmen, Innings, Fifties) %>%
   ungroup %>%
-  filter(row_number(desc(Fifties)) < 6)
+  filter(row_number(desc(Fifties)) < 6) %>%
+  kable(digits = 1)
 ```
 ### Most Not Outs (career)
 ```{r}
 df %>%
   group_by(Batsmen) %>%
-  summarise(NO = sum(not_out),
+  summarise(NO = sum(not_out, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(NO), Innings) %>%
   select(Batsmen, Innings, NO) %>%
-  filter(row_number(desc(NO)) < 6)
+  filter(row_number(desc(NO)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -296,11 +314,12 @@ df %>%
 ```{r}
 df %>%
   group_by(season, Batsmen) %>%
-  summarise(NO = sum(not_out),
+  summarise(NO = sum(not_out, na.rm = TRUE),
             Innings = n()) %>%
   arrange(desc(NO), Innings) %>%
   select(season, Batsmen, Innings, NO) %>%
   ungroup %>%
-  filter(row_number(desc(NO)) < 6)
+  filter(row_number(desc(NO)) < 6) %>%
+  kable(digits = 1)
 ```
 

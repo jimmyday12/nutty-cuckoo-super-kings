@@ -27,7 +27,7 @@ library(rmarkdown)
 
 ```{r load data, include=FALSE, echo = FALSE}
 
-bowling <- read_csv(here::here("data", "bowling.csv"))
+bowling <- read_csv(here::here("data", "bowling_combined.csv"))
 ```
 
 
@@ -42,15 +42,15 @@ bowling <- bowling %>%
 df_all <- bowling %>%
   group_by(Bowlers) %>%
   summarise(innings = n(),
-            Overs = sum(Overs),
-            Balls = ceiling(sum(Overs)*6),
-            Runs = sum(Runs),
-            Wkts = sum(Wkts),
-            SR = Balls/sum(Wkts),
+            Overs = sum(Overs, na.rm = TRUE),
+            Balls = ceiling(sum(Overs, na.rm = TRUE)*6),
+            Runs = sum(Runs, na.rm = TRUE),
+            Wkts = sum(Wkts, na.rm = TRUE),
+            SR = Balls/sum(Wkts, na.rm = TRUE),
             Avg = Runs/Wkts,
-            Econ = Runs/sum(Overs),
-            `3` = sum(`3s`),
-            `5` = sum(`5s`)) %>%
+            Econ = Runs/sum(Overs, na.rm = TRUE),
+            `3` = sum(`3s`, na.rm = TRUE),
+            `5` = sum(`5s`, na.rm = TRUE)) %>%
   rename(Name = Bowlers) 
 
 best_bowling <- bowling %>% 
@@ -73,15 +73,15 @@ df_all[df_all == "Inf" ] <- NA
 df_seas <- bowling %>%
   group_by(season, Bowlers) %>%
   summarise(innings = n(),
-            Overs = sum(Overs),
-            Balls = ceiling(sum(Overs)*6),
-            Runs = sum(Runs),
-            Wkts = sum(Wkts),
-            SR = Balls/sum(Wkts),
+            Overs = sum(Overs, na.rm = TRUE),
+            Balls = ceiling(sum(Overs, na.rm = TRUE)*6),
+            Runs = sum(Runs, na.rm = TRUE),
+            Wkts = sum(Wkts, na.rm = TRUE),
+            SR = Balls/sum(Wkts, na.rm = TRUE),
             Avg = Runs/Wkts,
-            Econ = Runs/sum(Overs),
-            `3` = sum(`3s`),
-            `5` = sum(`5s`)) %>%
+            Econ = Runs/sum(Overs, na.rm = TRUE),
+            `3` = sum(`3s`, na.rm = TRUE),
+            `5` = sum(`5s`, na.rm = TRUE)) %>%
   rename(Name = Bowlers) 
 
 df_seas[df_seas == "Inf" ] <- NA
@@ -94,7 +94,8 @@ bowling %>%
   mutate(BB = paste0(Wkts, "/", Runs)) %>%
   ungroup() %>%
   filter(row_number(desc(Wkts)) < 6) %>%
-  select(date, Bowlers, Overs, BB, Opposition)
+  select(date, Bowlers, Overs, BB, Opposition) %>%
+  kable(digits = 1)
   
   
 ```
@@ -107,7 +108,8 @@ bowling %>%
 df_all %>%
   arrange(desc(Wkts), Balls) %>%
   select(Name, innings, Overs, Wkts, Runs, Avg, SR) %>%
-  filter(row_number(desc(Wkts)) < 6)
+  filter(row_number(desc(Wkts)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -119,7 +121,8 @@ df_seas %>%
   arrange(desc(Wkts), Balls) %>%
   select(Name, innings, Overs, Wkts, Runs, Avg, SR) %>%
   ungroup() %>%
-  filter(row_number(desc(Wkts)) < 6)
+  filter(row_number(desc(Wkts)) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -132,7 +135,8 @@ df_all %>%
   filter(Overs >= 10) %>%
   arrange(Econ, Balls) %>%
   select(Name, innings, Overs, Runs, Econ) %>%
-  filter(row_number(Econ) < 6)
+  filter(row_number(Econ) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -144,7 +148,8 @@ df_seas %>%
   arrange(Econ, Overs) %>%
   select(Name, innings, Overs, Runs, Econ) %>%
   ungroup() %>%
-  filter(row_number(Econ) < 6)
+  filter(row_number(Econ) < 6) %>%
+  kable(digits = 1)
 ```
 
 ### Best Economy Rate (innings, min 2 overs)
@@ -155,7 +160,8 @@ bowling %>%
   arrange(Econ, Overs, desc(Wkts)) %>%
   select(date, Bowlers, Overs, Wkts, Runs, Econ, Opposition) %>%
   ungroup() %>%
-  filter(row_number(Econ) < 6)
+  filter(row_number(Econ) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -167,7 +173,8 @@ df_all %>%
   filter(Overs >= 10) %>%
   arrange(SR, Balls) %>%
   select(Name, innings, Overs, Wkts, SR) %>%
-  filter(row_number(SR) < 6)
+  filter(row_number(SR) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -179,7 +186,8 @@ df_seas %>%
   arrange(SR, Overs) %>%
   select(Name, innings, Overs, Wkts, SR) %>%
   ungroup() %>%
-  filter(row_number(SR) < 6)
+  filter(row_number(SR) < 6) %>%
+  kable(digits = 1)
 ```
 
 # Avg
@@ -191,7 +199,8 @@ df_all %>%
   filter(Overs >= 10) %>%
   arrange(Avg, Balls) %>%
   select(Name, innings, Overs, Wkts, Runs, Avg) %>%
-  filter(row_number(Avg) < 6)
+  filter(row_number(Avg) < 6) %>%
+  kable(digits = 1)
 
 ```
 
@@ -203,7 +212,8 @@ df_seas %>%
   arrange(Avg, Overs) %>%
   select(Name, innings, Overs, Wkts, Runs, Avg) %>%
   ungroup() %>%
-  filter(row_number(Avg) < 6)
+  filter(row_number(Avg) < 6) %>%
+  kable(digits = 1)
 ```
 
 
