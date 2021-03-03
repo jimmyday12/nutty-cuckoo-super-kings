@@ -1,5 +1,4 @@
-
-fetch_detailed_stats <- function(id){
+get_dat_state <- function(id) {
   print(id)
   url <- paste0("https://admin.lastmanstands.com/api/v1/Fixtures/", id, "/LastManStands/FixtureState")
   resp <- httr::GET(url,
@@ -12,6 +11,11 @@ fetch_detailed_stats <- function(id){
   if(is.null(dat$State)) return(NULL)
   
   dat_state <- jsonlite::fromJSON(dat$State)
+}
+
+fetch_detailed_stats <- function(id){
+  
+  dat_state <- get_dat_state(id)
 
   overs <- dat_state$Innings$Overs
   events <- overs %>%
@@ -110,7 +114,15 @@ fetch_detailed_stats <- function(id){
     battingFirstName = dat_state$BattingFirst$Name,
     battingFirstId = dat_state$BattingFirst$Id,
     bowlingFirstName = dat_state$BowlingFirst$Name,
-    bowlingFirstId = dat_state$BowlingFirst$Id
+    bowlingFirstId = dat_state$BowlingFirst$Id,
+    battingFirstScoreRuns = dat_state$Innings$Score$Runs[1],
+    battingFirstScoreWickets = dat_state$Innings$Score$Wickets[1],
+    battingFirstScoreOvers = dat_state$Innings$Score$Overs$Over[1],
+    battingFirstScoreBalls = dat_state$Innings$Score$Overs$Ball[1], 
+    bowlingFirstScoreRuns = dat_state$Innings$Score$Runs[2],
+    bowlingFirstScoreWickets = dat_state$Innings$Score$Wickets[2],
+    bowlingFirstScoreOvers = dat_state$Innings$Score$Overs$Over[2],
+    bowlingFirstScoreBalls = dat_state$Innings$Score$Overs$Ball[2]
   )
   
   league_ids <- get_seas_league_ids(id)
