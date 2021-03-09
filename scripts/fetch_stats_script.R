@@ -68,10 +68,25 @@ readr::write_csv(bowling, here::here("data", "bowling.csv"))
 # Detailed Data ----------------------------------------------------------------
 
 # Get existing IDS
-bowling_detailed_existing <- readr::read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
-batting_detailed_existing <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
-fielding_detailed_existing <- readr::read_csv(here::here("data", "fielding_detailed.csv"), col_types = cols())
-keeping_detailed_existing <- readr::read_csv(here::here("data", "keeping_detailed.csv"), col_types = cols())
+bowling_detailed_existing <- readr::read_csv(
+  here::here("data", "bowling_detailed.csv"), 
+  col_types = cols())
+
+batting_detailed_existing <- readr::read_csv(
+  here::here("data", "batting_detailed.csv"), 
+  col_types = cols())
+
+fielding_detailed_existing <- readr::read_csv(
+  here::here("data", "fielding_detailed.csv"), 
+  col_types = cols())
+
+keeping_detailed_existing <- readr::read_csv(
+  here::here("data", "keeping_detailed.csv"), 
+  col_types = cols())
+
+match_details_existing <- readr::read_csv(
+  here::here("data", "match_details.csv"), 
+  col_types = cols())
 
 all_ids <- season_ids %>%
   purrr::map2(league_ids, ~fetch_ids(season_id = .x, league_id = .y)) %>%
@@ -88,6 +103,11 @@ dat_detailed <- ids %>%
 
 
 if(!all(map_lgl(dat_detailed, is.null))) {
+  
+  match_details <- dat_detailed %>%
+    purrr::map_dfr(~purrr::pluck(.x, "match_details"))
+  
+  match_details <- bind_rows(match_details_existing, match_details)
   
   batting_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "batters"))
@@ -119,11 +139,13 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   bowling_detailed$league_id[bowling_detailed$league_id == 3072] <- 1398
   keeping_detailed$league_id[keeping_detailed$league_id == 3072] <- 1398
   fielding_detailed$league_id[fielding_detailed$league_id == 3072] <- 1398
+  match_details$league_id[match_details$league_id == 3072] <- 1398
   
   readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
   readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
   readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
   readr::write_csv(batting_detailed, here::here("data", "batting_detailed.csv"))
+  readr::write_csv(match_details, here::here("data", "match_details.csv"))
 }
 
 
