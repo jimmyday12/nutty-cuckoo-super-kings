@@ -92,7 +92,7 @@ all_ids <- season_ids %>%
   purrr::map2(league_ids, ~fetch_ids(season_id = .x, league_id = .y)) %>%
   reduce(c)
 
-existing_ids <- unique(bowling_detailed_existing$MatchId)
+existing_ids <- unique(match_details_existing$MatchId)
 existing_ids <- c(existing_ids, empty_matches)
 # Check against existing ids
 ids <- all_ids[!all_ids %in% existing_ids]
@@ -107,12 +107,14 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   match_details <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "match_details"))
   
-  match_details <- bind_rows(match_details_existing, match_details)
+  match_details <- bind_rows(match_details_existing, match_details) %>%
+    distinct()
   
   batting_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "batters"))
   
-  batting_detailed <- bind_rows(batting_detailed_existing, batting_detailed)
+  batting_detailed <- bind_rows(batting_detailed_existing, batting_detailed) %>%
+    distinct()
   
   bowling_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "bowlers"))
@@ -122,17 +124,20 @@ if(!all(map_lgl(dat_detailed, is.null))) {
     select(-contains("Overs")) %>%
     mutate(`$id` = as.numeric(`$id`))
   
-  bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed)
+  bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed) %>%
+    distinct()
   
   fielding_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "fielders"))
   
-  fielding_detailed <- bind_rows(fielding_detailed_existing, fielding_detailed)
+  fielding_detailed <- bind_rows(fielding_detailed_existing, fielding_detailed) %>%
+    distinct()
   
   keeping_detailed <- dat_detailed %>%
-    purrr::map_dfr(~purrr::pluck(.x, "keepers"))
+    purrr::map_dfr(~purrr::pluck(.x, "keepers")) 
   
-  keeping_detailed <- bind_rows(keeping_detailed_existing, keeping_detailed)
+  keeping_detailed <- bind_rows(keeping_detailed_existing, keeping_detailed) %>%
+    distinct()
   
   # Save Data
   batting_detailed$league_id[batting_detailed$league_id == 3072] <- 1398
@@ -151,10 +156,6 @@ if(!all(map_lgl(dat_detailed, is.null))) {
 
 # Combine Stats --------------------------------------------------------------
 # Combine Batting --------------------------------------------------------------
-batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
-batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
-
-
 batting_comb <- full_join(batting, batting_detailed, 
                           by = c("User.Id" = "Id", 
                                  "id" = "MatchId",
