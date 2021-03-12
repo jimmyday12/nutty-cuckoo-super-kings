@@ -1,0 +1,382 @@
+---
+title: "NSCK - Summer 2021 Review"
+output: powerpoint_presentation
+
+---
+
+```{r setup, include=FALSE}
+current_season <- 114
+
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(dplyr)
+library(readr)
+library(purrr)
+library(stringr)
+library(here)
+library(reactable)
+library(htmltools)
+library(knitr)
+library(rmarkdown)
+library(tidyverse)
+library(googlesheets4)
+library(lubridate)
+
+match_details <- read_csv(here::here("data", "match_details.csv"))
+fielding <- read_csv(here::here("data", "fielding_detailed.csv"))
+keeping <- read_csv(here::here("data", "keeping_detailed.csv"))
+
+batting_detailed <- readr::read_csv(
+  here::here("data", "batting_detailed.csv"), col_types = cols())
+
+batting <- readr::read_csv(
+  here::here("data", "batting.csv"), 
+  col_types = cols())
+
+bowling <- read_csv(
+  here::here("data", "bowling.csv"), 
+  col_types = cols())
+
+bowling_detailed <- read_csv(
+  here::here("data", "bowling_detailed.csv"), 
+  col_types = cols())
+
+votes <- read_csv(here::here("data", "votes-summer-2021.csv"))
+```
+
+
+```{r batting, layout="l-body-outset"}
+batting_comb <- full_join(batting, batting_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
+
+ batting_comb <- batting_comb %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  filter(season_id == current_season)
+ 
+batting_df <- batting_comb %>%
+  mutate(Batsmen = ifelse(is.na(Batsmen),
+                          paste0(FirstName, " ", LastName), Batsmen),
+         runs_made = ifelse(is.na(Runs), RunsScored, Runs),
+         Balls = ifelse(is.na(Balls), BallsFaced, Balls),
+         `4s` = ifelse(is.na(`4s`), Fours, `4s`),
+         `6s` = ifelse(is.na(`6s`), Sixes, `6s`)) %>%
+  mutate(`50s` = ifelse(runs_made >= 50, 1, 0),
+         `30s` = ifelse(runs_made >= 30 & Runs < 50, 1, 0),
+         ducks = ifelse(runs_made == 0 & Dismissal != "Not Out", 1, 0),
+         ) %>%
+  group_by(team, User.Id, Batsmen) %>%
+  summarise(Inns = n(),
+            NO = sum(Dismissal == "Not Out", na.rm = TRUE),
+            Runs = sum(runs_made, na.rm = TRUE),
+            HS = max(runs_made, na.rm = TRUE),
+            Avg = Runs/(Inns-NO),
+            Balls = sum(Balls),
+            SR = Runs/Balls*100,
+            `50` = sum(`50s`, na.rm = TRUE),
+            `30` = sum(`30s`, na.rm = TRUE),
+            ducks = sum(ducks, na.rm = TRUE),
+            Dots = sum(BattingDotBalls, na.rm = TRUE),
+            fours = sum(`4s`, na.rm = TRUE),
+            sixes = sum(`6s`, na.rm = TRUE)) %>%
+  arrange(desc(Runs)) %>%
+  mutate(dot.perc = Dots/Balls,
+         boundary.perc = (fours+sixes)/Balls) %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  ungroup() %>%
+  rename(Name = Batsmen) %>%
+  select(-team)
+
+batting_df[batting_df == "Inf" ] <- NA
+
+```
+
+
+```{r bowling, layout="l-body-outset"}
+bowling <- bowling %>% 
+  select(-Maidens) 
+  
+
+bowling_comb <- full_join(bowling, bowling_detailed, 
+                          by = c("User.Id" = "Id", 
+                                 "id" = "MatchId",
+                                 "season_id" = "season_id",
+                                 "league_id" = "league_id",
+                                 "team" = "Team"))
+bowling_comb <- bowling_comb %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  filter(season_id == current_season)
+
+bowling_df <- bowling_comb %>%
+  mutate(Bowlers = ifelse(is.na(Bowlers), paste0(FirstName, " ", LastName), Bowlers),
+        Overs = ifelse(is.na(Overs), Over, Overs),
+        Runs = ifelse(is.na(Runs), RunsConceded, Runs),
+        Wkts = ifelse(is.na(Wkts), Wickets, Wkts)) %>%
+  mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
+         `5s` = ifelse(Wkts >= 5 , 1, 0)) %>%
+  group_by(team, User.Id, Bowlers) %>%
+  summarise(innings = n(),
+            Overs = sum(Overs, na.rm = TRUE),
+            Balls = ceiling(Overs*5),
+            Runs = sum(Runs, na.rm = TRUE),
+            Wkts = sum(Wkts, na.rm = TRUE),
+            SR = Balls/sum(Wkts, na.rm = TRUE),
+            Avg = Runs/Wkts,
+            Econ = Runs/Overs,
+            Maidens = sum(Maidens, na.rm = TRUE),
+            wide.perc = sum(Wide, na.rm = TRUE)/Balls,
+            nb.perc = sum(NoBall, na.rm = TRUE)/Balls,
+            dot.perc = sum(BowlingDotBalls, na.rm = TRUE)/Balls,
+            `3fa` = sum(`3s`, na.rm = TRUE),
+            `5fa` = sum(`5s`, na.rm = TRUE),
+  ) %>%
+  arrange(desc(Wkts), Econ, Avg) %>%
+  ungroup() %>%
+  rename(Name = Bowlers) %>%
+  select(-team)
+
+best_bowling <- bowling %>% 
+  rename(Name = Bowlers) %>%
+  group_by(Name) %>% 
+  filter(Wkts == max(Wkts)) %>% 
+  filter(Runs == min(Runs)) %>% 
+  filter(row_number(Runs) == 1) %>%
+  mutate(BB = paste0(Wkts, "/", Runs)) %>%
+  select(Name, BB)
+
+bowling_df <- bowling_df %>%
+  left_join(best_bowling, by = "Name")
+bowling_df[bowling_df == "Inf" ] <- NA
+
+```
+
+```{r}
+ fielding <- fielding %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(season_id == current_season)
+
+fielding_df <- fielding  %>%
+  mutate(Name = paste0(FirstName, " ", LastName)) %>%
+  rename(User.Id = Id) %>%
+  group_by(User.Id, Name) %>%
+  summarise(Catches = sum(Catches), 
+            RunOuts = sum(RunOuts)) %>%
+  arrange(desc(Catches))
+
+```
+
+```{r}
+ keeping <- keeping %>%
+  filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  filter(season_id == current_season)
+
+keeping_df <- keeping  %>%
+  mutate(Name = paste0(FirstName, " ", LastName)) %>%
+  rename(User.Id = Id) %>%
+  group_by(User.Id, Name) %>%
+  summarise(Catches = sum(Catches), 
+            Stumpings = sum(Stumpings),
+            Byes = sum(Byes),
+            Dismissals = Catches + Stumpings)
+
+```
+
+
+## Season Review
+## Team Results
+## Team Status
+## Notable Performances
+
+## Season Stats
+## Batting
+
+
+```{r}
+batting_df %>%
+  filter(row_number(desc(Runs)) <= 8) %>%
+  select(Name, Inns, Runs, HS, Avg, SR) %>%
+  kable(digits = 1)
+
+```
+
+## Bowling
+
+```{r}
+bowling_df %>%
+  filter(row_number(desc(Wkts)) <= 7) %>%
+  select(Name, Overs, Runs, Wkts, Econ, Avg, SR) %>%
+  kable(digits = 1)
+
+```
+
+## Fielding
+```{r}
+fielding_df %>% 
+  left_join(keeping_df, by = c("User.Id", "Name")) %>%
+  ungroup() %>%
+  tidyr::replace_na(list(Catches.y = 0)) %>%
+  mutate(Catches = Catches.x - Catches.y) %>%
+  filter(row_number(desc(Catches)) <= 5) %>%
+  select(Name, Catches, RunOuts) %>%
+  kable(digts = 1)
+
+```
+## Keeping
+```{r}
+keeping_df %>%
+  ungroup() %>%
+  filter(row_number(desc(Dismissals)) <= 5) %>%
+  select(Name, Catches, Stumpings, Byes) %>%
+  kable(digts = 1)
+
+```
+
+```{r}
+get_best_batters <- function(match_id, n) {
+  batting_comb %>% 
+  filter(id == match_id) %>% 
+  mutate(not_out = ifelse(Dismissal == "Not Out", "*", "")) %>%
+    mutate(not_out = ifelse(is.na(not_out), "", not_out)) %>%
+  mutate(details = paste0(FirstName, " ", 
+                          LastName, " - ", 
+                          RunsScored, " (", 
+                          BallsFaced, ")", 
+                          not_out)) %>%
+    arrange(desc(RunsScored), BallsFaced) %>%
+  slice_max(RunsScored, n = n, with_ties = FALSE) %>%
+  select(details)
+}
+
+get_best_bowlers <- function(match_id, n) {
+  bowling_comb %>% 
+  filter(id == match_id) %>% 
+  mutate(details = paste0(FirstName, " ", 
+                          LastName, " - ", 
+                          Wickets, "/", RunsConceded, " (", Over, ")")) %>%
+    arrange(desc(Wickets), RunsConceded) %>%
+  slice_max(Wickets, n = n, with_ties = FALSE) %>%
+  select(details)
+}
+```
+
+```{r}
+get_result_msg <- function(season_id, match_id) {
+  x <- match_details %>% 
+  filter(season_id == season_id) %>%
+  filter(MatchId == match_id)
+
+batting_first <- paste0(
+  x$battingFirstName,
+  " - ",
+  x$battingFirstScoreRuns,
+  "/",
+  x$battingFirstScoreWickets,
+  " (",
+  x$battingFirstScoreOvers,
+  ".",
+  x$battingFirstScoreBalls,
+  ")"
+)
+
+bowling_first <- paste0(
+  x$bowlingFirstName,
+  " - ",
+  x$bowlingFirstScoreRuns,
+  "/",
+  x$bowlingFirstScoreWickets,
+  " (",
+  x$bowlingFirstScoreOvers,
+  ".",
+  x$bowlingFirstScoreBalls,
+  ")"
+)
+
+result <- case_when(
+  x$bowlingFirstScoreRuns > x$battingFirstScoreRuns ~ "def by",
+  x$bowlingFirstScoreRuns < x$battingFirstScoreRuns ~ "defeated",
+  TRUE ~ "tied")
+
+
+paste0(batting_first, " ", result, " ", bowling_first)    
+}
+
+  
+```
+)
+
+## Vote Count
+
+```{r}
+library(pander)
+
+create_section <- function(n) {
+  # Slide 1 - result
+   pander::pandoc.header(paste0("Match ", n, " - Result"), level = 2)
+  
+  match_ids <- votes %>% 
+    select(game, match_id) %>% 
+    distinct()
+  
+  id <- match_ids$match_id[n]
+  
+  msg <- get_result_msg(current_season, id)
+  bats <- get_best_batters(id, 3)
+  bowlers <- get_best_bowlers(id, 3)
+  
+  #pander::pandoc.p(msg)
+  pander::pandoc.p('')
+  pander::pandoc.list(list(msg, 
+                           list("Batting", bats$details),
+                           list("Bowling", bowlers$details)))
+  
+  #pander::pandoc.list(list("Bowling", bowlers), loose = TRUE)
+  #pander::pandoc.p('')
+  # Slide 2 - Votes
+   pander::pandoc.header(paste0("Match ", n, " - Votes"), level = 2)
+
+   votes_wk <- votes %>%
+     filter(game == n) %>%
+     rename(Votes = game_votes) %>%
+     filter(Votes > 0) %>%
+     arrange(Votes)
+
+   # a list, formatted as Markdown
+   # adding also empty lines, to be sure that this is valid Markdown
+   pander::pandoc.p('')
+   pander::pandoc.list(paste0(1:5, " votes - ", votes_wk$name))
+   pander::pandoc.p('')
+   
+   # Slide 3 - Leaderboard
+   pander::pandoc.header(paste0("Match ", n, " - Leaderboard"), level = 2)
+   
+   leader <- votes %>% 
+     filter(game <= n) %>%
+     group_by(name) %>% 
+     summarise(Votes = sum(game_votes)) %>%
+     filter(Votes > 0) %>%
+     arrange(desc(Votes)) %>%
+     slice_head(n = 13)
+   
+    pander::pandoc.p('')
+    pander::pandoc.table(leader)
+    pander::pandoc.p('')
+
+
+}
+```
+
+
+```{r, results='asis'}
+weeks <- max(votes$game)
+
+for (i in seq(weeks)) {
+   create_section(i)
+}
+```
+
