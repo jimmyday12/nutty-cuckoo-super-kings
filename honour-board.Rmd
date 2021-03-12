@@ -8,6 +8,7 @@ output: distill::distill_article
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(dplyr)
+library(tidyr)
 library(readr)
 library(purrr)
 library(stringr)
@@ -21,30 +22,37 @@ library(rmarkdown)
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 honour_roll <- read_csv(here::here("data", "honour-board.csv"))
-bowling <- read_csv(here::here("data", "bowling.csv"))
-batting <- read_csv(here::here("data", "batting.csv"))
+bowling <- read_csv(here::here("data", "bowling_combined.csv"))
+batting <- read_csv(here::here("data", "batting_combined.csv"))
 
 names(honour_roll) <- make.names(names(honour_roll))
 ```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
+seasons <- batting %>%
+  select(season_id, season) %>% 
+  distinct() %>%
+  drop_na()
+
 leading_runs <- batting %>% 
   filter(team == "The Nutty Cuckoo Super Kings") %>% 
-  group_by(season, season_id, Batsmen) %>% 
-  summarise(runs = sum(Runs)) %>%
+  group_by(season_id, Batsmen) %>% 
+  summarise(runs = sum(RunsScored)) %>%
   group_by(season_id) %>%
-  filter(runs == max(runs)) %>%
+  slice_max(runs, n = 1) %>%
   mutate(top_runscorer = paste0(Batsmen, " (", runs, ")")) %>%
-  select(season, season_id, top_runscorer)
+  select(season_id, top_runscorer) %>%
+  left_join(seasons, by = "season_id")
 
 leading_wickets <- bowling %>% 
   filter(team == "The Nutty Cuckoo Super Kings") %>% 
-  group_by(season, season_id, Bowlers) %>% 
-  summarise(wkts = sum(Wkts)) %>%
+  group_by(season_id, Bowlers) %>% 
+  summarise(wkts = sum(Wickets)) %>%
   group_by(season_id) %>%
-  filter(wkts == max(wkts)) %>%
+  slice_max(wkts, n = 1) %>%
   mutate(most_wickets = paste0(Bowlers, " (", wkts, ")")) %>%
-  select(season, season_id, most_wickets)
+  select(season_id, most_wickets) %>%
+  left_join(seasons, by = "season_id")
 
 
 ```
