@@ -156,6 +156,8 @@ if(!all(map_lgl(dat_detailed, is.null))) {
 
 # Combine Stats --------------------------------------------------------------
 # Combine Batting --------------------------------------------------------------
+batting <- read_csv(here::here("data", "batting.csv"), col_types = cols())
+batting_detailed <- read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
 batting_comb <- full_join(batting, batting_detailed, 
                           by = c("User.Id" = "Id", 
                                  "id" = "MatchId",

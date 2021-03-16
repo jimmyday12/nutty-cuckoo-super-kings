@@ -187,14 +187,7 @@ keeping_df <- keeping  %>%
 
 ```
 
-
-## Season Review
-## Team Results
-## Team Status
-## Notable Performances
-
 ## Season Stats
-## Batting
 
 
 ```{r}
@@ -245,9 +238,10 @@ get_best_batters <- function(match_id, n) {
     mutate(not_out = ifelse(is.na(not_out), "", not_out)) %>%
   mutate(details = paste0(FirstName, " ", 
                           LastName, " - ", 
-                          RunsScored, " (", 
-                          BallsFaced, ")", 
-                          not_out)) %>%
+                          RunsScored, not_out,
+                          " (", 
+                          BallsFaced, ")"
+                          )) %>%
     arrange(desc(RunsScored), BallsFaced) %>%
   slice_max(RunsScored, n = n, with_ties = FALSE) %>%
   select(details)
@@ -308,7 +302,7 @@ paste0(batting_first, " ", result, " ", bowling_first)
 
   
 ```
-)
+
 
 ## Vote Count
 
