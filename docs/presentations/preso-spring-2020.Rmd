@@ -1,11 +1,11 @@
 ---
-title: "NSCK - Summer 2021 Review"
+title: "NSCK - Spring/Summer 2020 Review"
 output: powerpoint_presentation
 
 ---
 
 ```{r setup, include=FALSE}
-current_season <- 114
+current_season <- 112
 
 knitr::opts_chunk$set(
 	echo = FALSE,
@@ -45,6 +45,20 @@ bowling_detailed <- read_csv(
   col_types = cols())
 
 votes <- read_csv(here::here("data", "votes-summer-2021.csv"))
+votes <- batting %>% 
+  select(date, season, season_id, id, home_team, away_team, team) %>% 
+  filter(team == "The Nutty Cuckoo Super Kings" & season_id == current_season) %>% 
+  distinct() %>%
+  rename(match_id = id) %>%
+  mutate(opponent = ifelse(home_team == "The Nutty Cuckoo Super Kings", away_team, home_team),
+         game = row_number(date),
+         name = "") %>%
+  select(game, match_id, date, opponent, name) %>%
+  arrange(game) %>%
+  uncount(5) %>%
+  group_by(game) %>%
+  mutate(game_votes = row_number(game))
+  
 ```
 
 
