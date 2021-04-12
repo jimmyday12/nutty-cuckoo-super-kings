@@ -23,28 +23,28 @@ MatchId,MatchName,LeagueName,SeasonName,StartDateTime,battingFirstName,battingFi
 268471,Round 1,JJ Holland Midweek,2019 Spring,2019-10-24T06:42:53Z,The Hunts,9013,The Michael Bevans,11117,194,3,20,0,197,3,18,1,1398,105
 268469,Round 1,JJ Holland Midweek,2019 Spring,2019-10-21T06:48:36Z,Batty Boys,5888,Workers Club Lions,16726,180,2,20,0,170,2,20,0,1398,105
 268470,Round 1,JJ Holland Midweek,2019 Spring,2019-10-21T06:33:37Z,Poms & Convicts,17119,The Nutty Cuckoo Super Kings,18132,169,4,20,0,173,2,15,4,1398,105
-281021,Grand Final,Inner West Midweek Summer ,2020 Spring,2020-03-19T06:19:02Z,The Hunts,9013,Major Paine,18659,182,6,20,0,156,7,20,0,1398,110
-281020,Semi Final 2 vs 3,Inner West Midweek Summer ,2020 Spring,2020-03-17T06:21:26Z,The Hunts,9013,Batty Boys,5888,169,8,19,4,104,8,18,3,1398,110
-281019,Semi Final 1 vs 4,Inner West Midweek Summer ,2020 Spring,2020-03-16T06:22:44Z,Major Paine,18659,Workers Club Lions,16726,217,1,20,0,153,8,18,0,1398,110
-277723,Round 9,Inner West Midweek Summer ,2020 Spring,2020-03-12T06:25:43Z,Workers Club Lions,16726,Batty Boys,5888,201,4,20,0,202,3,16,4,1398,110
-277724,Round 9,Inner West Midweek Summer ,2020 Spring,2020-03-12T06:26:24Z,The Michael Bevans,11117,The Hunts,9013,189,4,20,0,180,6,20,0,1398,110
-281503,Round,Inner West Midweek Summer ,2020 Spring,2020-03-10T06:18:58Z,Major Paine,18659,The Nutty Cuckoo Super Kings,18132,180,6,20,0,99,6,20,0,1398,110
-277720,Round 8,Inner West Midweek Summer ,2020 Spring,2020-03-03T06:43:40Z,Batty Boys,5888,The Hunts,9013,150,5,20,0,151,3,17,4,1398,110
-277717,Round 7,Inner West Midweek Summer ,2020 Spring,2020-02-27T06:39:17Z,Workers Club Lions,16726,The Michael Bevans,11117,92,8,14,4,93,4,13,4,1398,110
-277719,Round 7,Inner West Midweek Summer ,2020 Spring,2020-02-27T06:36:31Z,Batty Boys,5888,Major Paine,18659,190,3,20,0,169,4,20,0,1398,110
-277714,Round 6,Inner West Midweek Summer ,2020 Spring,2020-02-20T06:40:23Z,Major Paine,18659,The Michael Bevans,11117,132,4,20,0,126,7,20,0,1398,110
-277715,Round 6,Inner West Midweek Summer ,2020 Spring,2020-02-20T06:32:51Z,Batty Boys,5888,The Nutty Cuckoo Super Kings,18132,193,4,20,0,178,4,20,0,1398,110
-277699,Round 1,Inner West Midweek Summer ,2020 Spring,2020-02-17T06:37:15Z,The Nutty Cuckoo Super Kings,18132,Batty Boys,5888,106,2,20,0,110,4,13,4,1398,110
-277712,Round 5,Inner West Midweek Summer ,2020 Spring,2020-02-13T06:38:03Z,Batty Boys,5888,The Michael Bevans,11117,172,6,20,0,174,4,17,3,1398,110
-277713,Round 5,Inner West Midweek Summer ,2020 Spring,2020-02-11T06:31:17Z,Workers Club Lions,16726,The Nutty Cuckoo Super Kings,18132,201,4,20,0,138,3,20,0,1398,110
-277711,Round 5,Inner West Midweek Summer ,2020 Spring,2020-02-10T06:34:55Z,Major Paine,18659,The Hunts,9013,168,7,20,0,171,4,17,4,1398,110
-277709,Round 4,Inner West Midweek Summer ,2020 Spring,2020-02-06T06:30:05Z,Batty Boys,5888,Workers Club Lions,16726,116,8,17,2,119,2,14,2,1398,110
-277710,Round 4,Inner West Midweek Summer ,2020 Spring,2020-02-06T06:44:16Z,The Michael Bevans,11117,The Hunts,9013,162,3,20,0,163,3,15,3,1398,110
-277708,Round 4,Inner West Midweek Summer ,2020 Spring,2020-02-04T06:36:35Z,The Nutty Cuckoo Super Kings,18132,Major Paine,18659,158,3,20,0,151,5,20,0,1398,110
-277705,Round 3,Inner West Midweek Summer ,2020 Spring,2020-01-30T06:46:29Z,The Hunts,9013,Batty Boys,5888,194,2,20,0,182,4,20,0,1398,110
-277706,Round 3,Inner West Midweek Summer ,2020 Spring,2020-01-28T06:36:12Z,Workers Club Lions,16726,Major Paine,18659,145,5,20,0,129,6,20,0,1398,110
-277702,Round 2,Inner West Midweek Summer ,2020 Spring,2020-01-23T06:42:33Z,The Michael Bevans,11117,Workers Club Lions,16726,116,5,20,0,117,0,8,1,1398,110
-277703,Round 2,Inner West Midweek Summer ,2020 Spring,2020-01-21T06:41:18Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,115,7,20,0,121,4,13,1,1398,110
+281021,Grand Final,Inner West Midweek Summer,2020 Spring,2020-03-19T06:19:02Z,The Hunts,9013,Major Paine,18659,182,6,20,0,156,7,20,0,1398,110
+281020,Semi Final 2 vs 3,Inner West Midweek Summer,2020 Spring,2020-03-17T06:21:26Z,The Hunts,9013,Batty Boys,5888,169,8,19,4,104,8,18,3,1398,110
+281019,Semi Final 1 vs 4,Inner West Midweek Summer,2020 Spring,2020-03-16T06:22:44Z,Major Paine,18659,Workers Club Lions,16726,217,1,20,0,153,8,18,0,1398,110
+277723,Round 9,Inner West Midweek Summer,2020 Spring,2020-03-12T06:25:43Z,Workers Club Lions,16726,Batty Boys,5888,201,4,20,0,202,3,16,4,1398,110
+277724,Round 9,Inner West Midweek Summer,2020 Spring,2020-03-12T06:26:24Z,The Michael Bevans,11117,The Hunts,9013,189,4,20,0,180,6,20,0,1398,110
+281503,Round,Inner West Midweek Summer,2020 Spring,2020-03-10T06:18:58Z,Major Paine,18659,The Nutty Cuckoo Super Kings,18132,180,6,20,0,99,6,20,0,1398,110
+277720,Round 8,Inner West Midweek Summer,2020 Spring,2020-03-03T06:43:40Z,Batty Boys,5888,The Hunts,9013,150,5,20,0,151,3,17,4,1398,110
+277717,Round 7,Inner West Midweek Summer,2020 Spring,2020-02-27T06:39:17Z,Workers Club Lions,16726,The Michael Bevans,11117,92,8,14,4,93,4,13,4,1398,110
+277719,Round 7,Inner West Midweek Summer,2020 Spring,2020-02-27T06:36:31Z,Batty Boys,5888,Major Paine,18659,190,3,20,0,169,4,20,0,1398,110
+277714,Round 6,Inner West Midweek Summer,2020 Spring,2020-02-20T06:40:23Z,Major Paine,18659,The Michael Bevans,11117,132,4,20,0,126,7,20,0,1398,110
+277715,Round 6,Inner West Midweek Summer,2020 Spring,2020-02-20T06:32:51Z,Batty Boys,5888,The Nutty Cuckoo Super Kings,18132,193,4,20,0,178,4,20,0,1398,110
+277699,Round 1,Inner West Midweek Summer,2020 Spring,2020-02-17T06:37:15Z,The Nutty Cuckoo Super Kings,18132,Batty Boys,5888,106,2,20,0,110,4,13,4,1398,110
+277712,Round 5,Inner West Midweek Summer,2020 Spring,2020-02-13T06:38:03Z,Batty Boys,5888,The Michael Bevans,11117,172,6,20,0,174,4,17,3,1398,110
+277713,Round 5,Inner West Midweek Summer,2020 Spring,2020-02-11T06:31:17Z,Workers Club Lions,16726,The Nutty Cuckoo Super Kings,18132,201,4,20,0,138,3,20,0,1398,110
+277711,Round 5,Inner West Midweek Summer,2020 Spring,2020-02-10T06:34:55Z,Major Paine,18659,The Hunts,9013,168,7,20,0,171,4,17,4,1398,110
+277709,Round 4,Inner West Midweek Summer,2020 Spring,2020-02-06T06:30:05Z,Batty Boys,5888,Workers Club Lions,16726,116,8,17,2,119,2,14,2,1398,110
+277710,Round 4,Inner West Midweek Summer,2020 Spring,2020-02-06T06:44:16Z,The Michael Bevans,11117,The Hunts,9013,162,3,20,0,163,3,15,3,1398,110
+277708,Round 4,Inner West Midweek Summer,2020 Spring,2020-02-04T06:36:35Z,The Nutty Cuckoo Super Kings,18132,Major Paine,18659,158,3,20,0,151,5,20,0,1398,110
+277705,Round 3,Inner West Midweek Summer,2020 Spring,2020-01-30T06:46:29Z,The Hunts,9013,Batty Boys,5888,194,2,20,0,182,4,20,0,1398,110
+277706,Round 3,Inner West Midweek Summer,2020 Spring,2020-01-28T06:36:12Z,Workers Club Lions,16726,Major Paine,18659,145,5,20,0,129,6,20,0,1398,110
+277702,Round 2,Inner West Midweek Summer,2020 Spring,2020-01-23T06:42:33Z,The Michael Bevans,11117,Workers Club Lions,16726,116,5,20,0,117,0,8,1,1398,110
+277703,Round 2,Inner West Midweek Summer,2020 Spring,2020-01-21T06:41:18Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,115,7,20,0,121,4,13,1,1398,110
 277700,Round 1,Inner West Midweek,2020 Spring,2020-01-16T06:46:01Z,The Michael Bevans,11117,Poms & Convicts,17119,129,6,20,0,133,2,16,0,1398,110
 277701,Round 1,Inner West Midweek,2020 Spring,2020-01-16T06:38:32Z,The Hunts,9013,Workers Club Lions,16726,165,6,20,0,170,2,15,1,1398,110
 301479,3 vs 4 Epic Showdown,JJ Holland Midweek,2020,2020-12-17T06:37:22Z,The Nutty Cuckoo Super Kings,18132,Major Paine,18659,188,4,20,0,136,3,20,0,1398,112
@@ -79,9 +79,11 @@ MatchId,MatchName,LeagueName,SeasonName,StartDateTime,battingFirstName,battingFi
 305506,Round 3,JJ Holland Midweek,2021 Summer,2021-01-28T06:44:28Z,The Hunts,9013,Major Paine,18659,124,6,20,0,125,2,15,0,1398,114
 305338,Round 2,JJ Holland Midweek,2021 Summer,2021-01-21T06:39:31Z,Major Paine,18659,The Nutty Cuckoo Super Kings,18132,195,6,20,0,196,1,18,1,1398,114
 305339,Round 2,JJ Holland Midweek,2021 Summer,2021-01-21T06:34:29Z,Workers Club Lions,16726,The Hunts,9013,132,4,20,0,133,5,18,2,1398,114
-305336, Home Team :	  Please select a home team,JJ Holland Midweek,2021 Summer,2021-01-14T06:53:41Z,Workers Club Lions,16726,Major Paine,18659,117,8,18,4,120,2,14,0,1398,114
-305337, Home Team :	  Please select a home team,JJ Holland Midweek,2021 Summer,2021-01-14T06:36:51Z,The Hunts,9013,The Nutty Cuckoo Super Kings,18132,135,4,20,0,97,8,16,2,1398,114
-307423,,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-11T06:23:27Z,Workers Club Lions,16726,The Nutty Cuckoo Super Kings,18132,145,8,19,3,148,0,13,3,1398,114
+305336,Home Team :	  Please select a home team,JJ Holland Midweek,2021 Summer,2021-01-14T06:53:41Z,Workers Club Lions,16726,Major Paine,18659,117,8,18,4,120,2,14,0,1398,114
+305337,Home Team :	  Please select a home team,JJ Holland Midweek,2021 Summer,2021-01-14T06:36:51Z,The Hunts,9013,The Nutty Cuckoo Super Kings,18132,135,4,20,0,97,8,16,2,1398,114
+307423,NA,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-11T06:23:27Z,Workers Club Lions,16726,The Nutty Cuckoo Super Kings,18132,145,8,19,3,148,0,13,3,1398,114
 306944,GRAND FINAL,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-11T06:32:05Z,Prahraners,10480,St Peter's Cricket Club,18295,151,9,17,1,120,7,20,0,1398,114
-306943,,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-01T06:28:01Z,Prahraners,10480,Workers Club Lions,16726,218,4,20,0,135,7,20,0,1398,114
-306942,,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-01T06:35:54Z,St Peter's Cricket Club,18295,The Nutty Cuckoo Super Kings,18132,163,5,20,0,106,4,20,0,1398,114
+306943,NA,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-01T06:28:01Z,Prahraners,10480,Workers Club Lions,16726,218,4,20,0,135,7,20,0,1398,114
+306942,NA,JJ Holland / Ross Straw Midweek Minor Championship,2021 Summer,2021-03-01T06:35:54Z,St Peter's Cricket Club,18295,The Nutty Cuckoo Super Kings,18132,163,5,20,0,106,4,20,0,1398,114
+316022,Round 1,Newport Autumn Sundays,2021 Autumn,2021-04-11T02:00:02Z,The Nutty Cuckoo Super Kings,18132,V8s,20205,109,8,17,0,110,2,15,2,3476,117
+316021,Round 1,Newport Autumn Sundays,2021 Autumn,2021-04-10T23:46:33Z,Mustangs ,20237,Melbourne Dolphins,19542,184,3,20,0,76,8,12,4,3476,117
