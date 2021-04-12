@@ -62,7 +62,7 @@ leading_wickets <- bowling %>%
 df <- honour_roll %>%
   left_join(leading_runs, by = "season_id") %>%
   left_join(leading_wickets, by = c("season_id", "season")) %>%
-  select(season_id, Season.Number, season, Position, Golden.Furphy, Golden.Bunny, top_runscorer, most_wickets, everything())
+  select(season_id, league_id, Season.Number, season, Position, Golden.Furphy, Golden.Bunny, top_runscorer, most_wickets, everything())
 ```
 
 
@@ -86,15 +86,20 @@ reactable_function <- function(df, type = "batting"){
       headerClass = "box-score-header"),
       columns = list(      
         season_id = colDef(show = FALSE),
+        league_id = colDef(show = FALSE),
         Season.Number = colDef(name = "#", width = 30),
         season = colDef(
           name = "Season",
           defaultSortOrder = "asc",
           cell = function(value, index) {
             season_id <- df[index, "season_id"]
-            season_url <- sprintf(
-              "https://www.lastmanstands.com/leagues/standings/t20&leagueid=1398&seasonid=%s&divisionid=0", 
-              season_id)
+            league_id <- df[index, "league_id"]
+            season_url <- paste0(
+              "https://www.lastmanstands.com/leagues/standings/t20&leagueid=",
+              league_id,
+              "&seasonid=",
+              season_id,
+              "&divisionid=0")
             tags$a(href = season_url, target = "_blank", value)
           }
         ),
