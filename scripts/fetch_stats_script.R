@@ -76,7 +76,8 @@ bowling <- bowling %>%
 
 # Fix missed home run
 batting <- batting %>%
-  mutate(Runs = ifelse(Batsmen == "Jimmy Day" & id == 316028, 68, Runs))
+  mutate(Runs = ifelse(Batsmen == "Jimmy Day" & id == 316028, 68, Runs)) %>%
+  mutate(`6s` = ifelse(Batsmen == "Jimmy Day" & id == 316028, 2, `6s`))
 
 readr::write_csv(batting, here::here("data", "batting.csv"))
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
@@ -174,6 +175,10 @@ if(!all(map_lgl(dat_detailed, is.null))) {
                LastName == "James" &
                Team == "The Nutty Cuckoo Super Kings"))
   
+  batting_detailed <- batting_detailed %>%
+    mutate(RunsScored = ifelse(FirstName == "Jimmy" & MatchId == 316028, 68, RunsScored)) %>%
+    mutate(Sixes = ifelse(FirstName == "Jimmy" & MatchId == 316028, 2, Sixes))
+  
   readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
   readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
   readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
@@ -235,7 +240,7 @@ write_csv(batting_comb, here::here("data", "batting_combined.csv"))
 bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
 bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
-bowling <- bowling %>% select(-Maidens)
+bowling <- bowling %>% select(-contains("Maidens"))
 
 bowling_comb <- full_join(bowling, bowling_detailed, 
                           by = c("User.Id" = "Id", 
