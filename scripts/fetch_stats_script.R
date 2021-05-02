@@ -22,6 +22,9 @@ league_ids <- c(1398, 1398, 1398, 1398, 3072, 3476)
 batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols())
 
+
+
+
 existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
 
 # Add random matches
@@ -61,6 +64,19 @@ bowling <- bind_rows(bowling, bowling_all)
 # Save Data
 batting$league_id[batting$league_id == 3072] <- 1398
 bowling$league_id[bowling$league_id == 3072] <- 1398
+
+# Remove Roger the baby
+batting <- batting %>%
+  filter(!(Batsmen == "Roger James" & 
+                      team == "The Nutty Cuckoo Super Kings"))
+
+bowling <- bowling %>%
+  filter(!(Bowlers == "Roger James" & 
+                      team == "The Nutty Cuckoo Super Kings"))
+
+# Fix missed home run
+batting <- batting %>%
+  mutate(Runs = ifelse(Batsmen == "Jimmy Day" & id == 316028, 68, Runs))
 
 readr::write_csv(batting, here::here("data", "batting.csv"))
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
@@ -145,6 +161,18 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   keeping_detailed$league_id[keeping_detailed$league_id == 3072] <- 1398
   fielding_detailed$league_id[fielding_detailed$league_id == 3072] <- 1398
   match_details$league_id[match_details$league_id == 3072] <- 1398
+  
+  
+  # Remove Roger the baby
+  batting_detailed <- batting_detailed %>%
+    filter(!(FirstName == "Roger" & 
+               LastName == "James" &
+               Team == "The Nutty Cuckoo Super Kings"))
+  
+  bowling_detailed <- bowling_detailed %>%
+    filter(!(FirstName == "Roger" & 
+               LastName == "James" &
+               Team == "The Nutty Cuckoo Super Kings"))
   
   readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
   readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
