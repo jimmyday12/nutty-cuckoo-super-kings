@@ -1,0 +1,11 @@
+game,match_id,date,opponent,name,total_votes,votes_1,votes_2,votes_3,rank,game_votes,cumulative
+1, 316022,2020-04-11,V8s ,Peely,26,0,4,6,1,5,5
+1, 316022,2020-04-11,V8s ,Jimmy,15,0,3,3,2,4,4
+1, 316022,2020-04-11,V8s ,NA,8,8,0,0,3,3,3
+1, 316022,2020-04-11,V8s ,Pat,7,0,2,1,4,2,2
+1, 316022,2020-04-11,V8s ,Hemu,4,2,1,0,5,1,1
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Ronnie,10,1,0,3,1,5,5
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Hemu,6,1,1,1,2,4,5
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Peely,4,0,2,0,3,3,8
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Dale,3,1,1,0,4,2,2
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Rohan,1,1,0,0,5,1,1
