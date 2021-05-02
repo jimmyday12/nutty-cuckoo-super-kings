@@ -1,21 +1,3 @@
----
-title: "Current Season"
-description: |
-  Stats from our current Season
-author:
-  - name: James Day
-date: "`r Sys.Date()`"
-output: distill::distill_article
----
-
-```{r setup, include=FALSE}
-current_season <- 117
-
-knitr::opts_chunk$set(
-	echo = FALSE,
-	message = FALSE,
-	warning = FALSE
-)
 library(dplyr)
 library(readr)
 library(purrr)
@@ -25,22 +7,31 @@ library(reactable)
 library(htmltools)
 library(knitr)
 library(rmarkdown)
-source(here::here("scripts", "reactable_function.R"))
+library(tidyverse)
+library(googlesheets4)
+library(lubridate)
 
-```
+# Summer 2021
+current_season <- 114
 
-```{r load data, include=FALSE, echo = FALSE}
+match_details <- read_csv(here::here("data", "match_details.csv"))
 fielding <- read_csv(here::here("data", "fielding_detailed.csv"))
 keeping <- read_csv(here::here("data", "keeping_detailed.csv"))
-batting_detailed <- readr::read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
-batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
-bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
-bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
-```
-Stats for `r first(bowling$league[bowling$season_id == current_season])` - `r first(bowling$season[bowling$season_id == current_season])`. Last updated `r Sys.Date()`.
+batting_detailed <- readr::read_csv(
+  here::here("data", "batting_detailed.csv"), col_types = cols())
 
-```{r batting, layout="l-body-outset"}
+batting <- readr::read_csv(
+  here::here("data", "batting.csv"), 
+  col_types = cols())
+
+bowling <- read_csv(
+  here::here("data", "bowling.csv"), 
+  col_types = cols())
+
+bowling_detailed <- read_csv(
+  here::here("data", "bowling_detailed.csv"), 
+  col_types = cols())
 
 batting_comb <- full_join(batting, batting_detailed, 
                           by = c("User.Id" = "Id", 
@@ -49,9 +40,11 @@ batting_comb <- full_join(batting, batting_detailed,
                                  "league_id" = "league_id",
                                  "team" = "Team"))
 
-batting_df <- batting_comb %>%
+batting_comb <- batting_comb %>%
   filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season)
+
+batting_df <- batting_comb %>%
   mutate(Batsmen = ifelse(is.na(Batsmen),
                           paste0(FirstName, " ", LastName), Batsmen),
          runs_made = ifelse(is.na(Runs), RunsScored, Runs),
@@ -61,7 +54,7 @@ batting_df <- batting_comb %>%
   mutate(`50s` = ifelse(runs_made >= 50, 1, 0),
          `30s` = ifelse(runs_made >= 30 & Runs < 50, 1, 0),
          ducks = ifelse(runs_made == 0 & Dismissal != "Not Out", 1, 0),
-         ) %>%
+  ) %>%
   group_by(team, User.Id, Batsmen) %>%
   summarise(Inns = n(),
             NO = sum(Dismissal == "Not Out", na.rm = TRUE),
@@ -86,11 +79,10 @@ batting_df <- batting_comb %>%
 
 batting_df[batting_df == "Inf" ] <- NA
 
-```
+# Bowling combined
+bowling <- bowling %>% 
+  select(-Maidens) 
 
-
-```{r bowling, layout="l-body-outset"}
-bowling <- bowling %>% select(-contains("Maidens"))
 
 bowling_comb <- full_join(bowling, bowling_detailed, 
                           by = c("User.Id" = "Id", 
@@ -98,14 +90,15 @@ bowling_comb <- full_join(bowling, bowling_detailed,
                                  "season_id" = "season_id",
                                  "league_id" = "league_id",
                                  "team" = "Team"))
+bowling_comb <- bowling_comb %>%
+  filter(team == "The Nutty Cuckoo Super Kings") %>%
+  filter(season_id == current_season)
 
 bowling_df <- bowling_comb %>%
-  filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
   mutate(Bowlers = ifelse(is.na(Bowlers), paste0(FirstName, " ", LastName), Bowlers),
-        Overs = ifelse(is.na(Overs), Over, Overs),
-        Runs = ifelse(is.na(Runs), RunsConceded, Runs),
-        Wkts = ifelse(is.na(Wkts), Wickets, Wkts)) %>%
+         Overs = ifelse(is.na(Overs), Over, Overs),
+         Runs = ifelse(is.na(Runs), RunsConceded, Runs),
+         Wkts = ifelse(is.na(Wkts), Wickets, Wkts)) %>%
   mutate(`3s` = ifelse(Wkts >= 3, 1, 0),
          `5s` = ifelse(Wkts >= 5 , 1, 0)) %>%
   group_by(team, User.Id, Bowlers) %>%
@@ -130,8 +123,6 @@ bowling_df <- bowling_comb %>%
   select(-team)
 
 best_bowling <- bowling %>% 
-  filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
   rename(Name = Bowlers) %>%
   group_by(Name) %>% 
   filter(Wkts == max(Wkts)) %>% 
@@ -144,12 +135,12 @@ bowling_df <- bowling_df %>%
   left_join(best_bowling, by = "Name")
 bowling_df[bowling_df == "Inf" ] <- NA
 
-```
 
-```{r}
-fielding_df <- fielding  %>%
+fielding <- fielding %>%
   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season)
+
+fielding_df <- fielding  %>%
   mutate(Name = paste0(FirstName, " ", LastName)) %>%
   rename(User.Id = Id) %>%
   group_by(User.Id, Name) %>%
@@ -157,12 +148,12 @@ fielding_df <- fielding  %>%
             RunOuts = sum(RunOuts)) %>%
   arrange(desc(Catches))
 
-```
 
-```{r}
-keeping_df <- keeping  %>%
+keeping <- keeping %>%
   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season)
+
+keeping_df <- keeping  %>%
   mutate(Name = paste0(FirstName, " ", LastName)) %>%
   rename(User.Id = Id) %>%
   group_by(User.Id, Name) %>%
@@ -171,127 +162,49 @@ keeping_df <- keeping  %>%
             Byes = sum(Byes),
             Dismissals = Catches + Stumpings)
 
-```
+## Season Stats ---------------------------------------------------------------
+batting_df %>%
+  select(Name, Inns, Runs, HS, Avg, SR) %>%
+  write_csv(here::here("presentations", "summer-2021", "batting-stats-summer-2021.csv"))
 
+bowling_df %>%
+  select(Name, Overs, Runs, Wkts, Econ, Avg, SR) %>%
+  write_csv(here::here("presentations", "summer-2021", "bowling-stats-summer-2021.csv"))
 
+fielding_df %>% 
+  left_join(keeping_df, by = c("User.Id", "Name")) %>%
+  ungroup() %>%
+  tidyr::replace_na(list(Catches.y = 0)) %>%
+  mutate(Catches = Catches.x - Catches.y) %>%
+  select(Name, Catches, RunOuts) %>%
+  arrange(desc(Catches)) %>%
+  write_csv(here::here("presentations", "summer-2021", "fielding-stats-summer-2021.csv"))
 
+keeping_df %>%
+  ungroup() %>%
+  select(Name, Catches, Stumpings, Byes) %>%
+  write_csv(here::here("presentations", "summer-2021", "keeping-stats-summer-2021.csv"))
 
-```{r, layout="l-body-outset"}
+## Match Details
+ncsk <- "The Nutty Cuckoo Super Kings"
+match_details %>%
+  filter(season_id == current_season) %>%
+  filter(battingFirstName == ncsk | bowlingFirstName == ncsk) %>%
+  mutate(RunsScored = ifelse(battingFirstName == ncsk, battingFirstScoreRuns, bowlingFirstScoreRuns),
+         WicketsLost = ifelse(battingFirstName == ncsk, battingFirstScoreWickets,  bowlingFirstScoreWickets),
+         OversFaced = ifelse(battingFirstName == ncsk,
+                             paste0(battingFirstScoreOvers, ".", battingFirstScoreBalls),
+                             paste0(bowlingFirstScoreOvers, ".", bowlingFirstScoreBalls))) %>%
+  mutate(RunsConceded = ifelse(bowlingFirstName == ncsk, battingFirstScoreRuns, bowlingFirstScoreRuns),
+         WicketsTaken = ifelse(bowlingFirstName == ncsk, battingFirstScoreWickets,  bowlingFirstScoreWickets),
+         OversBowled = ifelse(bowlingFirstName == ncsk,
+                             paste0(battingFirstScoreOvers, ".", battingFirstScoreBalls),
+                             paste0(bowlingFirstScoreOvers, ".", bowlingFirstScoreBalls))) %>%
+  mutate(Oppo = ifelse(battingFirstName == ncsk, bowlingFirstName, battingFirstName)) %>%
+  select(MatchId, SeasonName, StartDateTime, Oppo, 
+         OversFaced, WicketsLost, RunsScored,
+         OversBowled, WicketsTaken, RunsConceded
+         ) %>%
+  arrange(StartDateTime) %>%
+  write_csv(here::here("presentations", "summer-2021", "summary-stats-summer-2021.csv"))
 
-
-div(class = "box-score",
-  div(class = "box-score-title", "Batting"),
-  reactable_function(batting_df, "batting"),
-  div(class = "box-score-title", "Bowling"),
-  reactable_function(bowling_df, "bowling"),
-  div(class = "box-score-title", "Fielding"),
-  reactable_function(fielding_df, "fielding"),
-  div(class = "box-score-title", "Keeping"),
-  reactable_function(keeping_df, "keeping"),
-)
-
-```
-
-
-
-
-```{r ref.label="box_score", eval=FALSE}
-```
-
-```{r}
-tags$link(href = "https://fonts.googleapis.com/css?family=Roboto:400,500&display=fallback", rel = "stylesheet")
-```
-
-```{css}
-.box-score {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-}
-.box-score a:hover {
-  text-decoration: none;
-}
-.header {
-  text-align: center;
-  font-size: 20px;
-}
-.game-date {
-  font-size: 16px;
-}
-.line-score {
-  margin-top: 24px;
-  text-align: center;
-}
-.line-score-tbl {
-  margin: 0 auto;
-  max-width: 500px;
-  font-size: 15px;
-}
-.line-score-header {
-  font-size: 13px;
-  font-weight: 400;
-}
-.line-score-final {
-  font-weight: 500;
-}
-.team-name {
-  font-weight: 500;
-}
-.team-record {
-  margin-left: 6px;
-  color: hsl(0, 0%, 45%);
-  font-size: 12px;
-}
-.box-score-title {
-  margin-top: 24px;
-  padding: 8px;
-  background-color: hsl(205, 100%, 36%);
-  color: hsl(0, 0%, 98%);
-  font-size: 15px;
-  font-weight: 400;
-}
-.box-score-tbl {
-  font-size: 12px;
-  letter-spacing: 0.2px;
-}
-.box-score-header {
-  padding: 8px !important;
-  border-bottom-width: 1px;
-  background-color: hsl(205, 93%, 16%);
-  color: hsl(0, 0%, 98%);
-  font-weight: 400;
-  font-size: 11px;
-  text-transform: uppercase;
-  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.box-score-header:hover,
-.box-score-header[aria-sort="ascending"],
-.box-score-header[aria-sort="descending"] {
-  background-color: hsl(205, 100%, 36%);
-}
-.box-score-header[aria-sort="ascending"] {
-  box-shadow: inset 0 10px 0 -6px #efaa10 !important;
-}
-.box-score-header[aria-sort="descending"] {
-  box-shadow: inset 0 -10px 0 -6px #efaa10 !important;
-}
-.sorted {
-  background-color: hsla(0, 0%, 60%, 0.1);
-}
-.box-score-total {
-  font-size: 13px;
-  font-weight: 500;
-}
-```
-
-```{css echo=FALSE}
-/* rmarkdown html documents */
-.main-container {
-  max-width: 1024px !important;
-}
-h1.title {
-  display: none;
-}
-/* pkgdown articles */
-.contents {
-  width: inherit;
-}
-```
