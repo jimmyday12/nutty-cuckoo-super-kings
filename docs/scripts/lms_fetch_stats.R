@@ -85,7 +85,7 @@ fetch_match_details <- function(id) {
        away_team = dat$TeamFixtures$Team.Name[!dat$TeamFixtures$HomeTeam],
        home_score = dat$TeamFixtures$Score[dat$TeamFixtures$HomeTeam],
        away_score = dat$TeamFixtures$Score[!dat$TeamFixtures$HomeTeam],
-       umpire = paste(dat$Umpires$FirstName, dat$Umpires$LastName)
+       umpire = paste(dat$Umpires$FirstName, dat$Umpires$LastName, "")
        )
 }
 
