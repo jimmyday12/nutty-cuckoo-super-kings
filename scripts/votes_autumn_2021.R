@@ -11,7 +11,7 @@ google_app <-
 
 google_key <- "AIzaSyDID85vsf3YYV3q0ps9HSi5lOf2nhzR5X4"
 
-#ooglesheets4::gs4_auth()
+#googlesheets4::gs4_auth()
 
 googlesheets4::gs4_auth_configure(app = google_app, api_key = google_key)
 
