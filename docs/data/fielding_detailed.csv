@@ -471,20 +471,33 @@ Id,FirstName,LastName,Catches,RunOuts,DoublePlay,Played,EmailAddressConfirmed,Te
 45694,Roger,James,1,0,0,0,NA,Melbourne Dolphins,316055,Round 7,Newport Autumn Sundays,2021 Autumn,2021-06-26T23:38:03Z,The Nutty Cuckoo Super Kings,18132,Melbourne Dolphins,19542,174,2,20,0,177,6,19,3,3476,117
 266211,Krish,Dantuluri,1,0,0,0,NA,Melbourne Dolphins,316055,Round 7,Newport Autumn Sundays,2021 Autumn,2021-06-26T23:38:03Z,The Nutty Cuckoo Super Kings,18132,Melbourne Dolphins,19542,174,2,20,0,177,6,19,3,3476,117
 125735,Jimmy,Day,1,0,0,0,NA,The Nutty Cuckoo Super Kings,316055,Round 7,Newport Autumn Sundays,2021 Autumn,2021-06-26T23:38:03Z,The Nutty Cuckoo Super Kings,18132,Melbourne Dolphins,19542,174,2,20,0,177,6,19,3,3476,117
-275529,Ishtiaq Ahmed,Syed,1,0,0,0,NA,Mustangs ,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs ,20237,172,5,20,0,135,8,17,3,3476,117
-270708,Mohammed Taqee,Uddin,1,0,0,0,NA,Mustangs ,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs ,20237,172,5,20,0,135,8,17,3,3476,117
-125735,Jimmy,Day,0,1,0,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs ,20237,172,5,20,0,135,8,17,3,3476,117
-84884,Ronald ,Victor ,1,0,0,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs ,20237,172,5,20,0,135,8,17,3,3476,117
-77580,Hemu,Bhardwaj,0,0,1,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs ,20237,172,5,20,0,135,8,17,3,3476,117
+275529,Ishtiaq Ahmed,Syed,1,0,0,0,NA,Mustangs,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs,20237,172,5,20,0,135,8,17,3,3476,117
+270708,Mohammed Taqee,Uddin,1,0,0,0,NA,Mustangs,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs,20237,172,5,20,0,135,8,17,3,3476,117
+125735,Jimmy,Day,0,1,0,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs,20237,172,5,20,0,135,8,17,3,3476,117
+84884,Ronald,Victor,1,0,0,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs,20237,172,5,20,0,135,8,17,3,3476,117
+77580,Hemu,Bhardwaj,0,0,1,0,NA,The Nutty Cuckoo Super Kings,316046,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T04:12:22Z,The Nutty Cuckoo Super Kings,18132,Mustangs,20237,172,5,20,0,135,8,17,3,3476,117
 261215,Korey,Flavel-Wood,1,0,0,0,NA,Melbourne Dolphins,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
-146139,Parth ,Makwana,2,0,1,0,NA,Melbourne Dolphins,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
+146139,Parth,Makwana,2,0,1,0,NA,Melbourne Dolphins,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
 247544,Nishane,Karunaratne,1,0,0,0,NA,Newport Nellies,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
 253509,Hernie,Isorena,1,0,0,0,NA,Newport Nellies,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
 266211,Krish,Dantuluri,0,1,0,0,NA,Melbourne Dolphins,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
-261673,Reza,Mohammed ,1,0,0,0,NA,Newport Nellies,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
+261673,Reza,Mohammed,1,0,0,0,NA,Newport Nellies,316044,Round 9,Newport Autumn Sundays,2021 Autumn,2021-07-04T01:56:00Z,Newport Nellies,20301,Melbourne Dolphins,19542,163,5,20,0,166,6,19,0,3476,117
 225828,Pratik,Thakkar,1,0,0,0,NA,FUCCC Blue,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
 101886,Vamshi,Madisetty,1,0,0,0,NA,FUCCC Blue,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
 270713,Vu,Bui,0,1,0,0,NA,V8s,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
-271516,Shashi,Vijaya ,1,0,0,0,NA,FUCCC Blue,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
+271516,Shashi,Vijaya,1,0,0,0,NA,FUCCC Blue,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
 270684,Brenton,Fletcher,1,0,0,0,NA,V8s,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
 271184,Ben,Risk,0,0,1,0,NA,V8s,316032,Round 4,Newport Autumn Sundays,2021 Autumn,2021-07-03T23:35:40Z,V8s,20205,FUCCC Blue,20239,182,3,20,0,125,8,19,1,3476,117
+270713,Vu,Bui,1,0,1,0,NA,V8s,316043,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T04:10:58Z,Mustangs ,20237,V8s,20205,158,4,20,0,159,1,19,1,3476,117
+270184,Davide,Ricci,1,0,0,0,NA,V8s,316043,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T04:10:58Z,Mustangs ,20237,V8s,20205,158,4,20,0,159,1,19,1,3476,117
+270907,Vraj,Shah,1,0,0,0,NA,FUCCC Blue,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+263897,Aiman,Toufiq,1,1,0,0,NA,Melbourne Dolphins,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+271621,Shubh,Mistri,1,0,0,0,NA,FUCCC Blue,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+266211,Krish,Dantuluri,1,0,0,0,NA,Melbourne Dolphins,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+271851,nisarg,patel,1,0,0,0,NA,FUCCC Blue,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+101886,Vamshi,Madisetty,0,1,1,0,NA,FUCCC Blue,316042,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-11T01:58:33Z,Melbourne Dolphins,19542,FUCCC Blue,20239,187,6,20,0,139,5,20,0,3476,117
+125735,Jimmy,Day,1,0,0,0,NA,The Nutty Cuckoo Super Kings,316041,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-10T23:34:23Z,Newport Nellies,20301,The Nutty Cuckoo Super Kings,18132,175,7,18,3,153,7,20,0,3476,117
+260758,Alladi,Ruthvik,1,1,0,0,NA,Newport Nellies,316041,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-10T23:34:23Z,Newport Nellies,20301,The Nutty Cuckoo Super Kings,18132,175,7,18,3,153,7,20,0,3476,117
+84884,Ronald ,Victor ,2,0,0,0,NA,The Nutty Cuckoo Super Kings,316041,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-10T23:34:23Z,Newport Nellies,20301,The Nutty Cuckoo Super Kings,18132,175,7,18,3,153,7,20,0,3476,117
+253509,Hernie,Isorena,1,1,0,0,NA,Newport Nellies,316041,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-10T23:34:23Z,Newport Nellies,20301,The Nutty Cuckoo Super Kings,18132,175,7,18,3,153,7,20,0,3476,117
+242570,Ben,Cull,1,0,0,0,NA,The Nutty Cuckoo Super Kings,316041,Round 8,Newport Autumn Sundays,2021 Autumn,2021-07-10T23:34:23Z,Newport Nellies,20301,The Nutty Cuckoo Super Kings,18132,175,7,18,3,153,7,20,0,3476,117
