@@ -39,20 +39,43 @@ fetch_innings_data <- function(id, innings) {
     mutate(id = as.character(id),
            innings = innings)
   
+  # extract_outs <- function(x, remove = TRUE){
+  #   dismissals <- c("Caught", "Stumped", "Bowled", "Not Out", "LBW",
+  #                   "Run Out")
+  #   ind <- map(x, str_detect, dismissals)
+  #   
+  #   if(remove) {
+  #     map2_chr(x, ind, ~str_remove(.x, dismissals[.y]))
+  #   } else {
+  #     map_chr(ind, ~dismissals[.x])
+  #   }
+  # }
+  
   extract_outs <- function(x, remove = TRUE){
     dismissals <- c("Caught", "Stumped", "Bowled", "Not Out", "LBW",
                     "Run Out")
-    ind <- map(x, str_detect, dismissals)
+    ind <- str_detect(x, dismissals)
+    ind_any_true <- any(ind)
+    
+    if (!ind_any_true) {
+      if(remove) {
+        return(x)
+        } else {
+          return("")
+        }
+    }
+    
     if(remove) {
-      map2_chr(x, ind, ~str_remove(.x, dismissals[.y]))
+      str_remove(x, dismissals[ind])
     } else {
-      map_chr(ind, ~dismissals[.x])
+      dismissals[ind]
     }
   }
   
   batting <- batting %>%
     filter(!str_detect(Batsmen, "Extras"),
            !str_detect(Batsmen, "Did Not Bat")) %>%
+    rowwise() %>%
     mutate(Dismissal = extract_outs(Batsmen, FALSE),
            Batsmen = extract_outs(Batsmen))
   
@@ -109,7 +132,7 @@ fetch_players <- function(id) {
 
 
 fetch_match_results <- function(id){
-  print(id)
+  print(paste0("match ID: ", id))
   match_details <- fetch_match_details(id)
   innings_1 <- fetch_innings_data(id, 1)
   innings_2 <- fetch_innings_data(id, 2)

@@ -1,46 +1,55 @@
-game,match_id,date,opponent,name,total_votes,votes_3,votes_1,votes_2,rank,game_votes,cumulative
-1, 316022,2020-04-11,V8s ,Fuckhead,24,8,0,0,1,5,5
-1, 316022,2020-04-11,V8s ,Peely,18,2,4,4,2,4,4
-1, 316022,2020-04-11,V8s ,Jimmy,11,0,1,5,3,3,3
-1, 316022,2020-04-11,V8s ,Pat,4,0,2,1,4,2,2
-1, 316022,2020-04-11,V8s ,Hemu,3,0,3,0,5,1,1
-2, 316026 ,2020-04-18,Melbourne Dolphins ,Ronnie,12,3,1,1,1,5,5
-2, 316026 ,2020-04-18,Melbourne Dolphins ,Peely,11,2,1,2,2,4,8
-2, 316026 ,2020-04-18,Melbourne Dolphins ,Hemu,10,1,1,3,3,3,4
+game,match_id,date,opponent,name,total_votes,votes_1,votes_2,votes_3,rank,game_votes,cumulative
+1, 316022,2020-04-11,V8s ,Peely,26,0,4,6,1,5,5
+1, 316022,2020-04-11,V8s ,Jimmy,19,4,3,3,2,4,4
+1, 316022,2020-04-11,V8s ,Pat,11,4,2,1,3,3,3
+1, 316022,2020-04-11,V8s ,Hemu,4,2,1,0,4,2,2
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Ronnie,12,1,1,3,1,5,5
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Peely,11,1,2,2,2,4,9
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Hemu,10,1,3,1,3,3,5
 2, 316026 ,2020-04-18,Melbourne Dolphins ,Dale,6,1,1,1,4,2,2
-2, 316026 ,2020-04-18,Melbourne Dolphins ,Jimmy,2,0,2,0,5,1,4
-2, 316026 ,2020-04-18,Melbourne Dolphins ,Rohan,1,0,1,0,6,0,0
-3, 316028,2020-05-03,Newport Nellies ,Jimmy,14,3,1,2,1,5,9
-3, 316028,2020-05-03,Newport Nellies ,Ronnie,13,3,0,2,2,4,9
-3, 316028,2020-05-03,Newport Nellies ,Hemu,6,1,1,1,3,3,7
-3, 316028,2020-05-03,Newport Nellies ,Ben,4,0,0,2,4,2,2
-3, 316028,2020-05-03,Newport Nellies ,Dev,2,0,2,0,5,1,1
-3, 316028,2020-05-03,Newport Nellies ,Morgs,2,0,2,0,6,0,0
-3, 316028,2020-05-03,Newport Nellies ,Rohan,1,0,1,0,7,0,0
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Jimmy,2,2,0,0,5,1,5
+2, 316026 ,2020-04-18,Melbourne Dolphins ,Rohan,1,1,0,0,6,0,0
+3, 316028,2020-05-02,Newport Nellies ,Jimmy,14,1,2,3,1,5,10
+3, 316028,2020-05-02,Newport Nellies ,Ronnie,13,0,2,3,2,4,9
+3, 316028,2020-05-02,Newport Nellies ,Hemu,6,1,1,1,3,3,8
+3, 316028,2020-05-02,Newport Nellies ,Ben,4,0,2,0,4,2,2
+3, 316028,2020-05-02,Newport Nellies ,Dev,2,2,0,0,5,1,1
+3, 316028,2020-05-02,Newport Nellies ,Morgs,2,2,0,0,6,0,0
+3, 316028,2020-05-02,Newport Nellies ,Rohan,1,1,0,0,7,0,0
 4, 316030,2020-05-09,Mustangs ,Ben,6,1,1,1,1,5,7
-4, 316030,2020-05-09,Mustangs ,Ronnie,5,1,0,1,2,4,13
-4, 316030,2020-05-09,Mustangs ,Hemu,4,0,2,1,3,3,10
-4, 316030,2020-05-09,Mustangs ,Dev,3,1,0,0,4,2,3
-5, 316033,2020-05-16,FUCCC Blue ,Peely,25,5,0,5,1,5,13
-5, 316033,2020-05-16,FUCCC Blue ,Jimmy,19,5,0,2,2,4,13
-5, 316033,2020-05-16,FUCCC Blue ,Hemu,6,0,2,2,3,3,13
-5, 316033,2020-05-16,FUCCC Blue ,Ronnie,6,0,6,0,4,2,15
-5, 316033,2020-05-16,FUCCC Blue ,Ben,2,0,0,1,5,1,8
-5, 316033,2020-05-16,FUCCC Blue ,Morgs,2,0,2,0,6,0,0
-6, 316049,2020-06-20,FUCCC Blue ,Hemu,24,8,0,0,1,5,18
-6, 316049,2020-06-20,FUCCC Blue ,Peely,17,0,1,8,2,4,17
-6, 316049,2020-06-20,FUCCC Blue ,Jimmy,9,2,1,1,3,3,16
-6, 316049,2020-06-20,FUCCC Blue ,Pat,7,0,5,1,4,2,4
-6, 316049,2020-06-20,FUCCC Blue ,Russel,2,0,2,0,5,1,1
-6, 316049,2020-06-20,FUCCC Blue ,Ben,1,0,1,0,6,0,8
-7, 316055,2020-06-27,Melbourne Dolphins ,Ben,14,4,0,1,1,5,13
-7, 316055,2020-06-27,Melbourne Dolphins ,Ronnie,7,1,2,1,2,4,19
-7, 316055,2020-06-27,Melbourne Dolphins ,Hemu,7,0,1,3,3,3,21
-7, 316055,2020-06-27,Melbourne Dolphins ,Russel,2,0,2,0,4,2,3
-8, 316046,2020-07-04,Mustangs ,Jimmy,22,4,0,5,1,5,21
-8, 316046,2020-07-04,Mustangs ,Ben,16,3,1,3,2,4,17
-8, 316046,2020-07-04,Mustangs ,Anas,13,3,4,0,3,3,3
-8, 316046,2020-07-04,Mustangs ,Morgs,5,0,1,2,4,2,2
-8, 316046,2020-07-04,Mustangs ,Pat,2,0,2,0,5,1,5
-8, 316046,2020-07-04,Mustangs ,Hemu,1,0,1,0,6,0,21
-8, 316046,2020-07-04,Mustangs ,Ronnie,1,0,1,0,7,0,19
+4, 316030,2020-05-09,Mustangs ,Ronnie,5,0,1,1,2,4,13
+4, 316030,2020-05-09,Mustangs ,Hemu,4,2,1,0,3,3,11
+4, 316030,2020-05-09,Mustangs ,Dev,3,0,0,1,4,2,3
+5, 316033,2020-05-16,FUCCC Blue ,Peely,25,0,5,5,1,5,14
+5, 316033,2020-05-16,FUCCC Blue ,Jimmy,19,0,2,5,2,4,14
+5, 316033,2020-05-16,FUCCC Blue ,Hemu,6,2,2,0,3,3,14
+5, 316033,2020-05-16,FUCCC Blue ,Ronnie,6,6,0,0,4,2,15
+5, 316033,2020-05-16,FUCCC Blue ,Ben,2,0,1,0,5,1,8
+5, 316033,2020-05-16,FUCCC Blue ,Morgs,2,2,0,0,6,0,0
+6, 316036,2020-05-23,V8s ,Morgs,8,1,2,1,1,5,5
+6, 316036,2020-05-23,V8s ,Peely,7,1,0,2,2,4,18
+6, 316036,2020-05-23,V8s ,Dev,5,2,0,1,3,3,6
+6, 316036,2020-05-23,V8s ,Ronnie,4,0,2,0,4,2,17
+7, 316049,2020-06-20,FUCCC Blue ,Hemu,24,0,0,8,1,5,19
+7, 316049,2020-06-20,FUCCC Blue ,Peely,17,1,8,0,2,4,22
+7, 316049,2020-06-20,FUCCC Blue ,Jimmy,9,1,1,2,3,3,17
+7, 316049,2020-06-20,FUCCC Blue ,Pat,7,5,1,0,4,2,5
+7, 316049,2020-06-20,FUCCC Blue ,Russel,2,2,0,0,5,1,1
+7, 316049,2020-06-20,FUCCC Blue ,Ben,1,1,0,0,6,0,8
+8, 316055,2020-06-27,Melbourne Dolphins ,Ben,17,0,1,5,1,5,13
+8, 316055,2020-06-27,Melbourne Dolphins ,Ronnie,9,2,2,1,2,4,21
+8, 316055,2020-06-27,Melbourne Dolphins ,Hemu,7,1,3,0,3,3,22
+8, 316055,2020-06-27,Melbourne Dolphins ,Russel,2,2,0,0,4,2,3
+8, 316055,2020-06-27,Melbourne Dolphins ,Jimmy,1,1,0,0,5,1,18
+9, 316046,2020-07-04,Mustangs ,Jimmy,22,0,5,4,1,5,23
+9, 316046,2020-07-04,Mustangs ,Ben,16,1,3,3,2,4,17
+9, 316046,2020-07-04,Mustangs ,Anas,13,4,0,3,3,3,3
+9, 316046,2020-07-04,Mustangs ,Morgs,5,1,2,0,4,2,7
+9, 316046,2020-07-04,Mustangs ,Pat,2,2,0,0,5,1,6
+9, 316046,2020-07-04,Mustangs ,Hemu,1,1,0,0,6,0,22
+9, 316046,2020-07-04,Mustangs ,Ronnie,1,1,0,0,7,0,21
+10, 316041,2020-07-11,Newport Nellies ,Rusty,9,0,0,3,1,5,5
+10, 316041,2020-07-11,Newport Nellies ,Morgs,4,0,2,0,2,4,11
+10, 316041,2020-07-11,Newport Nellies ,Ronnie,2,0,1,0,3,3,24
+10, 316041,2020-07-11,Newport Nellies ,Peely,2,2,0,0,4,2,24
+10, 316041,2020-07-11,Newport Nellies ,Jimmy,1,1,0,0,5,1,24
