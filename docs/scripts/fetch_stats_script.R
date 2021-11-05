@@ -16,8 +16,8 @@ source(here::here("scripts", "lms_fetch_detailed_stats.R"))
 # Simple data --------------------------------------------------------------------
 # Get data
 # Season IDS
-season_ids <- c(105, 110, 112, 114, 114, 117)
-league_ids <- c(1398, 1398, 1398, 1398, 3072, 3476)
+season_ids <- c(105, 110, 112, 114, 114, 117, 115)
+league_ids <- c(1398, 1398, 1398, 1398, 3072, 3476, 2856)
 
 batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols())
