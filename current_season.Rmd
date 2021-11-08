@@ -9,7 +9,9 @@ output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-current_season <- 117
+current_season <- 115
+current_league <- 2856
+
 
 knitr::opts_chunk$set(
 	echo = FALSE,
@@ -38,7 +40,7 @@ bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
 bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
 ```
-Stats for `r first(bowling$league[bowling$season_id == current_season])` - `r first(bowling$season[bowling$season_id == current_season])`. Last updated `r Sys.Date()`.
+Stats for `r first(bowling$league[bowling$season_id == current_season] & bowling$league_id == current_league)` - `r first(bowling$season[bowling$season_id == current_season & bowling$league_id == current_league])`. Last updated `r Sys.Date()`.
 
 ```{r batting, layout="l-body-outset"}
 
@@ -51,7 +53,7 @@ batting_comb <- full_join(batting, batting_detailed,
 
 batting_df <- batting_comb %>%
   filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season & league_id == current_league) %>%
   mutate(Batsmen = ifelse(is.na(Batsmen),
                           paste0(FirstName, " ", LastName), Batsmen),
          runs_made = ifelse(is.na(Runs), RunsScored, Runs),
@@ -101,7 +103,7 @@ bowling_comb <- full_join(bowling, bowling_detailed,
 
 bowling_df <- bowling_comb %>%
   filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season & league_id == current_league) %>%
   mutate(Bowlers = ifelse(is.na(Bowlers), paste0(FirstName, " ", LastName), Bowlers),
         Overs = ifelse(is.na(Overs), Over, Overs),
         Runs = ifelse(is.na(Runs), RunsConceded, Runs),
@@ -131,7 +133,7 @@ bowling_df <- bowling_comb %>%
 
 best_bowling <- bowling %>% 
   filter(team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season & league_id == current_league) %>%
   rename(Name = Bowlers) %>%
   group_by(Name) %>% 
   filter(Wkts == max(Wkts)) %>% 
@@ -149,7 +151,7 @@ bowling_df[bowling_df == "Inf" ] <- NA
 ```{r}
 fielding_df <- fielding  %>%
   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season & league_id == current_league) %>%
   mutate(Name = paste0(FirstName, " ", LastName)) %>%
   rename(User.Id = Id) %>%
   group_by(User.Id, Name) %>%
@@ -162,7 +164,7 @@ fielding_df <- fielding  %>%
 ```{r}
 keeping_df <- keeping  %>%
   filter(Team == "The Nutty Cuckoo Super Kings") %>%
-  filter(season_id == current_season) %>%
+  filter(season_id == current_season & league_id == current_league) %>%
   mutate(Name = paste0(FirstName, " ", LastName)) %>%
   rename(User.Id = Id) %>%
   group_by(User.Id, Name) %>%
