@@ -40,7 +40,7 @@ bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
 bowling_detailed <- read_csv(here::here("data", "bowling_detailed.csv"), col_types = cols())
 
 ```
-Stats for `r first(bowling$league[bowling$season_id == current_season] & bowling$league_id == current_league)` - `r first(bowling$season[bowling$season_id == current_season & bowling$league_id == current_league])`. Last updated `r Sys.Date()`.
+Stats for `r first(bowling$league[bowling$season_id == current_season & bowling$league_id == current_league])` - `r first(bowling$season[bowling$season_id == current_season & bowling$league_id == current_league])`. Last updated `r Sys.Date()`.
 
 ```{r batting, layout="l-body-outset"}
 
