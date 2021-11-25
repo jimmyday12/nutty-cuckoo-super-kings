@@ -18,7 +18,7 @@ googlesheets4::gs4_auth_configure(app = google_app, api_key = google_key)
 game_votes_dist <- c(5,4,3,2,1,0,0,0)
 
 # Get data ---------------------------------------------------------------------
-url <- "https://docs.google.com/spreadsheets/d/1Bs4l214zyBTclckRO6j4YMFXv-jF5R-cRg54I0dKpw8"
+url <- "https://docs.google.com/spreadsheets/d/1cfF3DOuvElFGPUcdLONbiZPEkPn_N4qClvm9z42d9JI/edit?resourcekey#gid=377121738"
 
 # find sheets
 sheets <- sheet_names(url)
@@ -80,4 +80,4 @@ dat_summary
 # Write data
 googlesheets4::write_sheet(dat_summary, url, "Summary")
 googlesheets4::write_sheet(dat_totals, url, "Total")
-write_csv(dat_summary, file = "/Users/jamesday/R/nutty-cuckoo-super-kings/data/votes-autumn-2021.csv")
+write_csv(dat_summary, file = "/Users/jamesday/R/nutty-cuckoo-super-kings/data/votes-spring-2021.csv")
