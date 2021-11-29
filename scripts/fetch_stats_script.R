@@ -30,7 +30,7 @@ existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
 # Add random matches
 empty_matches <- c(277707)
 existing_ids <- c(existing_ids, empty_matches)
-
+#existing_ids <- existing_ids[!existing_ids == 336820]
 
 dat_all <- purrr::map2(season_ids, league_ids,
                        ~fetch_season_stats(season_id = .x,
@@ -296,3 +296,4 @@ bowling_df[bowling_df == "Inf" ] <- NA
 
 write_csv(bowling_df, here::here("data", "bowling_summary.csv"))
 write_csv(bowling_comb, here::here("data", "bowling_combined.csv"))
+
