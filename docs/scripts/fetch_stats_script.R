@@ -86,8 +86,11 @@ batting <- batting %>%
   group_by(id, Batsmen, season_id, league_id) %>%
   filter(row_number() == 1) %>%
   ungroup()
-
+ 
+batting <- distinct(batting)
 readr::write_csv(batting, here::here("data", "batting.csv"))
+
+bowling <- distinct(bowling)
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
 # Detailed Data ----------------------------------------------------------------
@@ -198,11 +201,17 @@ if(!all(map_lgl(dat_detailed, is.null))) {
     filter(!(MatchId == 336820 & FirstName == "Jimmy" & Order == 9))
   
   
-  readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
-  readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
-  readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
-  readr::write_csv(batting_detailed, here::here("data", "batting_detailed.csv"))
-  readr::write_csv(match_details, here::here("data", "match_details.csv"))
+  readr::write_csv(distinct(keeping_detailed), 
+                   here::here("data", "keeping_detailed.csv"))
+  readr::write_csv(distinct(fielding_detailed), 
+                   here::here("data", "fielding_detailed.csv"))
+  readr::write_csv(distinct(bowling_detailed), 
+                   here::here("data", "bowling_detailed.csv"))
+  readr::write_csv(distinct(batting_detailed), 
+                   here::here("data", "batting_detailed.csv"))
+  
+  readr::write_csv(distinct(match_details), 
+                   here::here("data", "match_details.csv"))
 }
 
 
@@ -257,8 +266,8 @@ batting_df <- batting_comb %>%
   rename(Name = Batsmen)
 batting_df[batting_df == "Inf" ] <- NA
 
-write_csv(batting_df, here::here("data", "batting_summary.csv"))
-write_csv(batting_comb, here::here("data", "batting_combined.csv"))
+write_csv(distinct(batting_df), here::here("data", "batting_summary.csv"))
+write_csv(distinct(batting_comb), here::here("data", "batting_combined.csv"))
 
 # Combine Bowling --------------------------------------------------------------
 bowling <- read_csv(here::here("data", "bowling.csv"), col_types = cols())
@@ -316,6 +325,6 @@ bowling_df <- bowling_df %>%
   left_join(best_bowling, by = "Name")
 bowling_df[bowling_df == "Inf" ] <- NA
 
-write_csv(bowling_df, here::here("data", "bowling_summary.csv"))
-write_csv(bowling_comb, here::here("data", "bowling_combined.csv"))
+write_csv(distinct(bowling_df), here::here("data", "bowling_summary.csv"))
+write_csv(distinct(bowling_comb), here::here("data", "bowling_combined.csv"))
 
