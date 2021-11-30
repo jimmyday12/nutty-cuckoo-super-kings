@@ -80,6 +80,13 @@ batting <- batting %>%
   mutate(`6s` = ifelse(Batsmen == "Jimmy Day" & id == 316028, 2, `6s`)) %>%
   mutate(SR = ifelse(Batsmen == "Jimmy Day" & id == 316028, Runs/Balls*100, SR))
 
+batting <- batting %>%
+  mutate(`6s` = ifelse(Batsmen == "Jimmy Day" & id == 336820, 1, `6s`)) %>%
+  mutate(`4s` = ifelse(Batsmen == "Jimmy Day" & id == 336820, 9, `4s`)) %>%
+  group_by(id, Batsmen, season_id, league_id) %>%
+  filter(row_number() == 1) %>%
+  ungroup()
+
 readr::write_csv(batting, here::here("data", "batting.csv"))
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
@@ -181,6 +188,16 @@ if(!all(map_lgl(dat_detailed, is.null))) {
     mutate(HomeRuns = ifelse(FirstName == "Jimmy" & MatchId == 316028,1, HomeRuns)) %>%
     mutate(Sixes = ifelse(FirstName == "Jimmy" & MatchId == 316028, 2, Sixes))
   
+  batting_detailed <- batting_detailed %>%
+    mutate(RunsScored = ifelse(FirstName == "Jimmy" & MatchId == 336820, 63, RunsScored)) %>%
+    mutate(Fours = ifelse(FirstName == "Jimmy" & MatchId == 336820,9, Fours)) %>%
+    mutate(Sixes = ifelse(FirstName == "Jimmy" & MatchId == 336820, 1, Sixes)) %>%
+    mutate(BallsFaced = ifelse(FirstName == "Jimmy" & MatchId == 336820, 31, BallsFaced))
+  
+  batting_detailed <- batting_detailed %>%
+    filter(!(MatchId == 336820 & FirstName == "Jimmy" & Order == 9))
+  
+  
   readr::write_csv(keeping_detailed, here::here("data", "keeping_detailed.csv"))
   readr::write_csv(fielding_detailed, here::here("data", "fielding_detailed.csv"))
   readr::write_csv(bowling_detailed, here::here("data", "bowling_detailed.csv"))
@@ -207,6 +224,11 @@ batting_comb <- batting_comb %>%
          Balls = ifelse(is.na(Balls), BallsFaced, Balls),
          `4s` = ifelse(is.na(`4s`), Fours, `4s`),
          `6s` = ifelse(is.na(`6s`), Sixes, `6s`)) 
+
+batting_comb <- batting_comb %>%
+  group_by(season_id, id, Batsmen) %>%
+  filter(row_number() == 1)
+  
 
 batting_df <- batting_comb %>%
   mutate(`50s` = ifelse(Runs >= 50, 1, 0),
