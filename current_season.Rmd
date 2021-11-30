@@ -87,7 +87,7 @@ batting_df <- batting_comb %>%
   select(-team)
 
 batting_df[batting_df == "Inf" ] <- NA
-
+batting_df <- distinct(batting_df)
 ```
 
 
@@ -145,6 +145,7 @@ best_bowling <- bowling %>%
 bowling_df <- bowling_df %>%
   left_join(best_bowling, by = "Name")
 bowling_df[bowling_df == "Inf" ] <- NA
+bowling_df <- distinct(bowling_df)
 
 ```
 
