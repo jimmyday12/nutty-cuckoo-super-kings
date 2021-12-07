@@ -92,10 +92,14 @@ if(batting[batting$id == 336823 & batting$Batsmen == "Daniel Dymond",]$Runs != 5
 jimmy_ind <- batting$id == 336823 & batting$Batsmen == "Daniel Dymond"
 jimmy_dat <- batting[jimmy_ind,]
 jimmy_dat$Batsmen <- "Jimmy Day"
+jimmy_dat$User.Id <- 125735
+jimmy_dat$Player.Id <- 301054
 
 dan_ind <- batting$id == 336823 & batting$Batsmen == "Jimmy Day"
 dan_dat <- batting[dan_ind,]
 dan_dat$Batsmen <- "Daniel Dymond"
+dan_dat$Player.Id  <- 301055
+dan_dat$User.Id <-239861
 
 batting[jimmy_ind,] <- jimmy_dat
 batting[dan_ind,] <- dan_dat
@@ -225,11 +229,13 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   jimmy_dat <- batting_detailed[jimmy_ind,]
   jimmy_dat$FirstName <- "Jimmy"
   jimmy_dat$LastName <- "Day"
+  jimmy_dat$Id <- 125735
   
   dan_ind <- batting_detailed$MatchId == 336823 & batting_detailed$FirstName == "Jimmy"
   dan_dat <- batting_detailed[dan_ind,]
   dan_dat$FirstName <- "Daniel"
   dan_dat$LastName <- "Dymond"
+  dan_dat$Id <- 239861
   
   batting_detailed[jimmy_ind,] <- jimmy_dat
   batting_detailed[dan_ind,] <- dan_dat
