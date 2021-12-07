@@ -1721,7 +1721,11 @@ Id,FirstName,LastName,Maidens,RunsConceded,Wickets,BowlingDotBalls,NoBall,Wide,C
 84884,Ronald,Victor,0,19,0,4,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,365285589,live_scoring_core.dtos.outdoor_cricket.Overs,3,0
 242570,Ben,Cull,0,6,0,2,0,0,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,665722902,live_scoring_core.dtos.outdoor_cricket.Overs,1,0
 239860,Rohan,Bythell-Douglas,0,17,0,6,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,895207309,live_scoring_core.dtos.outdoor_cricket.Overs,3,0
+<<<<<<< HEAD
 125735,Jimmy,Day,0,19,0,2,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,634826802,live_scoring_core.dtos.outdoor_cricket.Overs,2,0
+=======
+125735,Jimmy,Day,0,19,1,2,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,634826802,live_scoring_core.dtos.outdoor_cricket.Overs,2,0
+>>>>>>> db0a03c (updating with random match fixed)
 260826,Pat,Danaher,0,26,0,0,2,0,0,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,516049248,live_scoring_core.dtos.outdoor_cricket.Overs,1,0
 261412,James,Bill,0,19,0,3,0,1,0,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,95830944,live_scoring_core.dtos.outdoor_cricket.Overs,3,0
 286320,Charlie,Watson,0,28,0,1,1,1,0,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,0,143,1,2,2856,115,113848771,live_scoring_core.dtos.outdoor_cricket.Overs,3,0

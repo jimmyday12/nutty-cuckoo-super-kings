@@ -1886,8 +1886,13 @@ Id,FirstName,LastName,Order,RunsScored,BallsFaced,Fours,Sixes,BattingDotBalls,St
 261314,Lachlan,Slattery,1,0,2,0,0,1,0,0,0,3,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
 286320,Charlie,Watson,3,3,3,0,0,0,0,0,0,3,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
 261412,James,Bill,5,48,23,4,2,2,0,0,0,3,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
+<<<<<<< HEAD
 125735,Jimmy,Day,1,53,41,6,0,10,0,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
 239861,Daniel,Dymond,4,24,11,2,0,0,0,0,0,2,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
+=======
+125735,Daniel,Dymond,1,53,41,6,0,10,0,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
+239861,Jimmy,Day,4,24,11,2,0,0,0,0,0,2,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
+>>>>>>> db0a03c (updating with random match fixed)
 242570,Ben,Cull,5,12,9,2,0,3,0,0,0,1,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
 261311,Rowan,Slattery,4,20,20,2,0,5,0,0,0,3,0,0,0,NA,Viper heat,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115
 84884,Ronald,Victor,2,50,27,3,2,6,0,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,336823,,City Midweek Div 2,2021 Spring,2021-12-06T06:53:47Z,Viper heat,19394,The Nutty Cuckoo Super Kings,18132,139,6,18,0,143,1,16,2,2856,115

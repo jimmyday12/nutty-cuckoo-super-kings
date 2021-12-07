@@ -22,9 +22,6 @@ league_ids <- c(1398, 1398, 1398, 1398, 3072, 3476, 2856)
 batting <- readr::read_csv(here::here("data", "batting.csv"), col_types = cols())
 bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols())
 
-
-
-
 existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
 
 # Add random matches
@@ -74,19 +71,40 @@ bowling <- bowling %>%
   filter(!(Bowlers == "Roger James" & 
                       team == "The Nutty Cuckoo Super Kings"))
 
-# Fix missed home run
+# Fix random matches
 batting <- batting %>%
   mutate(Runs = ifelse(Batsmen == "Jimmy Day" & id == 316028, 68, Runs)) %>%
   mutate(`6s` = ifelse(Batsmen == "Jimmy Day" & id == 316028, 2, `6s`)) %>%
   mutate(SR = ifelse(Batsmen == "Jimmy Day" & id == 316028, Runs/Balls*100, SR))
 
+# Jimmy twice
 batting <- batting %>%
   mutate(`6s` = ifelse(Batsmen == "Jimmy Day" & id == 336820, 1, `6s`)) %>%
   mutate(`4s` = ifelse(Batsmen == "Jimmy Day" & id == 336820, 9, `4s`)) %>%
   group_by(id, Batsmen, season_id, league_id) %>%
   filter(row_number() == 1) %>%
   ungroup()
- 
+
+if(batting[batting$id == 336823 & batting$Batsmen == "Daniel Dymond",]$Runs != 53){
+  
+
+# Dan and jimmy mixed
+jimmy_ind <- batting$id == 336823 & batting$Batsmen == "Daniel Dymond"
+jimmy_dat <- batting[jimmy_ind,]
+jimmy_dat$Batsmen <- "Jimmy Day"
+
+dan_ind <- batting$id == 336823 & batting$Batsmen == "Jimmy Day"
+dan_dat <- batting[dan_ind,]
+dan_dat$Batsmen <- "Daniel Dymond"
+
+batting[jimmy_ind,] <- jimmy_dat
+batting[dan_ind,] <- dan_dat
+}
+# Missed wicket
+# Dan and jimmy mixed
+bowling[bowling$id == 336823 & bowling$Bowlers == "Jimmy Day",]$Wkts <- 1
+
+# Write data
 batting <- distinct(batting)
 readr::write_csv(batting, here::here("data", "batting.csv"))
 
@@ -199,6 +217,26 @@ if(!all(map_lgl(dat_detailed, is.null))) {
   
   batting_detailed <- batting_detailed %>%
     filter(!(MatchId == 336820 & FirstName == "Jimmy" & Order == 9))
+  
+  if(batting_detailed[batting_detailed$MatchId == 336823 & batting_detailed$FirstName == "Daniel", ]$RunsScored != 53){
+    
+  
+  jimmy_ind <- batting_detailed$MatchId == 336823 & batting_detailed$FirstName == "Daniel"
+  jimmy_dat <- batting_detailed[jimmy_ind,]
+  jimmy_dat$FirstName <- "Jimmy"
+  jimmy_dat$LastName <- "Day"
+  
+  dan_ind <- batting_detailed$MatchId == 336823 & batting_detailed$FirstName == "Jimmy"
+  dan_dat <- batting_detailed[dan_ind,]
+  dan_dat$FirstName <- "Daniel"
+  dan_dat$LastName <- "Dymond"
+  
+  batting_detailed[jimmy_ind,] <- jimmy_dat
+  batting_detailed[dan_ind,] <- dan_dat
+  }
+  
+  # Missed wicket
+  bowling_detailed[bowling_detailed$MatchId == 336823 & bowling_detailed$FirstName == "Jimmy",]$Wickets <- 1
   
   
   readr::write_csv(distinct(keeping_detailed), 
