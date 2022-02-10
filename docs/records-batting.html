@@ -56,7 +56,7 @@ code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,14 +77,13 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
-
 
   <!--radix_placeholder_meta_tags-->
   <title>NCSK: Batting Records</title>
@@ -93,8 +92,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-02-10"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-02-10"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-02-11"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-02-11"/>
   <meta name="article:author" content="James Day"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -113,7 +112,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Batting Records"]},{"type":"character","attributes":{},"value":["A collection of various records throughout our history! \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["James Day"]}]}]},{"type":"character","attributes":{},"value":["2022-02-10"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Batting Records"]},{"type":"character","attributes":{},"value":["A collection of various records throughout our history! \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["James Day"]}]}]},{"type":"character","attributes":{},"value":["2022-02-11"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -460,7 +459,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   </style>
   
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1867,10 +1866,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2060,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Batting Records","description":"A collection of various records throughout our history!","authors":[{"author":"James Day","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-10T00:00:00.000+00:00","citationText":"Day, 2022"}
+{"title":"Batting Records","description":"A collection of various records throughout our history!","authors":[{"author":"James Day","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-11T00:00:00.000+00:00","citationText":"Day, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2122,7 +2118,7 @@ Stats
 <div class="d-byline">
   James Day  
   
-<br/>2022-02-10
+<br/>2022-02-11
 </div>
 
 <div class="d-article">
@@ -2207,15 +2203,15 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">1304</td>
-<td style="text-align: right;">50.2</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">1406</td>
+<td style="text-align: right;">54.1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">811</td>
-<td style="text-align: right;">30.0</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">834</td>
+<td style="text-align: right;">29.8</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Michael Drew</td>
@@ -2225,15 +2221,15 @@ Stats
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adam Peel</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">552</td>
-<td style="text-align: right;">18.4</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">604</td>
+<td style="text-align: right;">18.9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Daniel Dymond</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: right;">36.4</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">487</td>
+<td style="text-align: right;">37.5</td>
 </tr>
 </tbody>
 </table>
@@ -2302,34 +2298,34 @@ Stats
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Reza Mohammed</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">195</td>
+<td style="text-align: right;">97.5</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Michael Drew</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">690</td>
 <td style="text-align: right;">86.2</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">Russell Tydens</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">216</td>
+<td style="text-align: right;">72.0</td>
+</tr>
 <tr class="even">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">1304</td>
-<td style="text-align: right;">50.2</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">1406</td>
+<td style="text-align: right;">54.1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Daniel Dymond</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: right;">36.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">811</td>
-<td style="text-align: right;">30.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ronald Victor</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">144</td>
-<td style="text-align: right;">28.8</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">487</td>
+<td style="text-align: right;">37.5</td>
 </tr>
 </tbody>
 </table>
@@ -2400,9 +2396,9 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">811</td>
-<td style="text-align: right;">202.8</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">834</td>
+<td style="text-align: right;">198.6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michael Drew</td>
@@ -2412,21 +2408,21 @@ Stats
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">1304</td>
-<td style="text-align: right;">156.2</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">1406</td>
+<td style="text-align: right;">155.0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Daniel Dymond</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: right;">145.5</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">487</td>
+<td style="text-align: right;">146.2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Pat Danaher</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">226</td>
-<td style="text-align: right;">115.9</td>
+<td style="text-align: left;">Hemu Bhardwaj</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">128.6</td>
 </tr>
 </tbody>
 </table>
@@ -2622,28 +2618,28 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">67</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">68</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">35</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">38</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Michael Drew</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">18</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Adam Peel</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">16</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Daniel Dymond</td>
+<td style="text-align: left;">Russell Tydens</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">16</td>
-<td style="text-align: right;">14</td>
 </tr>
 </tbody>
 </table>
@@ -2769,8 +2765,8 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">112</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">116</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michael Drew</td>
@@ -2779,18 +2775,18 @@ Stats
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">53</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">54</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Adam Peel</td>
-<td style="text-align: right;">36</td>
-<td style="text-align: right;">44</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">48</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Daniel Dymond</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">31</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">38</td>
 </tr>
 </tbody>
 </table>
@@ -2917,8 +2913,8 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">14</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Michael Drew</td>
@@ -2927,17 +2923,17 @@ Stats
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
+<td style="text-align: right;">41</td>
 <td style="text-align: right;">7</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Daniel Dymond</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Adam Peel</td>
-<td style="text-align: right;">36</td>
+<td style="text-align: right;">38</td>
 <td style="text-align: right;">4</td>
 </tr>
 </tbody>
@@ -2968,21 +2964,21 @@ Stats
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">2022 Summer</td>
+<td style="text-align: left;">Jimmy Day</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">2021 Summer</td>
 <td style="text-align: left;">Michael Drew</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">2020</td>
 <td style="text-align: left;">Daniel Dymond</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">2020 Spring</td>
-<td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">5</td>
 <td style="text-align: right;">2</td>
 </tr>
 </tbody>
@@ -3001,27 +2997,27 @@ Stats
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Jimmy Day</td>
-<td style="text-align: right;">41</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Ben Cull</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Morgan Tear</td>
 <td style="text-align: right;">28</td>
 <td style="text-align: right;">12</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Ben Cull</td>
-<td style="text-align: right;">39</td>
-<td style="text-align: right;">12</td>
-</tr>
 <tr class="even">
+<td style="text-align: left;">Rohan Bythell-Douglas</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Michael Drew</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: right;">10</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rohan Bythell-Douglas</td>
-<td style="text-align: right;">30</td>
 <td style="text-align: right;">10</td>
 </tr>
 </tbody>
