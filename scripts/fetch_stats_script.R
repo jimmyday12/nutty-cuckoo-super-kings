@@ -158,13 +158,15 @@ if(!all(map_lgl(dat_detailed, is.null))) {
     purrr::map_dfr(~purrr::pluck(.x, "match_details"))
   
   match_details <- bind_rows(match_details_existing, match_details) %>%
-    distinct()
+    distinct() %>%
+    arrange(StartDateTime, MatchId)
   
   batting_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "batters"))
   
   batting_detailed <- bind_rows(batting_detailed_existing, batting_detailed) %>%
-    distinct()
+    distinct() %>%
+    arrange(StartDateTime, MatchId)
   
   bowling_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "bowlers"))
@@ -175,19 +177,22 @@ if(!all(map_lgl(dat_detailed, is.null))) {
     mutate(`$id` = as.numeric(`$id`))
   
   bowling_detailed <- bind_rows(bowling_detailed_existing, bowling_detailed) %>%
-    distinct()
+    distinct()  %>%
+    arrange(StartDateTime, MatchId)
   
   fielding_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "fielders"))
   
   fielding_detailed <- bind_rows(fielding_detailed_existing, fielding_detailed) %>%
-    distinct()
+    distinct()  %>%
+    arrange(StartDateTime, MatchId)
   
   keeping_detailed <- dat_detailed %>%
     purrr::map_dfr(~purrr::pluck(.x, "keepers")) 
   
   keeping_detailed <- bind_rows(keeping_detailed_existing, keeping_detailed) %>%
-    distinct()
+    distinct()  %>%
+    arrange(StartDateTime, Id)
   
   # Save Data
   batting_detailed$league_id[batting_detailed$league_id == 3072] <- 1398

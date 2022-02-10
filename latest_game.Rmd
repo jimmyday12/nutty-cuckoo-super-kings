@@ -87,6 +87,7 @@ fielding_df <- fielding  %>%
 ```{r}
 keeping_df <- keeping  %>%
   filter(Team == "The Nutty Cuckoo Super Kings") %>%
+  arrange(desc(StartDateTime)) %>%
   filter(StartDateTime == max(StartDateTime)) %>%
   mutate(Name = paste0(FirstName, " ", LastName)) %>%
   rename(User.Id = Id) %>%
@@ -117,47 +118,6 @@ div(class = "box-score",
   reactable_function(keeping_df, NULL),
 )
 
-```
-
-# Fines
-Under construction, numbers probably wrong. Doesn't include manual fines yet. 
-
-```{r fines}
-
-batting_fines <- batting_df %>%
-  mutate(`50` = ifelse(Runs >= 50, -4, NA),
-         `SR<110` = ifelse(SR < 110 & Balls > 10, 6, NA),
-         `SR<160` = ifelse(SR >= 110 & SR < 160 & Balls > 10, 3, NA),
-         `<21` = ifelse(Runs < 21, 3, NA),
-         Duck = ifelse(Runs == 0 & Balls > 1, 3, NA),
-         Golden = ifelse(Runs == 0 & Balls == 1, 6, NA)) %>%
-  group_by(Name) %>%
-  select(User.Id, Name, `50`:Golden)
-
-econ_fine <- function(overs, econ, field = NULL) {
-  # change for field
-  threshold <- 9
-  
-  if(floor(econ) < threshold) return(NA)
-  
-  round(floor(econ) - threshold)  + (overs * 2)
-  
-}
-
-bowling_fines <- bowling_df %>%
-  group_by(Name) %>%
-  mutate(Economy = econ_fine(Over, Econ),
-         `3+` = ifelse(Wkts >= 3, -3, NA)) %>%
-  select(User.Id, Name, Economy, `3+`)
-
-
-fines <- full_join(batting_fines, bowling_fines, by = c("User.Id" = "User.Id", "Name" = "Name"))  %>%
-  mutate(Total = sum(`50`, `SR<110`, `SR<160`, `<21`, Duck, Golden, Economy, `3+`, na.rm = TRUE)) 
-
-div(class = "box-score",
-  div(class = "box-score-title", "Fines"),
-  reactable_function(fines, NULL),
-)
 ```
 
 
