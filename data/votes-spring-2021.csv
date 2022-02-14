@@ -20,8 +20,27 @@ game,match_id,date,opponent,name,total_votes,votes_2,votes_1,votes_3,rank,game_v
 4, 335311,2020-11-24,We've got the runs ,Peely,4,0,1,1,4,2,2
 4, 335311,2020-11-24,We've got the runs ,Hemu,4,1,2,0,5,1,3
 4, 335311,2020-11-24,We've got the runs ,Jimmy,3,1,1,0,6,0,11
-5, 336820,2020-11-29,Brits Abroad ,Jimmy,15,0,0,5,1,5,16
+5, 336820,2020-11-29,Brits Abroad ,Jimmy,18,0,0,6,1,5,16
 5, 336820,2020-11-29,Brits Abroad ,Pat,8,2,4,0,2,4,9
 5, 336820,2020-11-29,Brits Abroad ,Peely,7,3,1,0,3,3,5
-5, 336820,2020-11-29,Brits Abroad ,Rohan,3,0,0,1,4,2,3
+5, 336820,2020-11-29,Brits Abroad ,Rohan,4,0,1,1,4,2,3
 5, 336820,2020-11-29,Brits Abroad ,Hemu,3,1,1,0,5,1,4
+5, 336820,2020-11-29,Brits Abroad ,Ben,2,1,0,0,6,0,8
+6,NA,2020-12-07,Viper Heat,Dan,12,1,1,3,1,5,7
+6,NA,2020-12-07,Viper Heat,Peely,12,3,0,2,2,4,9
+6,NA,2020-12-07,Viper Heat,Ronnie,11,2,1,2,3,3,7
+6,NA,2020-12-07,Viper Heat,Jimmy,5,1,3,0,4,2,18
+6,NA,2020-12-07,Viper Heat,Ben,1,0,1,0,5,1,9
+6,NA,2020-12-07,Viper Heat,Rohan,1,0,1,0,6,0,3
+7, 335322,2020-12-14,Rhodesian Warthogs ,Ben,20,1,0,6,1,5,14
+7, 335322,2020-12-14,Rhodesian Warthogs ,Reza,9,3,3,0,2,4,10
+7, 335322,2020-12-14,Rhodesian Warthogs ,Jimmy,7,2,0,1,3,3,21
+7, 335322,2020-12-14,Rhodesian Warthogs ,Dan,4,1,2,0,4,2,9
+7, 335322,2020-12-14,Rhodesian Warthogs ,Peely,4,1,2,0,5,1,10
+7, 335322,2020-12-14,Rhodesian Warthogs ,Rohan,3,0,0,1,6,0,3
+7, 335322,2020-12-14,Rhodesian Warthogs ,Ronnie,1,0,1,0,7,0,7
+8, 335323,2020-12-20,Brits Abroad ,Surya,12,2,2,2,1,5,8
+8, 335323,2020-12-20,Brits Abroad ,Rusty,11,1,3,2,2,4,4
+8, 335323,2020-12-20,Brits Abroad ,Reza,9,3,0,1,3,3,13
+8, 335323,2020-12-20,Brits Abroad ,Rohan,3,0,0,1,4,2,5
+8, 335323,2020-12-20,Brits Abroad ,Hemu,1,0,1,0,5,1,5
