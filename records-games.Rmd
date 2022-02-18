@@ -1,0 +1,175 @@
+---
+title: "Games Records"
+description: |
+  The number of games played for the mighty Super Kings
+author:
+  - name: James Day
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+library(dplyr)
+library(readr)
+library(purrr)
+library(stringr)
+library(here)
+library(reactable)
+library(htmltools)
+library(knitr)
+library(rmarkdown)
+```
+
+```{r load data, include=FALSE, echo = FALSE}
+df <- read_csv(here::here("data", "player_games.csv"))
+
+df <- df %>%
+  mutate(Name = paste(FirstName, LastName)) %>%
+  select(Name, Games)
+```
+
+```{r}
+reactable_function <- function(df, type = "games"){
+  reactable(df, 
+          pagination = FALSE,
+          defaultSortOrder = "desc",
+          defaultSorted = "Games",
+          defaultColDef = colDef(
+            sortNALast = TRUE,
+            minWidth = 45,
+            class = JS("function(rowInfo, colInfo, state) {
+        // Highlight sorted columns
+        for (var i = 0; i < state.sorted.length; i++) {
+          if (state.sorted[i].id === colInfo.id) {
+            return 'sorted'
+          }
+        }
+      }"),
+      headerClass = "box-score-header"),
+      columns = list(      
+        Name = colDef(show = TRUE),
+        Games = colDef(show = TRUE)
+      ),
+      showSortIcon = FALSE,
+      highlight = TRUE,
+      striped = TRUE,
+      class = "box-score-tbl")
+}
+```
+```{r}
+
+div(class = "box-score",
+    div(class = "box-score-title", "Games Played"),
+    reactable_function(df)
+)
+
+
+```
+
+
+```{r ref.label="box_score", eval=FALSE}
+```
+
+```{r}
+tags$link(href = "https://fonts.googleapis.com/css?family=Roboto:400,500&display=fallback", rel = "stylesheet")
+```
+
+```{css}
+.box-score {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.box-score a:hover {
+  text-decoration: none;
+}
+.header {
+  text-align: center;
+  font-size: 20px;
+}
+.game-date {
+  font-size: 16px;
+}
+.line-score {
+  margin-top: 24px;
+  text-align: center;
+}
+.line-score-tbl {
+  margin: 0 auto;
+  max-width: 500px;
+  font-size: 15px;
+}
+.line-score-header {
+  font-size: 13px;
+  font-weight: 400;
+}
+.line-score-final {
+  font-weight: 500;
+}
+.team-name {
+  font-weight: 500;
+}
+.team-record {
+  margin-left: 6px;
+  color: hsl(0, 0%, 45%);
+  font-size: 12px;
+}
+.box-score-title {
+  margin-top: 24px;
+  padding: 8px;
+  background-color: hsl(205, 100%, 36%);
+  color: hsl(0, 0%, 98%);
+  font-size: 15px;
+  font-weight: 400;
+}
+.box-score-tbl {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+.box-score-header {
+  padding: 8px !important;
+  border-bottom-width: 1px;
+  background-color: hsl(205, 93%, 16%);
+  color: hsl(0, 0%, 98%);
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.box-score-header:hover,
+.box-score-header[aria-sort="ascending"],
+.box-score-header[aria-sort="descending"] {
+  background-color: hsl(205, 100%, 36%);
+}
+.box-score-header[aria-sort="ascending"] {
+  box-shadow: inset 0 10px 0 -6px #efaa10 !important;
+}
+.box-score-header[aria-sort="descending"] {
+  box-shadow: inset 0 -10px 0 -6px #efaa10 !important;
+}
+.sorted {
+  background-color: hsla(0, 0%, 60%, 0.1);
+}
+.box-score-total {
+  font-size: 13px;
+  font-weight: 500;
+}
+```
+
+```{css echo=FALSE}
+/* rmarkdown html documents */
+.main-container {
+  max-width: 1024px !important;
+}
+h1.title {
+  display: none;
+}
+/* pkgdown articles */
+.contents {
+  width: inherit;
+}
+```
+

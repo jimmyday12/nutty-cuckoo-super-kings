@@ -13,6 +13,18 @@ get_dat_state <- function(id) {
   dat_state <- jsonlite::fromJSON(dat$State)
 }
 
+fetch_player_games <- function(id) {
+  dat_state <- get_dat_state(id)
+  
+  team_1 <- dat_state$BattingFirst$Players
+  team_1$playing_for <- dat_state$BattingFirst$Name
+  
+  team_2 <- dat_state$BowlingFirst$Players
+  team_2$playing_for <- dat_state$BowlingFirst$Name
+
+ bind_rows(team_1, team_2) 
+}
+ 
 fetch_detailed_stats <- function(id){
   
   dat_state <- get_dat_state(id)

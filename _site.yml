@@ -14,6 +14,8 @@ navbar:
       href: honour-board.html
     - text: "Records"
       menu:
+        - text: "Games"
+          href: records-games.html
         - text: "Batting"
           href: records-batting.html
         - text: "Bowling"
