@@ -28,7 +28,9 @@ existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
 empty_matches <- c(277707)
 existing_ids <- c(existing_ids, empty_matches)
 #existing_ids <- existing_ids[!existing_ids == 336820]
+source(here::here("scripts", "fetch_player_games.R"))
 
+  
 dat_all <- purrr::map2(season_ids, league_ids,
                        ~fetch_season_stats(season_id = .x,
                                            league_id = .y,
