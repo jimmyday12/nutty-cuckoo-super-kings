@@ -42,7 +42,9 @@ leading_runs <- batting %>%
   slice_max(runs, n = 1) %>%
   mutate(top_runscorer = paste0(Batsmen, " (", runs, ")")) %>%
   select(season_id, top_runscorer) %>%
-  left_join(seasons, by = "season_id")
+  left_join(seasons, by = "season_id") %>%
+  group_by(season_id, season) %>%
+  summarize(top_runscorer = str_c(top_runscorer, collapse = ", "))
 
 leading_wickets <- bowling %>% 
   filter(team == "The Nutty Cuckoo Super Kings") %>% 
@@ -52,8 +54,9 @@ leading_wickets <- bowling %>%
   slice_max(wkts, n = 1) %>%
   mutate(most_wickets = paste0(Bowlers, " (", wkts, ")")) %>%
   select(season_id, most_wickets) %>%
-  left_join(seasons, by = "season_id")
-
+  left_join(seasons, by = "season_id") %>%
+ group_by(season_id, season) %>%
+ summarize(most_wickets = str_c(most_wickets, collapse = ", "))
 
 ```
 

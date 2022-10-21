@@ -2,6 +2,7 @@ library(tidyverse)
 library(googlesheets4)
 library(lubridate)
 
+season_name <- "s6-spring-2021"
 
 google_app <- 
   httr::oauth_app(
@@ -34,7 +35,7 @@ dat <- raw_dat %>%
   mutate(game = as.numeric(game),
          game_id = sheets_games[game]) %>%
   separate(game_id, c("date", "opponent", "match_id"), sep = "-") %>%
-  mutate(date = lubridate::dmy(paste0(date, "/2020")),
+  mutate(date = lubridate::dmy(paste0(date, "/2021")),
          opponent = trimws(opponent, "left")) %>%
   select(game, date, opponent, everything(), -Timestamp)
 
@@ -80,4 +81,4 @@ dat_summary
 # Write data
 googlesheets4::write_sheet(dat_summary, url, "Summary")
 googlesheets4::write_sheet(dat_totals, url, "Total")
-write_csv(dat_summary, file = "/Users/jamesday/R/nutty-cuckoo-super-kings/data/votes-spring-2021.csv")
+write_csv(dat_summary, file = paste0("/Users/jamesday/R/nutty-cuckoo-super-kings/data/votes/", season_name, "-votes.csv"))
