@@ -1,12 +1,12 @@
 ---
-title: "NSCK - Season 6 Spring 2021 Review"
+title: "NSCK - Season 7 Summer 2021 Review"
 output: powerpoint_presentation
 
 ---
 
 ```{r setup, include=FALSE}
-current_season <- 115
-current_league <- 2856
+current_season <- 118
+current_league <- 1981
 
 knitr::opts_chunk$set(
 	echo = FALSE,
@@ -45,7 +45,7 @@ bowling_detailed <- read_csv(
   here::here("data", "bowling_detailed.csv"), 
   col_types = cols())
 
-votes <- read_csv(here::here("data", "votes-spring-2021.csv"))
+votes <- read_csv(here::here("data", "votes", "s7-summer-2022-votes.csv"))
 ```
 
 
