@@ -112,7 +112,7 @@ reactable_function <- function(df, type = "batting"){
         top_runscorer = colDef(name = "Most Runs"),
         most_wickets = colDef(name = "Most Wkts"),
         Dream.Team = colDef(name = "League Team",
-                            width = 120)
+                            width = 150)
       ),
       showSortIcon = FALSE,
       highlight = TRUE,
