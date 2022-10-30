@@ -6,7 +6,7 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:13+00:00"
+      "last_modified": "2022-10-30T01:25:57+00:00"
     },
     {
       "path": "current_season.html",
@@ -19,8 +19,8 @@
         }
       ],
       "date": "`r Sys.Date()`",
-      "contents": "\nStats for City Thursdays - 2022 Spring. Last updated 2022-10-29.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBatting\n\nBowling\n\nFielding\n\nKeeping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:16+00:00"
+      "contents": "\nStats for City Thursdays - 2022 Spring. Last updated 2022-10-30.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBatting\n\nBowling\n\nFielding\n\nKeeping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2022-10-30T01:26:01+00:00"
     },
     {
       "path": "honour-board.html",
@@ -28,7 +28,7 @@
       "description": "A summary of key performances throughout our history\n",
       "author": [],
       "contents": "\n\n\n\n\n\n\n\n\nHonour Board\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:17+00:00"
+      "last_modified": "2022-10-30T01:26:03+00:00"
     },
     {
       "path": "index.html",
@@ -36,7 +36,7 @@
       "description": "A hub for stats, figures and the history of the NSCK! \n",
       "author": [],
       "contents": "\nUnder construction. Use navigation bar for more info.\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:18+00:00"
+      "last_modified": "2022-10-30T01:26:04+00:00"
     },
     {
       "path": "latest_game.html",
@@ -50,7 +50,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\n\nBatting\n\n\n\n\n\n\n\n\n\n\n\nBatting\n\nBowling\n\n\n\n\n\nFielding\n\nKeeping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:20+00:00"
+      "last_modified": "2022-10-30T01:26:06+00:00"
     },
     {
       "path": "records-batting.html",
@@ -64,7 +64,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\n\nBest Batting\n\ndate\nseason\nBatsmen\nScore\nBalls\nSR\nOpposition\n11/07/2021\n2021 Autumn\nRussell Tydens\n90*\n47\n191.5\nNewport Nellies\n02/05/2021\n2021 Autumn\nJimmy Day\n68*\n43\n158.1\nNewport Nellies\n29/11/2021\n2021 Spring\nJimmy Day\n63\n31\n203.2\nBrits Abroad\n09/12/2019\n2019 Spring\nMichael Drew\n60*\n38\n157.9\nWorkers Club Lions\n20/10/2022\n2022 Spring\nJimmy Day\n58*\n34\n170.6\nKangaroos Strikers\n\nRuns\nMost Runs (all time)\n\nBatsmen\nInnings\nRuns\nAvg\nJimmy Day\n48\n1561\n53.8\nBen Cull\n44\n852\n27.5\nMichael Drew\n19\n716\n79.6\nAdam Peel\n41\n651\n19.1\nDaniel Dymond\n19\n487\n37.5\n\nMost Runs (season)\n\nseason\nBatsmen\nInnings\nRuns\nAvg\n2021 Autumn\nJimmy Day\n8\n271\n67.8\n2021 Summer\nJimmy Day\n6\n252\n63.0\n2019 Spring\nJimmy Day\n7\n232\n46.4\n2020\nBen Cull\n6\n218\n109.0\n2020\nJimmy Day\n6\n205\n51.2\n\nHighest Average (all time, min 5 innings)\n\nBatsmen\nInnings\nRuns\nAvg\nReza Mohammed\n8\n263\n87.7\nMichael Drew\n19\n716\n79.6\nRussell Tydens\n7\n233\n58.2\nJimmy Day\n48\n1561\n53.8\nDaniel Dymond\n19\n487\n37.5\n\nHighest Average (season, min 3 innings)\n\nseason\nBatsmen\nInnings\nRuns\nAvg\n2021 Spring\nReza Mohammed\n5\n194\n194.0\n2021 Summer\nMichael Drew\n3\n156\n156.0\n2020\nBen Cull\n6\n218\n109.0\n2021 Summer\nJoseph Kornwasser\n3\n81\n81.0\n2020 Spring\nJimmy Day\n5\n161\n80.5\n\nStrike Rate\nHighest SR (all time, min 10 innings)\n\nBatsmen\nInnings\nRuns\nSR\nBen Cull\n44\n852\n192.3\nMichael Drew\n19\n716\n157.4\nJimmy Day\n48\n1561\n154.9\nDaniel Dymond\n19\n487\n146.2\nRonald Victor\n11\n256\n139.9\n\nHighest SR (season, min 3 innings)\n\nseason\nBatsmen\nInnings\nRuns\nSR\n2021 Autumn\nAnas Shafiq\n3\n59\n295.0\n2020\nBen Cull\n6\n218\n242.2\n2021 Summer\nBen Cull\n7\n163\n239.7\n2021 Summer\nJoseph Kornwasser\n3\n81\n231.4\n2021 Spring\nBen Cull\n7\n176\n193.4\n\nHighest SR (innings, min 10 balls)\n\ndate\nseason\nBatsmen\nRuns\nBalls\nSR\nOpposition\n03/12/2020\n2020\nBen Cull\n36\n11\n327.3\nThe Michael Bevans\n13/12/2021\n2021 Spring\nBen Cull\n51\n16\n318.8\nRhodesian Warthogs\n21/01/2021\n2021 Summer\nBen Cull\n50\n16\n312.5\nMajor Paine\n04/07/2021\n2021 Autumn\nAnas Shafiq\n47\n16\n293.8\nMustangs\n20/02/2020\n2020 Spring\nBen Cull\n51\n19\n268.4\nBatty Boys\n\nFastest Fifty\n\ndate\nseason\nBatsmen\nRuns\nBalls\nSR\nOpposition\n13/12/2021\n2021 Spring\nBen Cull\n51\n16\n318.8\nRhodesian Warthogs\n21/01/2021\n2021 Summer\nBen Cull\n50\n16\n312.5\nMajor Paine\n20/02/2020\n2020 Spring\nBen Cull\n51\n19\n268.4\nBatty Boys\n09/11/2020\n2020\nBen Cull\n53\n20\n265.0\nMajor Paine\n21/10/2019\n2019 Spring\nJimmy Day\n51\n20\n255.0\nPoms & Convicts\n\nBoundaries\nMost Sixes (career)\n\nBatsmen\nInnings\nSixes\nBen Cull\n44\n68\nJimmy Day\n48\n41\nDaniel Dymond\n19\n19\nMichael Drew\n19\n18\nAdam Peel\n41\n18\n\nMost Sixes (season)\n\nseason\nBatsmen\nInnings\nSixes\n2020\nBen Cull\n6\n20\n2021 Spring\nBen Cull\n7\n14\n2021 Summer\nBen Cull\n7\n13\n2020\nJimmy Day\n6\n12\n2021 Autumn\nRussell Tydens\n3\n10\n\nMost Sixes (innings)\n\ndate\nseason\nBatsmen\nRuns\nBalls\nSixes\nOpposition\n11/07/2021\n2021 Autumn\nRussell Tydens\n90\n47\n9\nNewport Nellies\n04/07/2021\n2021 Autumn\nAnas Shafiq\n47\n16\n7\nMustangs\n21/01/2021\n2021 Summer\nBen Cull\n50\n16\n5\nMajor Paine\n13/12/2021\n2021 Spring\nBen Cull\n51\n16\n5\nRhodesian Warthogs\n20/02/2020\n2020 Spring\nBen Cull\n51\n19\n5\nBatty Boys\n\nMost Fours (career)\n\nBatsmen\nInnings\nFours\nJimmy Day\n48\n129\nMichael Drew\n19\n62\nBen Cull\n44\n56\nAdam Peel\n41\n51\nDaniel Dymond\n19\n38\n\nMost Fours (season)\n\nseason\nBatsmen\nInnings\nFours\n2019 Spring\nJimmy Day\n7\n26\n2020 Spring\nMichael Drew\n6\n22\n2021 Summer\nJimmy Day\n6\n21\n2021 Autumn\nJimmy Day\n8\n19\n2021 Spring\nJimmy Day\n8\n19\n\nMost Fours (innings)\n\ndate\nseason\nBatsmen\nRuns\nBalls\nFours\nOpposition\n29/11/2021\n2021 Spring\nJimmy Day\n63\n31\n9\nBrits Abroad\n21/10/2019\n2019 Spring\nJimmy Day\n51\n20\n8\nPoms & Convicts\n17/02/2020\n2020 Spring\nMichael Drew\n52\n24\n8\nBatty Boys\n11/11/2019\n2019 Spring\nJimmy Day\n56\n30\n8\nThe Hunts\n11/03/2021\n2021 Summer\nMichael Drew\n45\n20\n7\nWorkers Club Lions\n\nMilestones\nMost Fifties (career)\n\nBatsmen\nInnings\nFifties\nJimmy Day\n48\n16\nMichael Drew\n19\n8\nBen Cull\n44\n7\nDaniel Dymond\n19\n6\nAdam Peel\n41\n4\n\nMost Fifties (season)\n\nseason\nBatsmen\nInnings\nFifties\n2020\nMichael Drew\n3\n3\n2022 Summer\nJimmy Day\n6\n3\n2021 Autumn\nJimmy Day\n8\n3\n2021 Summer\nMichael Drew\n3\n2\n2020\nDaniel Dymond\n4\n2\n\nMost Not Outs (career)\n\nBatsmen\nInnings\nNO\nJimmy Day\n48\n19\nBen Cull\n44\n13\nMorgan Tear\n28\n12\nRohan Bythell-Douglas\n35\n12\nMichael Drew\n19\n10\n\nMost Not Outs (season)\n\nseason\nBatsmen\nInnings\nNO\n2020 Spring\nMorgan Tear\n5\n4\n2021 Spring\nReza Mohammed\n5\n4\n2020\nBen Cull\n6\n4\n2020\nMorgan Tear\n6\n4\n2021 Autumn\nJimmy Day\n8\n4\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:22+00:00"
+      "last_modified": "2022-10-30T01:26:10+00:00"
     },
     {
       "path": "records-bowling.html",
@@ -78,7 +78,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\n\n\n\n\nBest Bowling (innings)\n\ndate\nBowlers\nOvers\nBB\nOpposition\n08/11/2021\nJimmy Day\n3.0\n4/15\nDusk Risers\n05/12/2019\nCharlie Kenihan\n4.0\n4/28\nThe Michael Bevans\n10/03/2020\nMorgan Tear\n4.0\n4/34\nMajor Paine\n11/03/2021\nMichael Drew\n3.3\n3/10\nWorkers Club Lions\n20/06/2021\nHemu Bhardwaj\n4.0\n3/17\nFUCCC Blue\n\nWickets\nMost Wickets (all time)\n\nName\ninnings\nOvers\nWkts\nRuns\nAvg\nSR\nAdam Peel\n44\n163.0\n37\n1054\n28.5\n26.4\nHemu Bhardwaj\n26\n89.2\n29\n688\n23.7\n18.5\nMorgan Tear\n29\n61.9\n19\n594\n31.3\n19.6\nRohan Bythell-Douglas\n42\n95.8\n19\n973\n51.2\n30.3\nBen Cull\n38\n77.3\n14\n747\n53.4\n33.1\n\nMost Wickets (season)\n\nseason\nName\ninnings\nOvers\nWkts\nRuns\nAvg\nSR\n2021 Spring\nJimmy Day\n8\n19.0\n11\n117\n10.6\n10.4\n2021 Autumn\nHemu Bhardwaj\n10\n34.2\n10\n217\n21.7\n20.6\n2021 Autumn\nAdam Peel\n9\n33.0\n9\n221\n24.6\n22.0\n2019 Spring\nCharlie Kenihan\n4\n13.1\n8\n117\n14.6\n9.9\n2021 Spring\nHemu Bhardwaj\n7\n23.0\n8\n179\n22.4\n17.2\n\nEconomy\nBest Economy Rate (all time, min 10 overs)\n\nName\ninnings\nOvers\nRuns\nEcon\nMike Johnston\n7\n23.3\n139\n6.0\nRussell Tydens\n7\n23.3\n142\n6.1\nTaijas Kumar\n3\n10.0\n62\n6.2\nAdam Peel\n44\n163.0\n1054\n6.5\nSheraz Ahmad\n7\n24.1\n158\n6.6\n\nBest Economy Rate (season, min 5 overs)\n\nseason\nName\ninnings\nOvers\nRuns\nEcon\n2022 Summer\nRaza Afzal\n2\n7\n34\n4.9\n2021 Spring\nMike Johnston\n4\n15\n74\n4.9\n2021 Autumn\nRussell Tydens\n3\n11\n58\n5.3\n2020\nAdam Peel\n7\n28\n156\n5.6\n2020 Spring\nAdam Peel\n5\n19\n108\n5.7\n\nBest Economy Rate (innings, min 2 overs)\n\ndate\nBowlers\nOvers\nWkts\nRuns\nEcon\nOpposition\n11/04/2021\nAdam Peel\n4.0\n0\n6\n1.5\nV8s\n06/12/2021\nAdam Peel\n3.0\n1\n7\n2.3\nViper heat\n24/11/2021\nJimmy Day\n2.0\n1\n5\n2.5\nWe’ve got the Runs\n04/11/2021\nMike Johnston\n4.0\n1\n10\n2.5\nFour Fox Ache\n11/03/2021\nMichael Drew\n3.3\n3\n10\n3.0\nWorkers Club Lions\n\nSR\nBest Strike Rate (all time, min 10 overs)\n\nName\ninnings\nOvers\nWkts\nSR\nCharlie Kenihan\n5\n16.1\n8\n12.1\nSurya Yarlagadda\n5\n15.0\n7\n12.9\nPat Danaher\n12\n27.0\n9\n18.0\nHemu Bhardwaj\n26\n89.2\n29\n18.5\nReza Mohammed\n9\n25.0\n8\n18.8\n\nBest Strike Rate (season, min 5 overs)\n\nseason\nName\ninnings\nOvers\nWkts\nSR\n2021 Spring\nSurya Yarlagadda\n2\n6.0\n4\n9.0\n2019 Spring\nCharlie Kenihan\n4\n13.1\n8\n9.9\n2021 Summer\nSurya Yarlagadda\n2\n5.0\n3\n10.0\n2021 Spring\nJimmy Day\n8\n19.0\n11\n10.4\n2021 Summer\nMichael Drew\n3\n10.4\n5\n12.6\n\nAvg\nBest Average (all time, min 10 overs)\n\nName\ninnings\nOvers\nWkts\nRuns\nAvg\nSurya Yarlagadda\n5\n15.0\n7\n114\n16.3\nCharlie Kenihan\n5\n16.1\n8\n143\n17.9\nReza Mohammed\n9\n25.0\n8\n176\n22.0\nRussell Tydens\n7\n23.3\n6\n142\n23.7\nHemu Bhardwaj\n26\n89.2\n29\n688\n23.7\n\nBest Average (season, min 5 overs)\n\nseason\nName\ninnings\nOvers\nWkts\nRuns\nAvg\n2021 Spring\nJimmy Day\n8\n19.0\n11\n117\n10.6\n2021 Summer\nMichael Drew\n3\n10.4\n5\n62\n12.4\n2021 Spring\nSurya Yarlagadda\n2\n6.0\n4\n50\n12.5\n2021 Summer\nSurya Yarlagadda\n2\n5.0\n3\n43\n14.3\n2021 Autumn\nRussell Tydens\n3\n11.0\n4\n58\n14.5\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:24+00:00"
+      "last_modified": "2022-10-30T01:26:12+00:00"
     },
     {
       "path": "records-games.html",
@@ -92,7 +92,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\n\n\n\nGames Played\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:26+00:00"
+      "last_modified": "2022-10-30T01:26:13+00:00"
     },
     {
       "path": "stats-all-batting.html",
@@ -105,7 +105,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\nBatting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:27+00:00"
+      "last_modified": "2022-10-30T01:26:15+00:00"
     },
     {
       "path": "stats-all-bowling.html",
@@ -118,7 +118,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\nBowling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:28+00:00"
+      "last_modified": "2022-10-30T01:26:16+00:00"
     },
     {
       "path": "stats-all-fielding.html",
@@ -131,7 +131,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\n\n\n\n\nFielding\n\nKeeping\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-      "last_modified": "2022-10-29T12:28:30+00:00"
+      "last_modified": "2022-10-30T01:26:18+00:00"
     }
   ],
   "collections": []
