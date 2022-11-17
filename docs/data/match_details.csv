@@ -162,6 +162,9 @@ MatchId,MatchName,LeagueName,SeasonName,StartDateTime,battingFirstName,battingFi
 339771,Semi Final 1,City Midweek Div 1,2022 Summer,2022-03-09T06:31:49Z,Melbourne Arrack,12941,Melbourne Dolphins,19542,150,2,20,0,152,3,18,0,1981,118
 370556,NA,City Thursdays,2022 Spring,2022-10-20T06:36:17Z,The Hunts,9013,Major Paine,18659,191,3,20,0,125,4,20,0,1398,119
 370555,NA,City Thursdays,2022 Spring,2022-10-20T06:45:05Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,174,2,20,0,175,6,20,0,1398,119
-370560,,City Thursdays,2022 Spring,2022-11-03T06:42:16Z,Major Paine,18659,Darkside,18398,184,3,20,0,177,5,20,0,1398,119
-370562,,City Thursdays,2022 Spring,2022-11-03T06:44:17Z,Warthogs CC,19443,The Nutty Cuckoo Super Kings,18132,205,2,20,0,62,8,12,0,1398,119
-370561,,City Thursdays,2022 Spring,2022-11-03T06:45:18Z,The Hunts,9013,Kangaroos Strikers,22382,166,7,20,0,169,3,18,0,1398,119
+370560,NA,City Thursdays,2022 Spring,2022-11-03T06:42:16Z,Major Paine,18659,Darkside,18398,184,3,20,0,177,5,20,0,1398,119
+370562,NA,City Thursdays,2022 Spring,2022-11-03T06:44:17Z,Warthogs CC,19443,The Nutty Cuckoo Super Kings,18132,205,2,20,0,62,8,12,0,1398,119
+370561,NA,City Thursdays,2022 Spring,2022-11-03T06:45:18Z,The Hunts,9013,Kangaroos Strikers,22382,166,7,20,0,169,3,18,0,1398,119
+370567,,City Thursdays,2022 Spring,2022-11-17T06:38:51Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,171,3,20,0,182,4,20,0,1398,119
+370566,,City Thursdays,2022 Spring,2022-11-17T06:42:10Z,Kangaroos Strikers,22382,Major Paine,18659,129,6,20,0,130,4,18,3,1398,119
+370568,,City Thursdays,2022 Spring,2022-11-17T06:42:27Z,Warthogs CC,19443,The Hunts,9013,156,6,20,0,157,2,18,3,1398,119
