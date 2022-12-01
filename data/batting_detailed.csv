@@ -2373,47 +2373,88 @@ Id,FirstName,LastName,Order,RunsScored,BallsFaced,Fours,Sixes,BattingDotBalls,St
 244414,Darren,Eastwell,2,55,37,4,2,6,0,0,0,4,0,0,0,NA,The Hunts,370568,NA,City Thursdays,2022 Spring,2022-11-17T06:42:27Z,Warthogs CC,19443,The Hunts,9013,156,6,20,0,157,2,18,3,1398,119
 244413,Shaun,Marshall,4,10,6,0,1,1,0,0,0,1,0,0,0,NA,The Hunts,370568,NA,City Thursdays,2022 Spring,2022-11-17T06:42:27Z,Warthogs CC,19443,The Hunts,9013,156,6,20,0,157,2,18,3,1398,119
 262602,Testing,Austin,5,40,32,0,2,6,0,0,0,2,0,0,0,NA,Warthogs CC,370568,NA,City Thursdays,2022 Spring,2022-11-17T06:42:27Z,Warthogs CC,19443,The Hunts,9013,156,6,20,0,157,2,18,3,1398,119
-243725,Peewee,Hall,1,50,34,5,1,8,0,0,0,4,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-312121,Andrew,Barszusykj,3,50,34,5,2,16,0,0,0,4,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-312120,Zach ,Patten,4,19,16,3,0,5,0,0,0,3,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-246050,Aaron ,Guaci,6,21,3,0,2,0,0,1,0,1,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-291243,Daniel,Ingham,1,54,25,6,2,1,0,0,0,4,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-262601,Matt,McKone,3,43,35,7,0,16,0,0,0,3,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-263736,Mats,Holmquist,4,13,10,1,0,0,0,0,0,3,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-262603,Reuben,Guy,6,2,5,0,0,3,0,0,0,2,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-243688,Combo,Campbell,2,31,17,5,0,3,0,0,0,3,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-262607,Lachie,Watson,2,51,23,3,4,4,0,0,0,4,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-243665,Gym,Franklin,5,2,2,0,0,0,0,0,0,2,0,0,0,NA,Darkside,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-312220,Tom,Beech,5,9,12,0,0,5,0,0,0,1,0,0,0,NA,Warthogs CC,370570,,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
-249235,Brock,Mills,2,10,6,0,1,0,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-249340,Andrew,Palmer,3,18,22,0,0,6,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-249288,Mark,Russell,5,6,6,0,0,2,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-249289,Dana,Bentley,6,1,2,0,0,0,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-250946,James,Fyfe,8,8,4,0,1,0,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-78000,Atif,Rizvi,2,9,10,0,0,2,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-223355,Christopher,Armstrong,3,11,7,0,1,1,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-211891,Ryan,Bonnici,5,10,7,1,0,1,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-244413,Shaun,Marshall,6,5,7,0,0,1,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-271806,Shammy,Devarapalli,7,12,9,0,1,3,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-244414,Darren,Eastwell,1,7,3,0,1,0,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-285281,Matt,Innes,1,83,35,3,6,3,0,1,0,1,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-261673,Reza,Mohammed,4,38,20,3,2,1,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-79640,Haroon,Afridi,4,67,34,1,7,8,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-259547,Matthew,Love,7,22,14,0,2,1,0,0,0,3,0,0,0,NA,Major Paine,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-308576,Divyank,Tiwari,8,14,17,0,0,6,0,0,0,3,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-83193,Tenzin,Grieve,9,0,0,0,0,0,0,0,0,1,0,0,0,NA,The Hunts,370571,,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
-311156,Kamal ,Maan ,1,76,30,5,5,6,0,1,0,1,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-312999,Navroop,Singh,3,53,28,4,3,5,0,0,0,4,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-309097,Kunal,Insan,4,31,14,2,3,2,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-309130,James,Fisher,6,0,1,0,0,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-308758,Paul ,Cook,7,6,6,0,0,1,0,0,0,2,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-84884,Ronald,Victor,1,18,11,2,1,3,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-77580,Hemu,Bhardwaj,7,0,1,0,0,0,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-156220,Mirza,Farhan,2,11,16,0,0,6,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-144677,Al,Imran,5,17,10,1,1,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-194526,Jake,Jackson,2,6,6,1,0,2,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-58676,Amol,Chaudhari,3,9,12,0,0,2,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-261409,Mohiuddin,Syed,4,27,20,3,1,7,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-47638,Russell,Tydens,5,22,12,1,2,3,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-310795,Oliver,Tod,6,1,3,0,0,1,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-311152,Ben,Holloway,8,57,40,6,2,20,0,0,0,1,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+243725,Peewee,Hall,1,50,34,5,1,8,0,0,0,4,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+312121,Andrew,Barszusykj,3,50,34,5,2,16,0,0,0,4,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+312120,Zach,Patten,4,19,16,3,0,5,0,0,0,3,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+246050,Aaron,Guaci,6,21,3,0,2,0,0,1,0,1,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+291243,Daniel,Ingham,1,54,25,6,2,1,0,0,0,4,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+262601,Matt,McKone,3,43,35,7,0,16,0,0,0,3,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+263736,Mats,Holmquist,4,13,10,1,0,0,0,0,0,3,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+262603,Reuben,Guy,6,2,5,0,0,3,0,0,0,2,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+243688,Combo,Campbell,2,31,17,5,0,3,0,0,0,3,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+262607,Lachie,Watson,2,51,23,3,4,4,0,0,0,4,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+243665,Gym,Franklin,5,2,2,0,0,0,0,0,0,2,0,0,0,NA,Darkside,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+312220,Tom,Beech,5,9,12,0,0,5,0,0,0,1,0,0,0,NA,Warthogs CC,370570,NA,City Thursdays,2022 Spring,2022-11-24T06:40:50Z,Darkside,18398,Warthogs CC,19443,177,2,20,0,172,2,20,0,1398,119
+249235,Brock,Mills,2,10,6,0,1,0,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+249340,Andrew,Palmer,3,18,22,0,0,6,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+249288,Mark,Russell,5,6,6,0,0,2,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+249289,Dana,Bentley,6,1,2,0,0,0,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+250946,James,Fyfe,8,8,4,0,1,0,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+78000,Atif,Rizvi,2,9,10,0,0,2,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+223355,Christopher,Armstrong,3,11,7,0,1,1,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+211891,Ryan,Bonnici,5,10,7,1,0,1,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+244413,Shaun,Marshall,6,5,7,0,0,1,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+271806,Shammy,Devarapalli,7,12,9,0,1,3,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+244414,Darren,Eastwell,1,7,3,0,1,0,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+285281,Matt,Innes,1,83,35,3,6,3,0,1,0,1,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+261673,Reza,Mohammed,4,38,20,3,2,1,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+79640,Haroon,Afridi,4,67,34,1,7,8,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+259547,Matthew,Love,7,22,14,0,2,1,0,0,0,3,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+308576,Divyank,Tiwari,8,14,17,0,0,6,0,0,0,3,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+83193,Tenzin,Grieve,9,0,0,0,0,0,0,0,0,1,0,0,0,NA,The Hunts,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
+311156,Kamal,Maan,1,76,30,5,5,6,0,1,0,1,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+312999,Navroop,Singh,3,53,28,4,3,5,0,0,0,4,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+309097,Kunal,Insan,4,31,14,2,3,2,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+309130,James,Fisher,6,0,1,0,0,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+308758,Paul,Cook,7,6,6,0,0,1,0,0,0,2,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+84884,Ronald,Victor,1,18,11,2,1,3,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+77580,Hemu,Bhardwaj,7,0,1,0,0,0,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+156220,Mirza,Farhan,2,11,16,0,0,6,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+144677,Al,Imran,5,17,10,1,1,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+194526,Jake,Jackson,2,6,6,1,0,2,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+58676,Amol,Chaudhari,3,9,12,0,0,2,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+261409,Mohiuddin,Syed,4,27,20,3,1,7,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+47638,Russell,Tydens,5,22,12,1,2,3,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+310795,Oliver,Tod,6,1,3,0,0,1,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+311152,Ben,Holloway,8,57,40,6,2,20,0,0,0,1,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
+125735,Jimmy,Day,1,8,9,0,0,2,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+311151,Simon,Baker,8,1,4,0,0,3,0,0,0,2,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+78000,Atif,Rizvi,1,3,5,0,0,1,0,0,0,3,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+244414,Darren,Eastwell,5,17,11,2,0,2,0,0,0,1,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+239863,Adam,Peel,2,5,7,1,0,4,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+198555,Morgan,Tear,4,6,12,0,0,5,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+261409,Mohiuddin,Syed,5,50,19,2,6,5,0,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+239860,Rohan,Bythell-Douglas,6,6,12,0,0,5,0,0,0,3,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+271806,Shammy,Devarapalli,2,1,2,0,0,0,0,0,0,3,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+86627,Michael,Totsis,6,36,14,4,1,0,0,0,0,2,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+58676,Amol,Chaudhari,3,55,37,3,2,5,0,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+79640,Haroon,Afridi,3,29,21,1,2,6,0,0,0,3,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+313364,Shaik ,Khalid,7,1,7,0,0,6,0,0,0,1,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+238485,Brett,truscott,4,50,28,7,2,9,0,0,0,4,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+266934,Jason,Procter ,1,2,6,0,0,3,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+266882,Dan,Willis,6,41,31,3,1,7,1,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+262601,Matt,McKone,8,0,2,0,0,1,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+249235,Brock,Mills,1,52,28,4,3,6,0,0,0,4,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+248667,John,Richardson,5,22,6,2,2,1,0,0,0,1,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+262602,Testing,Austin,4,12,4,0,2,1,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+262603,Reuben,Guy,5,1,7,0,0,4,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+291243,Daniel,Ingham,7,0,1,0,0,0,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+259547,Matthew,Love,2,50,25,2,4,4,0,0,0,4,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+249289,Dana,Bentley,3,10,11,0,0,3,0,0,0,2,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+313411,Stuart,White,4,0,2,0,0,1,0,0,0,3,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+262316,Griff,Bristed,2,6,10,0,0,3,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+263736,Mats,Holmquist,3,63,42,5,2,10,0,0,0,3,0,0,0,NA,Warthogs CC,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+296186,Ishrak,Chowdhury,1,55,35,4,1,5,0,0,0,1,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+305450,Akash,Barot,3,4,5,0,0,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+310609,Tarun,Arneja,4,0,1,0,0,0,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+309097,Kunal,Insan,5,24,27,0,0,7,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+243688,Combo,Campbell,1,35,19,4,1,2,0,0,0,3,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+243665,Gym,Franklin,3,13,13,1,0,5,0,0,0,3,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+312121,Andrew,Barszusykj,6,1,1,0,0,0,0,0,0,2,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+144677,Al,Imran,2,1,4,0,0,2,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+243725,Peewee,Hall,2,9,12,0,0,4,0,0,0,3,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+297516,Leon,Stuart,6,15,9,1,1,2,0,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+312120,Zach ,Patten,4,31,25,3,0,6,0,0,0,3,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+309130,James,Fisher,7,33,20,4,1,6,1,0,0,3,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+310883,Khodor,LMS,5,47,18,3,4,3,1,0,0,1,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+304940,Mukeshbhai,Barot,8,3,11,0,0,8,1,0,0,2,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
