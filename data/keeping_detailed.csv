@@ -353,9 +353,18 @@ Id,FirstName,LastName,Catches,Stumpings,Byes,RunOuts,DoublePlay,Played,EmailAddr
 285281,Matt,Innes,3,0,0,0,0,0,NA,Major Paine,370571,NA,City Thursdays,2022 Spring,2022-11-24T06:41:18Z,Major Paine,18659,The Hunts,9013,188,7,20,0,135,8,17,0,1398,119
 84884,Ronald,Victor,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
 309097,Kunal,Insan,0,0,1,0,0,0,NA,Kangaroos Strikers,370569,NA,City Thursdays,2022 Spring,2022-11-24T06:47:52Z,Kangaroos Strikers,22382,The Nutty Cuckoo Super Kings,18132,200,4,20,0,141,7,20,0,1398,119
-125735,Jimmy,Day,3,0,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
-271806,Shammy,Devarapalli,0,0,0,0,0,0,NA,The Hunts,370572,,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
-249235,Brock,Mills,0,0,6,0,0,0,NA,Major Paine,370573,,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
-297516,Leon,Stuart,0,0,2,0,0,0,NA,Kangaroos Strikers,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
-310883,Khodor,LMS,0,0,0,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
-312121,Andrew,Barszusykj,0,0,0,0,0,0,NA,Darkside,370574,,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+125735,Jimmy,Day,3,0,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370572,NA,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+271806,Shammy,Devarapalli,0,0,0,0,0,0,NA,The Hunts,370572,NA,City Thursdays,2022 Spring,2022-12-01T06:43:46Z,The Nutty Cuckoo Super Kings,18132,The Hunts,9013,135,4,20,0,137,3,15,1,1398,119
+249235,Brock,Mills,0,0,6,0,0,0,NA,Major Paine,370573,NA,City Thursdays,2022 Spring,2022-12-01T06:47:17Z,Warthogs CC,19443,Major Paine,18659,133,8,19,2,136,1,13,2,1398,119
+297516,Leon,Stuart,0,0,2,0,0,0,NA,Kangaroos Strikers,370574,NA,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+310883,Khodor,LMS,0,0,0,0,0,0,NA,Darkside,370574,NA,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+312121,Andrew,Barszusykj,0,0,0,0,0,0,NA,Darkside,370574,NA,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
+271806,Shammy,Devarapalli,2,0,2,0,0,0,NA,The Hunts,370576,Semi Final 2,City Thursdays,2022 Spring,2022-12-08T06:43:24Z,Kangaroos Strikers,22382,The Hunts,9013,212,6,20,0,174,5,20,0,1398,119
+308457,Devjas,Bhinder ,2,0,0,0,0,0,NA,Kangaroos Strikers,370576,Semi Final 2,City Thursdays,2022 Spring,2022-12-08T06:43:24Z,Kangaroos Strikers,22382,The Hunts,9013,212,6,20,0,174,5,20,0,1398,119
+125735,Jimmy,Day,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
+243705,Romper,Shorten,1,0,0,0,0,0,NA,Darkside,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
+261673,Reza,Mohammed,0,3,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
+249235,Brock,Mills,0,0,4,0,0,0,NA,Major Paine,370575,Semi Final 1,City Thursdays,2022 Spring,2022-12-08T06:56:51Z,Major Paine,18659,Warthogs CC,19443,144,6,19,0,149,2,15,3,1398,119
+262609,Ryan,Stewart,0,0,1,0,0,0,NA,Warthogs CC,370575,Semi Final 1,City Thursdays,2022 Spring,2022-12-08T06:56:51Z,Major Paine,18659,Warthogs CC,19443,144,6,19,0,149,2,15,3,1398,119
+238804,Geoff,Peace,0,0,3,0,0,0,NA,The Hunts,370578,Final,City Thursdays,2022 Spring,2022-12-15T06:49:17Z,The Hunts,9013,Warthogs CC,19443,141,6,20,0,143,5,19,3,1398,119
+262609,Ryan,Stewart,1,1,0,0,0,0,NA,Warthogs CC,370578,Final,City Thursdays,2022 Spring,2022-12-15T06:49:17Z,The Hunts,9013,Warthogs CC,19443,141,6,20,0,143,5,19,3,1398,119
