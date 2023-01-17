@@ -20,6 +20,8 @@ jobs:
       - name: Install dependencies
         run: |
               Rscript -e 'install.packages(c("devtools", "dplyr", "reactable", "distill", "tidyr", "rmarkdown", "readr", "purrr", "stringr", "here", "httr", "rvest", "xml2", "lubridate", "cli"))'
+      - name: Run Script
+        run: Rscript -e 'source(here::here("scripts", "fetch_stats_script.R"))'
       - name: Render site
         run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8")'
       - name: Commit
