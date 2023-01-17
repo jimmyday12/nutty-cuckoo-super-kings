@@ -74,7 +74,11 @@ fetch_innings_data <- function(id, innings) {
   
   batting <- batting %>%
     filter(!str_detect(Batsmen, "Extras"),
-           !str_detect(Batsmen, "Did Not Bat")) %>%
+           !str_detect(Batsmen, "Did Not Bat")) 
+  
+  if(nrow(batting) == 0) return(NULL)
+  
+  batting <- batting%>%
     rowwise() %>%
     mutate(Dismissal = extract_outs(Batsmen, FALSE),
            Batsmen = extract_outs(Batsmen))
@@ -136,6 +140,8 @@ fetch_match_results <- function(id){
   match_details <- fetch_match_details(id)
   innings_1 <- fetch_innings_data(id, 1)
   innings_2 <- fetch_innings_data(id, 2)
+  
+  if(is.null(innings_1) | is.null(innings_2)) return(NULL)
   
   x <- map2(innings_1, innings_2, dplyr::bind_rows) %>%
     map(dplyr::left_join, match_details, by = "id")
