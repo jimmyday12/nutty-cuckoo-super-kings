@@ -9,8 +9,8 @@ output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-current_season <- 119
-current_league <- 1398
+current_season <- 128
+current_league <- 2454
 
 
 knitr::opts_chunk$set(

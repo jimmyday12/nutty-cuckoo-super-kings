@@ -360,7 +360,7 @@ Id,FirstName,LastName,Catches,Stumpings,Byes,RunOuts,DoublePlay,Played,EmailAddr
 310883,Khodor,LMS,0,0,0,0,0,0,NA,Darkside,370574,NA,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
 312121,Andrew,Barszusykj,0,0,0,0,0,0,NA,Darkside,370574,NA,City Thursdays,2022 Spring,2022-12-01T06:49:14Z,Kangaroos Strikers,22382,Darkside,18398,139,6,20,0,140,4,16,4,1398,119
 271806,Shammy,Devarapalli,2,0,2,0,0,0,NA,The Hunts,370576,Semi Final 2,City Thursdays,2022 Spring,2022-12-08T06:43:24Z,Kangaroos Strikers,22382,The Hunts,9013,212,6,20,0,174,5,20,0,1398,119
-308457,Devjas,Bhinder ,2,0,0,0,0,0,NA,Kangaroos Strikers,370576,Semi Final 2,City Thursdays,2022 Spring,2022-12-08T06:43:24Z,Kangaroos Strikers,22382,The Hunts,9013,212,6,20,0,174,5,20,0,1398,119
+308457,Devjas,Bhinder,2,0,0,0,0,0,NA,Kangaroos Strikers,370576,Semi Final 2,City Thursdays,2022 Spring,2022-12-08T06:43:24Z,Kangaroos Strikers,22382,The Hunts,9013,212,6,20,0,174,5,20,0,1398,119
 125735,Jimmy,Day,0,1,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
 243705,Romper,Shorten,1,0,0,0,0,0,NA,Darkside,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
 261673,Reza,Mohammed,0,3,0,0,0,0,NA,The Nutty Cuckoo Super Kings,370577,Semi Final 3,City Thursdays,2022 Spring,2022-12-08T06:56:40Z,The Nutty Cuckoo Super Kings,18132,Darkside,18398,157,4,20,0,125,7,19,3,1398,119
@@ -368,3 +368,12 @@ Id,FirstName,LastName,Catches,Stumpings,Byes,RunOuts,DoublePlay,Played,EmailAddr
 262609,Ryan,Stewart,0,0,1,0,0,0,NA,Warthogs CC,370575,Semi Final 1,City Thursdays,2022 Spring,2022-12-08T06:56:51Z,Major Paine,18659,Warthogs CC,19443,144,6,19,0,149,2,15,3,1398,119
 238804,Geoff,Peace,0,0,3,0,0,0,NA,The Hunts,370578,Final,City Thursdays,2022 Spring,2022-12-15T06:49:17Z,The Hunts,9013,Warthogs CC,19443,141,6,20,0,143,5,19,3,1398,119
 262609,Ryan,Stewart,1,1,0,0,0,0,NA,Warthogs CC,370578,Final,City Thursdays,2022 Spring,2022-12-15T06:49:17Z,The Hunts,9013,Warthogs CC,19443,141,6,20,0,143,5,19,3,1398,119
+292148,Liam,Thorp,2,0,0,0,0,0,NA,Last Minute CC,375087,,Princes Park Midweek,Summer 2023,2023-01-09T06:56:39Z,Last Minute CC,21299,Viper heat,19394,230,3,20,0,214,4,20,0,2454,128
+125735,Jimmy,Day,0,0,4,0,0,0,NA,The Nutty Cuckoo Super Kings,375089,,Princes Park Midweek,Summer 2023,2023-01-09T07:00:15Z,The Nutty Cuckoo Super Kings,18132,Pitch Pirates,20156,142,3,20,0,145,3,15,2,2454,128
+284353,Nicholas,Stragalinos,0,0,0,0,0,0,NA,The Swoopy Bois ,375088,,Princes Park Midweek,Summer 2023,2023-01-10T06:36:02Z,The Swoopy Bois ,20851,ANZAC's,14915,153,5,20,0,154,4,18,1,2454,128
+14770,Ben,Whitechurch,0,0,0,0,0,0,NA,Slippery Gypsies,375090,,Princes Park Midweek,Summer 2023,2023-01-10T06:37:40Z,Slippery Gypsies,8950,The B’Rats,22420,163,2,20,0,165,2,18,1,2454,128
+311236,Simon,Crowe,1,0,5,0,0,0,NA,The B’Rats,375090,,Princes Park Midweek,Summer 2023,2023-01-10T06:37:40Z,Slippery Gypsies,8950,The B’Rats,22420,163,2,20,0,165,2,18,1,2454,128
+125735,Jimmy,Day,0,1,1,0,0,0,NA,The Nutty Cuckoo Super Kings,375094,,Princes Park Midweek,Summer 2023,2023-01-16T06:44:35Z,The B’Rats,22420,The Nutty Cuckoo Super Kings,18132,139,6,20,0,140,3,17,1,2454,128
+311175,David,Stewart,0,0,1,0,0,0,NA,The B’Rats,375094,,Princes Park Midweek,Summer 2023,2023-01-16T06:44:35Z,The B’Rats,22420,The Nutty Cuckoo Super Kings,18132,139,6,20,0,140,3,17,1,2454,128
+261673,Reza,Mohammed,1,0,2,0,0,0,NA,Pitch Pirates,375092,,Princes Park Midweek,Summer 2023,2023-01-16T06:53:39Z,Last Minute CC,21299,Pitch Pirates,20156,175,3,20,0,163,5,20,0,2454,128
+292491,Cale,Hooker,3,0,0,0,0,0,NA,Last Minute CC,375092,,Princes Park Midweek,Summer 2023,2023-01-16T06:53:39Z,Last Minute CC,21299,Pitch Pirates,20156,175,3,20,0,163,5,20,0,2454,128
