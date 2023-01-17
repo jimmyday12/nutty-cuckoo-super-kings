@@ -25,12 +25,15 @@ bowling <- readr::read_csv(here::here("data", "bowling.csv"), col_types = cols()
 existing_ids <- unique(c(unique(batting$id), unique(bowling$id)))
 
 # Add random matches
-empty_matches <- c(277707)
+empty_matches <- c(277707, 306942)
 existing_ids <- c(existing_ids, empty_matches)
-#existing_ids <- existing_ids[!existing_ids == 336820]
+
+
+cli::cli_alert_info("fetching player games")
 source(here::here("scripts", "fetch_player_games.R"))
 
-  
+cli::cli_alert_info("fetching season stats")
+
 dat_all <- purrr::map2(season_ids, league_ids,
                        ~fetch_season_stats(season_id = .x,
                                            league_id = .y,
@@ -61,9 +64,12 @@ bowling <- bind_rows(bowling, bowling_all)
 
 
 # Save Data
+message("saving data")
 batting$league_id[batting$league_id == 3072] <- 1398
 bowling$league_id[bowling$league_id == 3072] <- 1398
 
+# Fix random things
+message("fixing random things")
 # Remove Roger the baby
 batting <- batting %>%
   filter(!(Batsmen == "Roger James" & 
@@ -118,24 +124,28 @@ bowling <- distinct(bowling)
 readr::write_csv(bowling, here::here("data", "bowling.csv"))
 
 # Detailed Data ----------------------------------------------------------------
-
+message("fetching detailed data - bowlers")
 # Get existing IDS
 bowling_detailed_existing <- readr::read_csv(
   here::here("data", "bowling_detailed.csv"), 
   col_types = cols())
 
+message("fetching detailed data - batters")
 batting_detailed_existing <- readr::read_csv(
   here::here("data", "batting_detailed.csv"), 
   col_types = cols())
 
+message("fetching detailed data - fielders")
 fielding_detailed_existing <- readr::read_csv(
   here::here("data", "fielding_detailed.csv"), 
   col_types = cols())
 
+message("fetching detailed data - keepers")
 keeping_detailed_existing <- readr::read_csv(
   here::here("data", "keeping_detailed.csv"), 
   col_types = cols())
 
+message("merging detailed data with cached data")
 match_details_existing <- readr::read_csv(
   here::here("data", "match_details.csv"), 
   col_types = cols())
@@ -268,6 +278,7 @@ if(!all(map_lgl(dat_detailed, is.null))) {
 
 # Combine Stats --------------------------------------------------------------
 # Combine Batting --------------------------------------------------------------
+message("combining stats")
 batting <- read_csv(here::here("data", "batting.csv"), col_types = cols())
 batting_detailed <- read_csv(here::here("data", "batting_detailed.csv"), col_types = cols())
 batting_comb <- full_join(batting, batting_detailed, 
