@@ -806,12 +806,24 @@ Id,FirstName,LastName,Catches,RunOuts,DoublePlay,Played,EmailAddressConfirmed,Te
 261673,Reza,Mohammed,1,0,0,0,NA,ANZAC's,375093,NA,Princes Park Midweek,Summer 2023,2023-01-17T06:43:20Z,Viper heat,19394,ANZAC's,14915,157,7,20,0,159,0,12,2,2454,128
 180279,Caleb,Tiller,1,0,0,0,NA,ANZAC's,375093,NA,Princes Park Midweek,Summer 2023,2023-01-17T06:43:20Z,Viper heat,19394,ANZAC's,14915,157,7,20,0,159,0,12,2,2454,128
 191024,Kieran,Gonzalez,1,0,0,0,NA,ANZAC's,375093,NA,Princes Park Midweek,Summer 2023,2023-01-17T06:43:20Z,Viper heat,19394,ANZAC's,14915,157,7,20,0,159,0,12,2,2454,128
-34166,Nick,Bailey,1,0,0,0,NA,Slippery Gypsies,375104,,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
-14770,Ben,Whitechurch,2,0,0,0,NA,Slippery Gypsies,375104,,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
-79444,Matt,Sanders,1,0,0,0,NA,Slippery Gypsies,375104,,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
-242570,Ben,Cull,3,1,0,0,NA,The Nutty Cuckoo Super Kings,375104,,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
-266553,Luke,McEvoy,0,2,0,0,NA,The Swoopy Bois ,375105,,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois ,20851,150,7,19,1,151,3,16,3,2454,128
-283669,Vaughan,Kernan,1,0,0,0,NA,The Swoopy Bois ,375105,,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois ,20851,150,7,19,1,151,3,16,3,2454,128
-278317,Harmandeep,Singh,0,1,0,0,NA,Pitch Pirates,375105,,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois ,20851,150,7,19,1,151,3,16,3,2454,128
-241777,Debjit,Bhowmick,1,0,0,0,NA,Pitch Pirates,375105,,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois ,20851,150,7,19,1,151,3,16,3,2454,128
-309851,Fraser,Daly,1,0,0,0,NA,The Swoopy Bois ,375105,,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois ,20851,150,7,19,1,151,3,16,3,2454,128
+34166,Nick,Bailey,1,0,0,0,NA,Slippery Gypsies,375104,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
+14770,Ben,Whitechurch,2,0,0,0,NA,Slippery Gypsies,375104,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
+79444,Matt,Sanders,1,0,0,0,NA,Slippery Gypsies,375104,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
+242570,Ben,Cull,3,1,0,0,NA,The Nutty Cuckoo Super Kings,375104,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
+266553,Luke,McEvoy,0,2,0,0,NA,The Swoopy Bois,375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
+283669,Vaughan,Kernan,1,0,0,0,NA,The Swoopy Bois,375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
+278317,Harmandeep,Singh,0,1,0,0,NA,Pitch Pirates,375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
+241777,Debjit,Bhowmick,1,0,0,0,NA,Pitch Pirates,375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
+309851,Fraser,Daly,1,0,0,0,NA,The Swoopy Bois,375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
+242570,Ben,Cull,1,0,0,0,NA,The Nutty Cuckoo Super Kings,375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+243658,Thomas,Lister,2,0,0,0,NA,The Swoopy Bois ,375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+187667,Prabs,Singh,1,1,0,0,NA,The Nutty Cuckoo Super Kings,375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+284353,Nicholas,Stragalinos,2,0,0,0,NA,The Swoopy Bois ,375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+170545,Navjot,Singh,1,0,0,0,NA,The Nutty Cuckoo Super Kings,375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+241910,Keerthiban,Manoharan,1,0,0,0,NA,Pitch Pirates,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+290952,Prateek,Sharma,1,0,0,0,NA,Pitch Pirates,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+311216,Aaron,Bloch,1,0,0,0,NA,Viper heat,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+241777,Debjit,Bhowmick,0,2,0,0,NA,Pitch Pirates,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+247544,Nishane,Karunaratne,0,1,0,0,NA,Pitch Pirates,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+290112,James,Tierney,1,0,0,0,NA,Viper heat,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+168729,Robert,Trinick,1,0,0,0,NA,Viper heat,375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
