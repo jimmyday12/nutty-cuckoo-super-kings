@@ -188,5 +188,7 @@ MatchId,MatchName,LeagueName,SeasonName,StartDateTime,battingFirstName,battingFi
 375093,NA,Princes Park Midweek,Summer 2023,2023-01-17T06:43:20Z,Viper heat,19394,ANZAC's,14915,157,7,20,0,159,0,12,2,2454,128
 375104,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:44:11Z,Slippery Gypsies,8950,The Nutty Cuckoo Super Kings,18132,192,5,20,0,140,4,20,0,2454,128
 375105,NA,Princes Park Midweek,Summer 2023,2023-01-23T06:49:56Z,Pitch Pirates,20156,The Swoopy Bois,20851,150,7,19,1,151,3,16,3,2454,128
-375098,,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois ,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
-375095,,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+375098,NA,Princes Park Midweek,Summer 2023,2023-01-30T06:42:30Z,The Swoopy Bois,20851,The Nutty Cuckoo Super Kings,18132,151,4,20,0,145,6,20,0,2454,128
+375095,NA,Princes Park Midweek,Summer 2023,2023-01-30T06:50:09Z,Pitch Pirates,20156,Viper heat,19394,171,5,20,0,162,6,20,0,2454,128
+375096,,Princes Park Midweek,Summer 2023,2023-01-31T06:35:14Z,Slippery Gypsies,8950,ANZAC's,14915,125,8,19,4,130,4,15,4,2454,128
+375097,,Princes Park Midweek,Summer 2023,2023-01-31T06:47:57Z,Last Minute CC,21299,The B’Rats,22420,163,4,20,0,135,5,20,0,2454,128
