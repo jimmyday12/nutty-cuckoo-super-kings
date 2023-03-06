@@ -2875,31 +2875,55 @@ Id,FirstName,LastName,Order,RunsScored,BallsFaced,Fours,Sixes,BattingDotBalls,St
 315796,shafeeq,j,4,1,5,0,0,4,0,0,0,3,0,0,0,NA,The Swoopy Bois,375115,NA,Princes Park Midweek,Summer 2023,2023-02-27T06:48:08Z,The Swoopy Bois,20851,ANZAC's,14915,88,6,20,0,90,3,15,2,2454,128
 243658,Thomas,Lister,6,21,33,0,0,16,0,0,0,2,0,0,0,NA,The Swoopy Bois,375115,NA,Princes Park Midweek,Summer 2023,2023-02-27T06:48:08Z,The Swoopy Bois,20851,ANZAC's,14915,88,6,20,0,90,3,15,2,2454,128
 180281,Finn,Schultz,3,37,31,2,0,7,0,0,0,2,0,0,0,NA,ANZAC's,375115,NA,Princes Park Midweek,Summer 2023,2023-02-27T06:48:08Z,The Swoopy Bois,20851,ANZAC's,14915,88,6,20,0,90,3,15,2,2454,128
-289139,Christian,Rogers,2,8,8,1,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-311178,Eamonn,Fenaughty,7,0,3,0,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-311188,Brenton,Shaughnessy,8,0,5,0,0,4,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-15666,Charlie,Burgess,1,34,20,0,2,5,0,0,0,3,0,0,0,NA,Slippery Gypsies,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-79445,David,Gough,4,17,7,2,0,1,0,0,0,2,0,0,0,NA,Slippery Gypsies,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-221272,Neil,Anderson,1,5,10,0,0,5,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-14770,Ben,Whitechurch,2,26,17,2,0,2,0,0,0,3,0,0,0,NA,Slippery Gypsies,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-261673,Reza,Mohammed,3,1,4,0,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-3242,Marty,Kennon,3,13,21,0,0,10,0,0,0,1,0,0,0,NA,Slippery Gypsies,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-217112,Hayden,Parker,4,42,32,1,3,8,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-311175,David,Stewart,5,22,30,1,0,8,0,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-292284,David,Donelly,6,6,9,0,0,2,1,0,0,3,0,0,0,NA,The B’Rats,375117,,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
-292146,Will,Stewart,1,47,20,9,1,4,1,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-319639,Alex,Browne,7,9,9,1,0,2,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-319640,Nathan,Holly,8,7,5,1,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-290112,James,Tierney,1,11,8,2,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-261413,Scott,Yeomans,6,1,3,0,0,1,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-291262,Joel,Tito,7,8,7,0,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-291029,Martyn,Horridge,2,3,4,0,0,0,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-292148,Liam,Thorp,5,1,3,0,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-311108,Peter,Seehusen,3,31,22,1,1,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-168729,Robert,Trinick,2,28,21,1,2,6,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-292919,Ryan,Thorp,6,11,9,1,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-261314,Lachlan,Slattery,3,30,22,0,2,4,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-292491,Cale,Hooker,4,72,36,4,4,11,0,1,0,1,0,0,0,NA,Last Minute CC,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-311215,Harry,Mazzarolo,4,15,11,2,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-261313,James,Park,5,25,18,3,0,5,0,0,0,3,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
-292565,Greg,Roebuck,8,11,17,1,0,7,0,0,0,1,0,0,0,NA,Viper heat,375116,,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+289139,Christian,Rogers,2,8,8,1,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+311178,Eamonn,Fenaughty,7,0,3,0,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+311188,Brenton,Shaughnessy,8,0,5,0,0,4,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+15666,Charlie,Burgess,1,34,20,0,2,5,0,0,0,3,0,0,0,NA,Slippery Gypsies,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+79445,David,Gough,4,17,7,2,0,1,0,0,0,2,0,0,0,NA,Slippery Gypsies,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+221272,Neil,Anderson,1,5,10,0,0,5,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+14770,Ben,Whitechurch,2,26,17,2,0,2,0,0,0,3,0,0,0,NA,Slippery Gypsies,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+261673,Reza,Mohammed,3,1,4,0,0,2,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+3242,Marty,Kennon,3,13,21,0,0,10,0,0,0,1,0,0,0,NA,Slippery Gypsies,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+217112,Hayden,Parker,4,42,32,1,3,8,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+311175,David,Stewart,5,22,30,1,0,8,0,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+292284,David,Donelly,6,6,9,0,0,2,1,0,0,3,0,0,0,NA,The B’Rats,375117,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:48:17Z,The B’Rats,22420,Slippery Gypsies,8950,90,8,18,2,93,2,11,2,2454,128
+292146,Will,Stewart,1,47,20,9,1,4,1,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+319639,Alex,Browne,7,9,9,1,0,2,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+319640,Nathan,Holly,8,7,5,1,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+290112,James,Tierney,1,11,8,2,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+261413,Scott,Yeomans,6,1,3,0,0,1,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+291262,Joel,Tito,7,8,7,0,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+291029,Martyn,Horridge,2,3,4,0,0,0,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+292148,Liam,Thorp,5,1,3,0,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+311108,Peter,Seehusen,3,31,22,1,1,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+168729,Robert,Trinick,2,28,21,1,2,6,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+292919,Ryan,Thorp,6,11,9,1,0,1,0,0,0,3,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+261314,Lachlan,Slattery,3,30,22,0,2,4,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+292491,Cale,Hooker,4,72,36,4,4,11,0,1,0,1,0,0,0,NA,Last Minute CC,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+311215,Harry,Mazzarolo,4,15,11,2,0,2,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+261313,James,Park,5,25,18,3,0,5,0,0,0,3,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+292565,Greg,Roebuck,8,11,17,1,0,7,0,0,0,1,0,0,0,NA,Viper heat,375116,NA,Princes Park Midweek,Summer 2023,2023-02-28T06:49:38Z,Last Minute CC,21299,Viper heat,19394,186,7,20,0,132,7,20,0,2454,128
+292491,Cale,Hooker,1,53,33,3,1,6,0,0,0,4,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+292146,Will,Stewart,3,14,17,0,0,3,0,0,0,3,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+292148,Liam,Thorp,4,6,8,0,0,2,0,0,0,3,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+292147,Edward,Cooper,6,9,14,0,0,7,0,0,0,1,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+15666,Charlie,Burgess,1,55,35,2,2,6,0,0,0,4,0,0,0,NA,Slippery Gypsies,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+3242,Marty,Kennon,3,9,10,0,0,2,0,0,0,2,0,0,0,NA,Slippery Gypsies,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+90249,Geoff,Earl,4,16,12,1,0,2,0,0,0,1,0,0,0,NA,Slippery Gypsies,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+291029,Martyn,Horridge,2,31,23,1,1,4,0,0,0,3,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+14770,Ben,Whitechurch,2,52,34,3,1,7,0,0,0,4,0,0,0,NA,Slippery Gypsies,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+292919,Ryan,Thorp,5,17,13,1,0,1,0,0,0,2,0,0,0,NA,Last Minute CC,375119,Semi Final 1,Princes Park Midweek,Summer 2023,2023-03-06T06:24:47Z,Last Minute CC,21299,Slippery Gypsies,8950,131,3,20,0,133,0,16,2,2454,128
+180354,Adam,Inglis,1,50,31,3,2,8,0,0,0,4,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+180279,Caleb,Tiller,3,14,8,2,0,0,0,0,0,3,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+180278,Jeremy,Schoushkoff,4,52,18,1,6,3,0,0,0,4,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+180281,Finn,Schultz,5,26,12,3,1,2,0,0,0,2,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+180277,Judd,Belousoff,6,21,6,2,1,2,0,1,0,1,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+290952,Prateek,Sharma,1,5,6,0,0,2,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+58676,Amol,Chaudhari,3,37,29,0,3,5,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+317783,Tarun Dev,Thalakunte Rajappa,8,5,3,1,0,0,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+180280,Keanu,White,2,50,38,0,2,8,0,0,0,4,0,0,0,NA,ANZAC's,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+287085,Dominic,Fernandez,4,20,20,1,0,7,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+264892,Shivanta,De Silva,2,1,3,0,0,0,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+241910,Keerthiban,Manoharan,5,36,29,3,1,11,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+241777,Debjit,Bhowmick,6,9,11,0,0,3,0,0,0,3,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
+264984,Antariksh,Ambasht,7,3,5,0,0,2,1,0,0,1,0,0,0,NA,Pitch Pirates,375120,Semi Final 2,Princes Park Midweek,Summer 2023,2023-03-06T06:30:59Z,ANZAC's,14915,Pitch Pirates,20156,215,1,20,0,127,7,20,0,2454,128
